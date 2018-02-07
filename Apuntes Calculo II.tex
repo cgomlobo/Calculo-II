@@ -1,0 +1,314 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{xfrac}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{accents}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\newcommand{\eqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{=}}
+\newcommand{\leqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\leq}}
+\newcommand{\geqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\geq}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bfrac}[2]{\scalebox{1.4}{$\frac{#1}{#2}$}}
+\newcommand{\spac}{\, \, \,}
+
+\begin{document}
+
+\title {Cálculo II}
+\author {Carlos Gómez-Lobo}
+\date{January 30, 2018}
+\maketitle
+
+%\TEMA 1
+
+\part* {Tema 1. Intrducción al espacio de varias variables $\displaystyle \mathbf{\mathbb{R}^n}$}
+
+\section {Vectores, producto escalar y distancia}
+
+\begin{itemize}
+
+\item En $\displaystyle \mathbb{R}^2$ los puntos, $p \in \displaystyle \mathbb{R}^2$, se representan mediante pares ordenados de números reales, $p=(a, b)$. \\$\mathbb{R}^2 = \{(x, y):x, y \in \mathbb{R}\}$.
+
+\item En $\displaystyle \mathbb{R}^3$ los puntos, $p \in\displaystyle  \mathbb{R}^3$, se representan mediante ternas ordenadas de números reales, $p=(a, b, c)$. \\$\displaystyle \mathbb{R}^3 = \{(x, y, z):x, y, z \in \displaystyle \mathbb{R}\}$.
+
+\item En $\mathbb{R}^n$ los puntos, $p \in \displaystyle \mathbb{R}^n$, se representan mediante pares ordenados de números reales, $p=(x_1, x_2, ..., x_n)$.\\ $\displaystyle \mathbb{R}^n = \{(x_1, x_2, ..., x_n):x_1 \in \displaystyle \mathbb{R}, i=1, 2, ..., n\}$.
+
+\end{itemize}
+
+\noindent -\underline{Definición:} Geométricamente, un vector se define como un segmento de recta "orientado" con punto inicial en el origen de coordenadas y punto final en un punto de $\displaystyle \mathbb{R}^n$.
+
+\vspace{3mm}
+
+\noindent *\underline{Observación:} Si n=3, la notación habitual parala base canónica es: \\$\vec{i}=(1, 0, 0), \vec{j}=(0, 1, 0), \vec{k}=(0, 0, 1)$.
+
+%Operaciones en Rn
+
+\subsection{Operaciones entre elementos de $\mathbf{\displaystyle \mathbb{R}^n : \vec{x}=(x_1, x_2, ..., x_n),} \\ \mathbf{ \vec{y}=(y_1, y_2, ... y_n)}$}
+
+\begin {enumerate}
+
+\item Suma: $\vec{x}+\vec{y}=(x_1+y_1, x_2+y_2, ..., x_n+y_n)$
+
+\item Multiplicación por un escalar, $\lambda \in \mathbb{R}: \lambda \vec{x}=(\lambda x_1, \lambda x_2, ..., \lambda x_n)$
+
+\item Producto escalar: $<\quad ,\quad > : \displaystyle \mathbb{R}^n \times \displaystyle \mathbb{R}^n \rightarrow <\vec{x}, \vec{y}>\displaystyle \eqc{not} \vec{x} \cdot \vec{y}= \\
+=  x_1y_1+x_2+y_2+...+x_ny_n = \displaystyle \sum_{i=1}^n x_i\,y_i$
+
+\end {enumerate}
+
+%Propiedades
+
+\subsubsection*{Propiedades}
+ Sean $\vec{x}, \vec{y}, \vec{z} \quad y \quad \lambda , \beta \in \displaystyle \mathbb{R}$
+
+\begin{enumerate}
+
+\item Linealidad: $(\lambda \, \vec{x} + \beta \, \vec{y}) \cdot \vec{z} = \lambda \, \vec{x} \, \vec{z} + \beta \, \vec{y} \, \vec{z}$
+
+\item Conmutativa: $<\vec{x}, \vec{y}>=<\vec{y}, \vec{x}>$
+
+\item $< \vec{x}, \vec{x} > \geq 0  \, \, \mathrm{y} < \vec{x}, \vec{x} > = 0 \iff \vec{x} = \vec{0} = (0, 0,..., 0)$
+
+\end{enumerate}
+
+%La norma euclídea
+
+\noindent -\underline{Definición:} La \textbf{norma euclídea} de un vector $\vec{x} \in \displaystyle \mathbb{R}^n$(y se escribe $\|\vec{x}\| \mathrm{)}$ como: $\|\vec{x}\| = \sqrt{<\vec{x}, \vec{x}>} = \Big{(}\displaystyle \sum_{i = 1}^{n} x_i^{\,2}\Big{)}^{^1/_2}$.
+
+\vspace{3mm}
+
+*\underline{Observación:} Sea $\vec{x} \in \displaystyle \mathbb{R}^n$ tal que $\|\vec{x}\| = 1$, se dice que es \textbf{unitario}. Sea  $\vec{x} \in \displaystyle \mathbb{R}^n$ un vector no unitario, podemos \textbf{normalizarlo}:\\
+{\large$\frac{\vec{x}}{\|\vec{x}\|} \rightarrow$} vector unitario.
+
+\subsubsection*{Significado geométrico de la norma euclídea}
+
+La norma $\|\vec{x}\|$ representa la \textbf{longitud} del vector $\vec{x}$. Not.: $long(\vec{x}) = |x| = d(0, x)$.
+
+%Desigualdad de Cauchy-Schwarz
+
+\subsubsection*{Desigualdad de Cauchy-Schwarz en $\mathbf{\mathbb{R}^n}$}
+
+Sean $\vec{x}, \vec{y} \in \displaystyle \mathbb{R}^n$\\  $$\boxed{|<\vec{x}, \vec{y}>| \leq \|\vec{x}\| \cdot \|\vec{y}\| = \bigg{|}\displaystyle \sum_{i=1}^n x_i \, y_i \bigg{|} \leq \bigg{(}  \sum_{i=1}^n x_i^2 \bigg{)}^{\sfrac{1}{2}} \cdot \bigg{(} \sum_{i=1}^n y_i^2 \bigg{)}^{\sfrac{1}{2}}}$$
+
+\vspace{3mm}
+
+\noindent\underline{Demostración:} Tomamos $a= \vec{y} \cdot \vec{y} = \|\vec{y}\|^2 \quad \mathrm{y} \quad b = -\vec{x} \cdot \vec{y} \,$ y aplicamos propiedades del producto escalar al vector $a  \vec{x} + b \vec{y}$.
+
+\vspace{3mm}
+
+-Si $a=0 \Rightarrow \vec{y} = 0$  \checkmark
+
+\vspace{1mm}
+
+-Si $a \neq 0 \Rightarrow 0 \leq ( a\vec{x} + b \vec{y} ) (a \vec{x} + b \vec{y} ) = a^2 \vec{x}\, \vec{x} + 2ab \vec{x} \vec{y} + b^2 \vec{y} \vec{y} = \\ = \|\vec{y}\|^4 \cdot \|\vec{x}\|^2-2 \, \|\vec{y}\|^2 \, ( \vec{x} \cdot \vec{y} )^2 + ( -\vec{x} \cdot \vec{y} )^2 \cdot \|\vec{y} \|^2 = \|\vec{y} \|^4 \cdot \|\vec{x}\|^2 - \|\vec{y}\|^2 \cdot ( \vec{x} \cdot \vec{y} )^2 \Rightarrow \\ \Rightarrow 0 \leq \|\vec{y}\|^2 \cdot \|\vec{x}\|^2 - ( \vec{x} \cdot \vec{y} )^2 \Rightarrow ( \vec{x} \cdot \vec{y} )^2 \leq \|\vec{x}\|^2 \cdot \|\vec{y}\|^2 \Rightarrow |\vec{x} \cdot \vec{y} |\leq \|\vec{x}\| \cdot \|\vec{y}\| \, \checkmark \\
+-\|\vec{x}\| \cdot \|\vec{y}\| \leq < \vec{x}, \vec{y} > \leq \|\vec{x}\| \cdot \|\vec{y}\| \Rightarrow -1 \leq \bfrac{<\vec{x}, \vec{y}>}{\|\vec{x}\| \cdot \|\vec{y}\|} \leq 1 \Rightarrow \\ \Rightarrow \cos{\theta} \eqc{def}  \bfrac{\vec{x} \cdot \vec{y}}{\|\vec{x}\| \cdot \|\vec{y}\|} \iff < \vec{x}, \vec{y} > = \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}$
+
+\vspace{3mm}
+
+\noindent-\underline{Definición:} Dos vectores $\vec{x}, \vec{y} \in \mathbb{R}^n$ son \textbf{perpendiculares/ortogonales} si y solo si $< \vec{x}, \vec{y}> = 0$. Not.: $\vec{x} \perp \vec{y}$.
+
+%Teorema de Pitágoras
+
+\subsubsection*{Teorema de Pitágoras en $\mathbf{\mathbb{R}^n}$}
+
+Sean $\vec{x}, \vec{y} \in \mathbb{R}^n$ tal que $\vec{x} \perp \vec{y}$, entonces: 
+$$\boxed{\|\vec{x} + \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2}$$
+
+\noindent\underline{Demostración:} $\|\vec{x} + \vec{y}\|^2 = (\vec{x}+ \vec{y}) (\vec{x}+ \vec{y}) = \vec{x}  \vec{x} + \cancelto{0}{2 \vec{x} \vec{y}}+ \vec{y} \vec{y} = \|\vec{x}\|^2 + \|\vec{y}\|^2$
+
+\vspace{3mm}
+
+%Teorema del coseno
+
+\subsubsection*{Teorema del coseno}
+
+Sean $\vec{x}, \vec{y} \in \mathbb{R}^n$ vectores cualesquiera, entonces:
+$$\boxed{\|\vec{x} - \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}}$$
+\underline{Demostración:} $\|\vec{x} - \vec{y}\|^2 = (\vec{x} - \vec{y}) (\vec{x} - \vec{y}) = \vec{x} \vec{x} - 2 \vec{x} \vec{y} + \vec{y} \vec{y} = \vspace{1mm} \\ 
+=\|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}$
+
+\vspace{3mm}
+
+%Propiedades de la norma euclídea
+
+\subsubsection*{Propiedades de la norma euclídea}
+Sea $\vec{x} \in \mathbb{R}^n$ y $\lambda \in \mathbb{R}$: \\ 
+
+$(i) \|\vec{x}\| \geq 0$ y $ \|\vec{x}\| = 0 \iff \vec{x} = \vec{0}$ \vspace{1mm}
+
+$(ii) \| \lambda \vec{x}\| = |\lambda| \cdot \|\vec{x}\|$ \vspace{1mm}
+
+$(iii)$Desigualdad tiangular: $\|\vec{x} + \vec{y}\| \leq \|\vec{x}\| + \|\vec{y}\|$ \vspace{1mm}
+
+$(iv)$Desigualdad triangular al revés: $\big{|} \|\vec{x}\| - \|\vec{y}\|\big{|} \leq \|\vec{x}- \vec{y}\|$
+\vspace{3mm}
+
+\noindent\underline{Demostraciones:}\vspace{5mm}
+
+$(i) \, \|\vec{x}\| = \sqrt{x_1^2 + x_2^2+...+ x_n^2} \geq 0$ y $ \|\vec{x}\| = \sqrt{x_1^2 + x_2^2 + ...+ x_n^2} = 0 \iff  \indent \iff x_1, x_2,..., x_n = 0 \Rightarrow \vec{x} = \vec{0}$
+
+$(ii) \, \displaystyle \|\lambda \vec{x}\| = \Big{(} \sum_{i=1}^n \lambda ^2 \, x_i^2 \Big{)}^{\sfrac{1}{2}} = \sqrt{\lambda^2} \, \Big{(} \sum_{i=1}^n x_i^2 \Big{)}^{\sfrac{1}{2}} = |\lambda| \, \|\vec{x}\|$
+
+$(iii) \|\vec{x} + \vec{y}\|^2 = (\vec{x} + \vec{y})(\vec{x} + \vec{y}) = \vec{x} \vec{x} + 2 \vec{x} \vec{y} + \vec{y} \vec{y} \leqc{C-S} \|\vec{x}\|^2 + 2 \, \|\vec{x}\| \, \|\vec{y}\| + \|\vec{y}\|^2 = \indent = (\|\vec{x}\| + \|\vec{y}\|)^2 \Rightarrow \|\vec{x} + \vec{y}\| \leq \|\vec{x}\| + \|\vec{y}\|$ \vspace{5mm}
+
+\noindent-\underline{Definición:} Una \textbf{distancia/métrica} es una función $d:\mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}^+$ tal que cumple: \vspace{2mm}
+
+(1) $ d(x, y) = 0 \iff x=y$ \vspace{1mm}
+
+(2) $ d(x, y) = d(y, x)$ \vspace{1mm}
+
+(3) $d(x, z) \leq d(x, y) + d(y, z)$ \\
+
+\noindent-\underline{Definición:} La \textbf{distancia euclídea} entre dos puntos $x = (x_1, x_2,..., x_n)$ e $y = (y_1, y_2,..., y_n)$ de $\mathbb{R}^n$ se define como:
+$$\boxed{d(x, y) = \sqrt{(x_1-y_1)^2+(x_2+y_2)^2+...+(x_n+y_n)^2}=\bigg{(} \sum_{i=1}^n (x_i - y_i)^2 \bigg{)}^{\sfrac{1}{2}} = \|\vec{x} - \vec{y}\|}$$\break
+(1) $\|\vec{x} - \vec{y}\| = 0 \iff \vec{x} = \vec{y}$\\
+(2) $\|\vec{x} - \vec{y}\| = \|\vec{y} - \vec{x}\|$ \\
+(3) $\|\vec{x} - \vec{z}\| \leq \|\vec{x} - \vec{y}\| + \|\vec{y} - \vec{z}\|$
+
+%CONCEPTOS MÉTRICOS EN EL ESPACIO EUCLÍDEO
+
+\section{Conceptos métricos en el espacio euclídeo en $\mathbb{R}^{\mathbf{n}}$}
+
+%BOLAS ABIERTAS Y CONJUNTOS ABIERTOS EN Rn
+
+\subsection{Bolas abiertas y conjuntos abiertos en $\mathbb{R}^{\mathbf{n}}$}
+
+-\underline{Definiciones:}
+
+\vspace{5mm}
+\noindent
+(1) Dado un punto $x_0 \in \mathbb{R}^n$ y un número real $r>0$, llamaremos \textbf{bola abierta} de centro $x_0$ y radio $r$ (y escribiremos $B_r (x_0) $ o $B(x_0, r)$al conjunto:
+$$\boxed{B_r (x_0)  \eqc{not} B(x_0, r) = \{ x \in \mathbb{R}^n : \|x-x_0\|<r\}}$$
+\vspace{1mm}
+
+\noindent
+$n=1 \rightarrow x_o \in \mathbb{R} \quad -r<x-x_o<r \\ B_r(x_0) = \{ x \in \mathbb{R} : |x-x_0|<r\} = \{ x \in \mathbb{R} : x \in (x_0-r, x_0+r) \}$
+
+\vspace{5mm}
+\noindent
+$n=2 \rightarrow (x_0, y_0) \in \mathbb{R}^2 \\ B_r (x_0, y_0) = \{ (x, y) \in \mathbb{R}^2 : \underbrace{\|(x-y) - (x_0 - y_0) \|}_{(x-x_0)^2 + (y - y_0)^2} < r\}$
+
+\noindent
+$n=3 \rightarrow (x_0, y_0, z_0) \in \mathbb{R}^3 \\
+B_r (x_0, y_0, z_0) = \{ (x, y, z) \in \mathbb{R}^3 : (x-x_0)^2 + (y - y_0)^2 + (z - z_0)^2 < r$
+
+\vspace{5mm}
+\noindent
+(2) Decimos que $A \in \mathbb{R}^n$ es un \textbf{conjunto abierto} si $\forall x_0 \in A \, \, \exists r>0$ tal que $B_r (x_0) \subset A$.
+
+\vspace{5mm}
+\noindent
+(3) Un \textbf{entorno} del punto $x \in \mathbb{R}^n$ es un conjunto abierto que lo contiene.
+
+%Proposiciones
+
+\begin{itemize}
+
+\item \underline{Proposición 1:} Si $x_0 \in \mathbb{R}^n$ y $r>0 \Rightarrow$ la bola abierta $B_r(x_0)$ es un conjunto abierto.
+
+\underline{Demostración:} $\forall x \in B_r(x_0) \, \exists s \in \R , s>0$ tal que $B_s(x) \subset B_r(x_0)$.
+
+Basta con tomar $s = r - \|x-x_0\|$, entonces $\forall y \in B_s(x) \quad \|y - x_0\| = \\
+ = \|y -x +x -x_0\| \leq \|y-x\| + \|x - x_0\| < s + \|x - x_0\| = r - \|x - x_0\| + \|x - x_0\| = r$
+\vspace{2mm}
+
+Ejemplo: Demostrar que $A = \{ (x, y) \in \R^2 : y>0\}$ es un conjunto abierto.
+
+$\forall (x_0, y_0) \in A \spac \exists r : B_r(x_0, y_0) \subset A$, es decir, $y_0 > 0$\\
+Basta con tomar $r = y_0 > 0$.\\
+$\forall (a, b) \in B_r(x_0, y_0) \Rightarrow$ ¿$(a, b) \in A$, es decir, $b>0$?\\
+Como $ (a, b) \in B_r(x_0, y_0) \Rightarrow \|(a, b) - (x_0, y_0)\| < r = y_0 \Rightarrow \\
+\Rightarrow (a - x_0)^2 + (b - y_0)^2 < y_0^2 \Rightarrow (b - y_0)^2 < y_0 ^2 \Rightarrow -y_0 < b-y_0 < y_0 \Rightarrow \\
+ \Rightarrow 0< b < 2 y_0 \Rightarrow b > 0 \Rightarrow (a, b) \in A$
+
+\item \underline{Proposición 2:} La unión (finita o infinita) de conjuntos abiertos es un conjunto abierto.
+
+\item \underline{Proposición 3:} La intersección finita de abiertos es un conjunto abierto.\vspace{1mm}
+
+\noindent *\underline{Observación:} La intersección finita de abiertos no es, en general, un abierto.
+
+\underline{Demostración:} $\{A_1, A_2,..., A_\}$ conjuntps abiertos y $A = \displaystyle \bigcap_{1}^n A$.  ¿A es un conjunto abierto? 
+
+Dado $x \in A \Rightarrow x \in A_1, x \in A-2,..., x \in A_n \Rightarrow \exists r_1, r_2,..., r_n$ tal que $ B_{r_1}(x) \subset  A_1, B_{r_2}(x) \subset A_2,..., B_{r_n}(x) \subset A_n$, tomando $r \leq min \{r_i\}^{n_i=1} \Rightarrow B_r(x) \subset \displaystyle \bigcap_1^n A_i = A$.
+
+\end{itemize}
+
+%LIMITES DE SUCESIONES EN Rn. COMPLETITUD.
+
+\subsection{Límites de sucesiones en $\mathbf{\R^n}$. Completitud.}
+\vspace{3mm}
+
+-\underline{Definición:} Una sucesión en $\R^n$ es una colección de n sucesiones en $\R : \{A_k\}_{k \in \N} = \{(a_1^k, a_2^k,..., a_n^k)\}_{k \in \N}$.
+\vspace{1mm}
+
+\indent \underline{Ejemplos:} $\{A_k\}_{k \in \N} = \left\{ \left (k, \bfrac{1}{k^2}, e^{-k}\right ) \right \}_{k \in \N}; \{A_k\}_{k \in \N} = \left \{ \left (\bfrac{3k^2}{k^2-1}, \bfrac{1}{k}, \log \bfrac{k+1}{k} \right )\right \}_{k \in \N}$.\vspace{5mm}
+
+\noindent-\underline{Definición:} Dada una sucesión $\{A_k\}_{k \in \N} \in \R^n$ y un punto $L \in \R^n$, diremos que el límite de $\{A_k\}_{k \in \N}$ es $L$ y escribimos: 
+\[
+\boxed{\displaystyle \lim_{k \to \infty} A_k = L \iff \forall \epsilon > 0 \spac \exists N \in \N : \|A_k - L\| < \epsilon \spac \forall k > N\text{, es decir, } \forall k > N \spac A_k \in B_\epsilon (l)}
+\]\vspace{2mm}
+
+%LEMA
+
+\noindent $\bullet$ \underline{Lema:} Dada una sucesión en $\R^n : \{A_k\}_{k \in \N} = \{(a^k_1, a^k_2,..., a^k_n)\}_{k \in \N}$ y un punto $L = (l_1, l_2,..., l_n) \in \R^n$, se tiene:
+\[
+\boxed{\displaystyle \lim_{k \to \infty} A_k = L \iff \lim_{k \to \infty} a_i^k = l_i \spac \forall i = 1, 2,..., n}
+\]
+
+\noindent\underline{Demostración:}
+$\Rightarrow$) Queremos ver que $\forall \epsilon > 0 \spac \exists N \in \N : |a_i^k - l_i| < \epsilon \spac \forall k > N \forall i = 1, 2,..., n$.\vspace{1mm}\\
+$|a_i^k - l_i| =\sqrt{(a_i^k - l_i)^2} \leq \sqrt{(a_1^k - l_1)^2 + (a_1^k - l_2)^2 + ... + (a_i^k - l_i)^2 +... + (a_n - l_n)^2} = \quad = \|A_k - L\| \leq \epsilon \spac \checkmark$\vspace{3mm}
+
+\noindent $\Leftarrow$) Como $\displaystyle \lim_{k \to \infty} a_i^k = l \spac \forall i = 1, 2,..., n$, sabemos que $\forall \epsilon > 0 :$
+
+$\exists N_1 \in \N \text{ tal que } |a_1^k - l_1| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_1$
+
+$\exists N_2 \in \N \text{ tal que } |a_2^k - l_2| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_2$
+
+\quad \quad \quad \quad \quad \quad \quad \quad \vdots
+
+$\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_n$
+\vspace{1mm}
+
+\noindent Entonces, $\forall k \geq \max \{N_1, N_2,..., N_n\}$ tenemos simultáneamente que $|a_i^k - l_k| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall i = 1, 2,..., n$, por tanto:
+\vspace{1mm}
+
+\noindent$\|A_k - L\| = \sqrt{(a_1^k - l_1)^2 + (a_1^k - l_2)^2 + ... + (a_i^k - l_i)^2 +... + (a_n - l_n)^2} \leq \vspace{1mm} \\ \leq \sqrt{n \left (\bfrac{\epsilon}{\sqrt{n}}\right )^2} = \epsilon \spac \checkmark$
+
+\underline{Ejemplo:} Hallar el límite $\displaystyle \lim_{k \to \infty} \left \{\left ( \bfrac{\log{x}}{x^2}, \bfrac{x^2-1}{5 x^2} \right )\right \}_{k \in \N}$.
+
+\[
+\left.\begin{array}{lc}\displaystyle
+
+\lim_{k \to \infty} \bfrac{\log{k}}{k^2} \eqc{L'H} \lim_{k \to \infty} \bfrac{\sfrac{1}{k}}{2 k} = \lim_{k \to \infty} \bfrac{1}{2 k^2} = 0 \\
+
+\lim_{k \to \infty} \bfrac{x^2 - 1}{5 x^2} = \bfrac{1}{5}
+
+\end{array}\right \}
+\displaystyle \lim_{k \to \infty} \left \{\left ( \bfrac{\log{x}}{x^2}, \bfrac{x^2-1}{5 x^2} \right )\right \} = (0, 5)
+\]
+\vspace{3mm}
+
+\noindent-\underline{Definición:} La propiedad de completitud dice que toda sucesión de Cauchy converge en el espacio.
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Una sucesión $\{ A_k\}_{k \in \N}$ es de Cauchy en $\R^n$ si $\forall \epsilon >0 \spac \exists N \in \N : \|A_{k_1} - A-{k_2}\| < \epsilon \spac \forall k_1, k_2 > N$.
+\vspace{5mm}
+
+\noindent $\bullet$ \underline{Teorema:} El espacio euclídeo $\R^n$ es completo, es decir, tosa sucesión de Cauchy es convergente.
+\vspace{2mm}
+
+\underline{Demostrción:} Pendiente como ejercicio.
+\vspace{5mm}
+
+\subsection{Más sobre la topología de $\mathbf{\R^n}$}
+\vspace{5mm}
+
+-\underline{Definición:} Sea $A$ un conjunto de $\R^n$. Diremos que un punto $x \in A$  es un punto interior de $A$ si $\exists r > 0 \text{ tal que } B_r (x) \in A$. Al conjunto de puntos interiores de $A$ se le denota $\mathring{A} \eqc{not} int(A)$.
+
+\end{document}
