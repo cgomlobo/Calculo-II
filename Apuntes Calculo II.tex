@@ -12,6 +12,7 @@
 \newcommand{\eqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{=}}
 \newcommand{\leqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\leq}}
 \newcommand{\geqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\geq}}
+\newcommand{\inc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\in}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\bfrac}[2]{\scalebox{1.4}{$\frac{#1}{#2}$}}
@@ -40,7 +41,7 @@
 
 \end{itemize}
 
-\noindent -\underline{Definición:} Geométricamente, un vector se define como un segmento de recta "orientado" con punto inicial en el origen de coordenadas y punto final en un punto de $\displaystyle \mathbb{R}^n$.
+\noindent -\underline{Definición:} Geométricamente, un \textbf{vector} se define como un segmento de recta "orientado" con punto inicial en el origen de coordenadas y punto final en un punto de $\displaystyle \mathbb{R}^n$.
 
 \vspace{3mm}
 
@@ -119,7 +120,7 @@ Sean $\vec{x}, \vec{y} \in \displaystyle \mathbb{R}^n$\\  $$\boxed{|<\vec{x}, \v
 Sean $\vec{x}, \vec{y} \in \mathbb{R}^n$ tal que $\vec{x} \perp \vec{y}$, entonces: 
 $$\boxed{\|\vec{x} + \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2}$$
 
-\noindent\underline{Demostración:} $\|\vec{x} + \vec{y}\|^2 = (\vec{x}+ \vec{y}) (\vec{x}+ \vec{y}) = \vec{x}  \vec{x} + \cancelto{0}{2 \vec{x} \vec{y}}+ \vec{y} \vec{y} = \|\vec{x}\|^2 + \|\vec{y}\|^2$
+\noindent\underline{Demostración:} $\|\vec{x} + \vec{y}\|^2 = (\vec{x}+ \vec{y}) (\vec{x}+ \vec{y}) = \vec{x}  \vec{x} + \cancelto{0}{2 \vec{x} \vec{y}}+ \vec{y} \vec{y} = \|\vec{x}\|^2 + \|\vec{y}\|^2 \, \checkmark$
 
 \vspace{3mm}
 
@@ -130,7 +131,7 @@ $$\boxed{\|\vec{x} + \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2}$$
 Sean $\vec{x}, \vec{y} \in \mathbb{R}^n$ vectores cualesquiera, entonces:
 $$\boxed{\|\vec{x} - \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}}$$
 \underline{Demostración:} $\|\vec{x} - \vec{y}\|^2 = (\vec{x} - \vec{y}) (\vec{x} - \vec{y}) = \vec{x} \vec{x} - 2 \vec{x} \vec{y} + \vec{y} \vec{y} = \vspace{1mm} \\ 
-=\|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}$
+=\|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta} \, \checkmark$
 
 \vspace{3mm}
 
@@ -173,10 +174,12 @@ $$\boxed{d(x, y) = \sqrt{(x_1-y_1)^2+(x_2+y_2)^2+...+(x_n+y_n)^2}=\bigg{(} \sum_
 %CONCEPTOS MÉTRICOS EN EL ESPACIO EUCLÍDEO
 
 \section{Conceptos métricos en el espacio euclídeo en $\mathbb{R}^{\mathbf{n}}$}
+\vspace{3mm}
 
 %BOLAS ABIERTAS Y CONJUNTOS ABIERTOS EN Rn
 
 \subsection{Bolas abiertas y conjuntos abiertos en $\mathbb{R}^{\mathbf{n}}$}
+\vspace{3mm}
 
 -\underline{Definiciones:}
 
@@ -211,13 +214,13 @@ B_r (x_0, y_0, z_0) = \{ (x, y, z) \in \mathbb{R}^3 : (x-x_0)^2 + (y - y_0)^2 + 
 
 \item \underline{Proposición 1:} Si $x_0 \in \mathbb{R}^n$ y $r>0 \Rightarrow$ la bola abierta $B_r(x_0)$ es un conjunto abierto.
 
-\underline{Demostración:} $\forall x \in B_r(x_0) \, \exists s \in \R , s>0$ tal que $B_s(x) \subset B_r(x_0)$.
+\quad\underline{Demostración:} $\forall x \in B_r(x_0) \, \exists s \in \R , s>0$ tal que $B_s(x) \subset B_r(x_0)$.
 
 Basta con tomar $s = r - \|x-x_0\|$, entonces $\forall y \in B_s(x) \quad \|y - x_0\| = \\
  = \|y -x +x -x_0\| \leq \|y-x\| + \|x - x_0\| < s + \|x - x_0\| = r - \|x - x_0\| + \|x - x_0\| = r$
 \vspace{2mm}
 
-Ejemplo: Demostrar que $A = \{ (x, y) \in \R^2 : y>0\}$ es un conjunto abierto.
+\quad\underline{Ejemplo:} Demostrar que $A = \{ (x, y) \in \R^2 : y>0\}$ es un conjunto abierto.
 
 $\forall (x_0, y_0) \in A \spac \exists r : B_r(x_0, y_0) \subset A$, es decir, $y_0 > 0$\\
 Basta con tomar $r = y_0 > 0$.\\
@@ -243,7 +246,7 @@ Dado $x \in A \Rightarrow x \in A_1, x \in A-2,..., x \in A_n \Rightarrow \exist
 \subsection{Límites de sucesiones en $\mathbf{\R^n}$. Completitud.}
 \vspace{3mm}
 
--\underline{Definición:} Una sucesión en $\R^n$ es una colección de n sucesiones en $\R : \{A_k\}_{k \in \N} = \{(a_1^k, a_2^k,..., a_n^k)\}_{k \in \N}$.
+-\underline{Definición:} Una \textbf{sucesión en} $\mathbf{\R^n}$ es una colección de n sucesiones en $\R : \{A_k\}_{k \in \N} = \{(a_1^k, a_2^k,..., a_n^k)\}_{k \in \N}$.
 \vspace{1mm}
 
 \indent \underline{Ejemplos:} $\{A_k\}_{k \in \N} = \left\{ \left (k, \bfrac{1}{k^2}, e^{-k}\right ) \right \}_{k \in \N}; \{A_k\}_{k \in \N} = \left \{ \left (\bfrac{3k^2}{k^2-1}, \bfrac{1}{k}, \log \bfrac{k+1}{k} \right )\right \}_{k \in \N}$.\vspace{5mm}
@@ -260,7 +263,7 @@ Dado $x \in A \Rightarrow x \in A_1, x \in A-2,..., x \in A_n \Rightarrow \exist
 \boxed{\displaystyle \lim_{k \to \infty} A_k = L \iff \lim_{k \to \infty} a_i^k = l_i \spac \forall i = 1, 2,..., n}
 \]
 
-\noindent\underline{Demostración:}
+\underline{Demostración:}
 $\Rightarrow$) Queremos ver que $\forall \epsilon > 0 \spac \exists N \in \N : |a_i^k - l_i| < \epsilon \spac \forall k > N \forall i = 1, 2,..., n$.\vspace{1mm}\\
 $|a_i^k - l_i| =\sqrt{(a_i^k - l_i)^2} \leq \sqrt{(a_1^k - l_1)^2 + (a_1^k - l_2)^2 + ... + (a_i^k - l_i)^2 +... + (a_n - l_n)^2} = \quad = \|A_k - L\| \leq \epsilon \spac \checkmark$\vspace{3mm}
 
@@ -294,13 +297,15 @@ $\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} 
 \]
 \vspace{3mm}
 
-\noindent-\underline{Definición:} La propiedad de completitud dice que toda sucesión de Cauchy converge en el espacio.
+%Propiedad de completitud
+
+\noindent-\underline{Definición:} La \textbf{propiedad de completitud} dice que toda sucesión de Cauchy converge en el espacio.
 \vspace{5mm}
 
-\noindent-\underline{Definición:} Una sucesión $\{ A_k\}_{k \in \N}$ es de Cauchy en $\R^n$ si $\forall \epsilon >0 \spac \exists N \in \N : \|A_{k_1} - A-{k_2}\| < \epsilon \spac \forall k_1, k_2 > N$.
+\noindent-\underline{Definición:} Una sucesión $\{ A_k\}_{k \in \N}$ es de \textbf{Cauchy} en $\R^n$ si $\forall \epsilon >0 \spac \exists N \in \N : \|A_{k_1} - A-{k_2}\| < \epsilon \spac \forall k_1, k_2 > N$.
 \vspace{5mm}
 
-\noindent $\bullet$ \underline{Teorema:} El espacio euclídeo $\R^n$ es completo, es decir, tosa sucesión de Cauchy es convergente.
+\noindent $\bullet$ \underline{Teorema:} El espacio euclídeo $\R^n$ es \textbf{completo}, es decir, toda sucesión de Cauchy es convergente.
 \vspace{2mm}
 
 \underline{Demostrción:} Pendiente como ejercicio.
@@ -309,6 +314,64 @@ $\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} 
 \subsection{Más sobre la topología de $\mathbf{\R^n}$}
 \vspace{5mm}
 
--\underline{Definición:} Sea $A$ un conjunto de $\R^n$. Diremos que un punto $x \in A$  es un punto interior de $A$ si $\exists r > 0 \text{ tal que } B_r (x) \in A$. Al conjunto de puntos interiores de $A$ se le denota $\mathring{A} \eqc{not} int(A)$.
+%Punto interior
+
+-\underline{Definición:} Sea $A$ un conjunto de $\R^n$. Diremos que un punto $x \in A$  es un \textbf{punto interior} de $A$ si $\exists r > 0 \text{ tal que } B_r (x) \in A$. Al conjunto de puntos interiores de $A$ se le denota $\mathring{A} \eqc{not} int(A)$.
+\vspace{3mm}
+
+\underline{Ejemplo 1:} Dado $A = \{(x, y) \in \R^n : |x|<1, |y| \leq 1 \}$. Hallar $\mathring{A}$.
+\vspace{3mm}
+
+1) $\forall (x, y) \N A : |y| = 1 \Rightarrow (x, \pm 1) (\text{ con } |x| < 1) \spac (x, 1) \in A, \forall r > 0 \rightarrow \\ \rightarrow (x, 1 + \sfrac{r}{2}) \inc{?} A \spac |1 + \sfrac{r}{2}| = 1 + \sfrac{r}{2} > 1 \Rightarrow B_r(x, 1) \not \subset A$
+
+2) $\forall (x, y) \subset A \spac |x|, |y| < 1$:
+\[
+*\left. \begin{array}{rc}
+
+r \leq 1- |x| donde |y| \leq |x|\\
+r \leq 1- |y| donde |x| \leq |y|
+
+\end{array}\right \}\spac\parbox{10cm}{en cualquier caso $r = 1 - \max{\{|x|, |y|\}} = \\ =\min{\{1 - |x|, 1 - |y|\}}$}
+\]
+
+Tenemos que ver que $B_r (x, y) \subset A$, es decir, $\forall (a, b) \in B_r(x, y)$ se tiene que $|a| < 1 \text{ y } |b| \leq 1 \Rightarrow (a, b) \in A$
+
+$|a| = |a - x + x| \leqc{D.T.} \underbrace{|a-x|}_{\sqrt{(a - x)^2}} + |x| \leq \underbrace{\|(a, b) - (x, y)\|}_{\sqrt{(a -x)^2 + (b - y)^2}} + |x| < r + |x| \leqc{*} \\ \leqc{*} 1 - |x| +|x| =1$
+\vspace{3mm}
+
+$|b| = |b - y + y| \leqc{D.T.} |b - y| +|y| < r + |y| \leq 1 - |y| + |y| = 1$
+\vspace{3mm}
+
+$\forall (a, b) \in B_r(x, y)$ se tiene que $(a, b) \in A \, \checkmark$
+\vspace{5mm}
+
+%Propiedades
+
+\noindent$\bullet$ \underline{Propiedades:}
+\vspace{3mm}
+
+(1) $\mathring{A}$ es un conjunto abierto.
+\vspace{3mm}
+
+(2) $\mathring{A} \subset A$.
+\vspace{3mm}
+
+(3) Si $A$ es un conjunto abierto, entonces $\mathring{A} = A$.
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Diremos que un conjunto $C \subset \R^n$ es un \textbf{conjunto cerrado} si su complementario $C^c \subset \R^n$, es un conjunto abierto.
+\vspace{3mm}
+
+\underline{Ejercicio 2:} Demostrar que la bola $C = \{ (x, y) : \underbrace{x^2 + y^2 \leq R^2}_{\|(x, y)\|} \leq R\}$ es un conjunto cerrado en $\R^2$.
+\vspace{3mm}
+
+$C$  cerrado en $\R^2 \text{ si } C^c = \{(x, y) \in \R^2 : \underbrace{x^2 + y^2}_{\|(x, y)\|} > R\}$ es un conjunto abierto en $\R^2$, es decir, $\forall (x_0, y_0) \in C^c \spac \exists r > 0 : B_r (x_0, y_0) \subset C^c$.
+\vspace{3mm}
+
+Tomamos $r = \| (x_0, y_0) \| - R \Rightarrow \forall (a, b) \in B_r (x_0, y_0) \text{, ¿} a, b \in C^c \text{, es decir, } \| (a, b) \| > \quad > R$?
+\vspace{2mm}
+
+$\| (x_0, y_0) \| = \| (x_0, y_0) - (a, b) + (a, b) \| \leqc{D.T.} \underbrace{\| (x_0, y_0) - (a, b) \|}_{< r = \| (x_0, y_0) \| - R} + \| (a, b) \| < \quad < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \| (x_0, y_0) \| < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \\ \Rightarrow R < \| (a, b) \| \, \checkmark$
+
 
 \end{document}
