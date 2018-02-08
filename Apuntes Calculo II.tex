@@ -331,12 +331,15 @@ $\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} 
 r \leq 1- |x| donde |y| \leq |x|\\
 r \leq 1- |y| donde |x| \leq |y|
 
-\end{array}\right \}\spac\parbox{10cm}{en cualquier caso $r = 1 - \max{\{|x|, |y|\}} = \\ =\min{\{1 - |x|, 1 - |y|\}}$}
+\end{array}\right \}\spac\parbox{10cm}{en cualquier caso $r = 1 - \max{\{|x|, |y|\}} = \\ =\min{\{1 - |x|,
+ 1 - |y|\}}$}
 \]
 
-Tenemos que ver que $B_r (x, y) \subset A$, es decir, $\forall (a, b) \in B_r(x, y)$ se tiene que $|a| < 1 \text{ y } |b| \leq 1 \Rightarrow (a, b) \in A$
+Tenemos que ver que $B_r (x, y) \subset A$, es decir, $\forall (a, b) \in B_r(x, y)$ se tiene que $|a| < 1
+ \text{ y } |b| \leq 1 \Rightarrow (a, b) \in A$
 
-$|a| = |a - x + x| \leqc{D.T.} \underbrace{|a-x|}_{\sqrt{(a - x)^2}} + |x| \leq \underbrace{\|(a, b) - (x, y)\|}_{\sqrt{(a -x)^2 + (b - y)^2}} + |x| < r + |x| \leqc{*} \\ \leqc{*} 1 - |x| +|x| =1$
+$|a| = |a - x + x| \leqc{D.T.} \underbrace{|a-x|}_{\sqrt{(a - x)^2}} + |x| \leq \underbrace{\|(a, b) - (x, y
+)\|}_{\sqrt{(a -x)^2 + (b - y)^2}} + |x| < r + |x| \leqc{*} \\ \leqc{*} 1 - |x| +|x| =1$
 \vspace{3mm}
 
 $|b| = |b - y + y| \leqc{D.T.} |b - y| +|y| < r + |y| \leq 1 - |y| + |y| = 1$
@@ -359,19 +362,26 @@ $\forall (a, b) \in B_r(x, y)$ se tiene que $(a, b) \in A \, \checkmark$
 (3) Si $A$ es un conjunto abierto, entonces $\mathring{A} = A$.
 \vspace{5mm}
 
-\noindent-\underline{Definición:} Diremos que un conjunto $C \subset \R^n$ es un \textbf{conjunto cerrado} si su complementario $C^c \subset \R^n$, es un conjunto abierto.
+\noindent-\underline{Definición:} Diremos que un conjunto $C \subset \R^n$ es un \textbf{conjunto
+ cerrado} si su complementario $C^c \subset \R^n$, es un conjunto abierto.
 \vspace{3mm}
 
-\underline{Ejercicio 2:} Demostrar que la bola $C = \{ (x, y) : \underbrace{x^2 + y^2 \leq R^2}_{\|(x, y)\|} \leq R\}$ es un conjunto cerrado en $\R^2$.
+\underline{Ejercicio 2:} Demostrar que la bola $C = \{ (x, y) : \underbrace{x^2 + y^2 \leq R^2}_{\|(x, y
+)\|} \leq R\}$ es un conjunto cerrado en $\R^2$.
 \vspace{3mm}
 
-$C$  cerrado en $\R^2 \text{ si } C^c = \{(x, y) \in \R^2 : \underbrace{x^2 + y^2}_{\|(x, y)\|} > R\}$ es un conjunto abierto en $\R^2$, es decir, $\forall (x_0, y_0) \in C^c \spac \exists r > 0 : B_r (x_0, y_0) \subset C^c$.
+$C$  cerrado en $\R^2 \text{ si } C^c = \{(x, y) \in \R^2 : \underbrace{x^2 + y^2}_{\|(x, y)\|} > R\}$ es
+ un conjunto abierto en $\R^2$, es decir, $\forall (x_0, y_0) \in C^c \spac \exists r > 0 : B_r (x_0, y_0)
+ \subset C^c$.
 \vspace{3mm}
 
-Tomamos $r = \| (x_0, y_0) \| - R \Rightarrow \forall (a, b) \in B_r (x_0, y_0) \text{, ¿} a, b \in C^c \text{, es decir, } \| (a, b) \| > \quad > R$?
+Tomamos $r = \| (x_0, y_0) \| - R \Rightarrow \forall (a, b) \in B_r (x_0, y_0) \text{, ¿} a, b \in C^c \text{,
+ es decir, } \| (a, b) \| > \quad > R$?
 \vspace{2mm}
 
-$\| (x_0, y_0) \| = \| (x_0, y_0) - (a, b) + (a, b) \| \leqc{D.T.} \underbrace{\| (x_0, y_0) - (a, b) \|}_{< r = \| (x_0, y_0) \| - R} + \| (a, b) \| < \quad < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \| (x_0, y_0) \| < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \\ \Rightarrow R < \| (a, b) \| \, \checkmark$
+$\| (x_0, y_0) \| = \| (x_0, y_0) - (a, b) + (a, b) \| \leqc{D.T.} \underbrace{\| (x_0, y_0) - (a, b) \|}_{< r =
+ \| (x_0, y_0) \| - R} + \| (a, b) \| < \quad < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \| (x_0, y_0) \| <
+ \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \\ \Rightarrow R < \| (a, b) \| \, \checkmark$
 \vspace{5mm}
 
 \noindent$\bullet$ \underline{Proposición 1:}
@@ -383,7 +393,65 @@ $\| (x_0, y_0) \| = \| (x_0, y_0) - (a, b) + (a, b) \| \leqc{D.T.} \underbrace{\
 (ii) La intersección (infinita o finita) de conjuntos cerrados, es un conjunto \indent cerrado.
 \vspace{3mm}
 
-*\underline{Observación:} La unión infinita de conjuntos cerrados no es, en general, \indent un conjunto cerrado.
+$\ast$\underline{Observación:} La unión infinita de conjuntos cerrados no es, en general, \indent un
+ conjunto cerrado.
 \vspace{3mm}
 
+-Bolas \textbf{abiertas} en $\R^2: \spac B_R (x_0, y_0) = \{ (x, y) \in \R^2 : \underbrace{(x-x_0)^2 + (y -
+ y_0)^2 < R^2}_{\| (x, y) - (x_0, y_0)\| <R}\}$
+
+-Bolas \textbf{cerradas} en $\R^2:  \spac \overline{B_R (x_0, y_0)} = \{(x , y) \in \R^2 : \underbrace{(x -
+ x_0)^2 + (y - y_0)^2 \leq R^2}_{\|(x, y) - (x_0, y_0)\| \leq R}\}$
+\vspace{3mm}
+
+\noindent$\ast$\underline{Observación 1:} No todos los conjuntos de $\R^n$ son necesariamente abiertos 
+o cerrados.
+\vspace{3mm}
+
+\noindent$\ast$\underline{Observación 2:} El vacío y $\R^n$ (por convención) son abiertos y cerrados al
+ mismo tiempo.
+\vspace{3mm}
+
+\noindent$\bullet$\underline{Proposición 2 (Caracterización de los conjuntos cerrados por sucesiones):}
+
+\[
+\boxed{C \subset \R^n \text{ es un cerrado } \iff \forall {A_k}_{k \in \N} \subset C \text{ con }
+ \displaystyle \lim_{k \to \infty}^{} A_k = L \text{ se tiene que } \\ L \in C}
+\]
+
+\underline{Demostrción:} Argumentamos (en ambas implicaciones) por reducción al absurdo:
+\vspace{2mm}
+
+$\Rightarrow$ ) Supongamos que $L \not\in C \Rightarrow L \in C^c \text{ abierto } \Rightarrow \exists 
+r > 0 \text{ tal que } B_r (L) \subset C^c \text{. Como} \displaystyle \lim_{k \to \infty} A_k = L, \spac
+\forall \epsilon > 0  \exists N \in \N \text{ tal que }|A_k - L| > \epsilon \spac \forall k > N \text{, es decir, 
+}A_k \in B_\epsilon (L) \spac \forall k>N \text{. Si tomamos } \epsilon = r : A_k \in B_r (L) \text{
+ \underline{Contradicción}}\spac A_k \in C \text{ y } \\ B_r (L) \subset C^c$
+\vspace{3mm}
+
+$\Leftarrow$ ) Supongamos que $C$ no es un cerrado $\Rightarrow C^c$ no es un abierto $\Rightarrow \\
+\Rightarrow \exists x_0 \in C^c \text{ tal que } \forall r>0 \spac B_r (x) \not\subset C^c \text{, es decir, }
+B_r (x_0) \cap C \neq \emptyset \spac  \forall{ r > 0 }\text{. Tomamos } \\ r =  \bfrac{1}{k}
+ \Rightarrow B_{\sfrac{1}{k}} (x_0) \cap C \neq \emptyset \Rightarrow \exists \{A_k\}_{k \in \N} \subset
+ B_{\sfrac{1}{k}} \cap C, \{A_k\}_{k \in \N} \rightarrow x_0 \in C \\ \text{\underline{Contradicción} porque } x_0 \subset C^c$.
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Sea $C$ un conjunto cualquiera en $\R^n$ y $x \in \R^n$, diremos que 
+$x$ es un \textbf{punto de adherencia/clausura} de $C$ si $\forall{r>0} \spac B_r (x) \cap C \neq \emptyset
+$ y el conjunto de puntos que cumplen esta condición se denota:
+\[
+\boxed{\overline{C} = \{x \in \R^n : \forall{r>0} \spac B_r (x 
+\cap C \neq \emptyset\}}
+\]
+
+\underline{Propiedades:} 
+\vspace{3mm}
+
+\indent \indent (1) $\overline{C}$ es un conjunto cerrado.
+\vspace{3mm}
+
+\indent \indent(2) $C \subset \overline{C}$.
+\vspace{3mm}
+
+\indent \indent(3) Si $C$ es cerrado $C = \overline{C}$.
 \end{document}
