@@ -235,9 +235,9 @@ Como $ (a, b) \in B_r(x_0, y_0) \Rightarrow \|(a, b) - (x_0, y_0)\| < r = y_0 \R
 
 \noindent *\underline{Observación:} La intersección finita de abiertos no es, en general, un abierto.
 
-\underline{Demostración:} $\{A_1, A_2,..., A_\}$ conjuntps abiertos y $A = \displaystyle \bigcap_{1}^n A$.  ¿A es un conjunto abierto? 
+\underline{Demostración:} $\{A_1, A_2,..., A_n\}$ conjuntos abiertos y $A = \displaystyle \bigcap_{i = 1}^n A_i$.  ¿A es un conjunto abierto? 
 
-Dado $x \in A \Rightarrow x \in A_1, x \in A-2,..., x \in A_n \Rightarrow \exists r_1, r_2,..., r_n$ tal que $ B_{r_1}(x) \subset  A_1, B_{r_2}(x) \subset A_2,..., B_{r_n}(x) \subset A_n$, tomando $r \leq min \{r_i\}^{n_i=1} \Rightarrow B_r(x) \subset \displaystyle \bigcap_1^n A_i = A$.
+Dado $x \in A \Rightarrow x \in A_1, x \in A_2,..., x \in A_n \Rightarrow \exists r_1, r_2,..., r_n$ tal que $ B_{r_1}(x) \subset  A_1, B_{r_2}(x) \subset A_2,..., B_{r_n}(x) \subset A_n$, tomando $r \leq min \{r_i\}^{n_i=1} \Rightarrow B_r(x) \subset \displaystyle \bigcap_{i = 1}^n A_i = A$.
 
 \end{itemize}
 
@@ -319,7 +319,7 @@ $\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} 
 -\underline{Definición:} Sea $A$ un conjunto de $\R^n$. Diremos que un punto $x \in A$  es un \textbf{punto interior} de $A$ si $\exists r > 0 \text{ tal que } B_r (x) \in A$. Al conjunto de puntos interiores de $A$ se le denota $\mathring{A} \eqc{not} int(A)$.
 \vspace{3mm}
 
-\underline{Ejemplo 1:} Dado $A = \{(x, y) \in \R^n : |x|<1, |y| \leq 1 \}$. Hallar $\mathring{A}$.
+\underline{Ejercicio 1:} Dado $A = \{(x, y) \in \R^n : |x|<1, |y| \leq 1 \}$. Hallar $\mathring{A}$.
 \vspace{3mm}
 
 1) $\forall (x, y) \N A : |y| = 1 \Rightarrow (x, \pm 1) (\text{ con } |x| < 1) \spac (x, 1) \in A, \forall r > 0 \rightarrow \\ \rightarrow (x, 1 + \sfrac{r}{2}) \inc{?} A \spac |1 + \sfrac{r}{2}| = 1 + \sfrac{r}{2} > 1 \Rightarrow B_r(x, 1) \not \subset A$
@@ -361,6 +361,8 @@ $\forall (a, b) \in B_r(x, y)$ se tiene que $(a, b) \in A \, \checkmark$
 
 (3) Si $A$ es un conjunto abierto, entonces $\mathring{A} = A$.
 \vspace{5mm}
+
+%Conjunto cerrado
 
 \noindent-\underline{Definición:} Diremos que un conjunto $C \subset \R^n$ es un \textbf{conjunto
  cerrado} si su complementario $C^c \subset \R^n$, es un conjunto abierto.
@@ -412,7 +414,7 @@ o cerrados.
  mismo tiempo.
 \vspace{3mm}
 
-\noindent$\bullet$\underline{Proposición 2 (Caracterización de los conjuntos cerrados por sucesiones):}
+\noindent$\bullet$ \underline{Proposición 2 (Caracterización de los conjuntos cerrados por sucesiones):}
 
 \[
 \boxed{C \subset \R^n \text{ es un cerrado } \iff \forall {A_k}_{k \in \N} \subset C \text{ con }
@@ -436,6 +438,8 @@ B_r (x_0) \cap C \neq \emptyset \spac  \forall{ r > 0 }\text{. Tomamos } \\ r = 
  B_{\sfrac{1}{k}} \cap C, \{A_k\}_{k \in \N} \rightarrow x_0 \in C \\ \text{\underline{Contradicción} porque } x_0 \subset C^c$.
 \vspace{5mm}
 
+%Punto de adherencia
+
 \noindent-\underline{Definición:} Sea $C$ un conjunto cualquiera en $\R^n$ y $x \in \R^n$, diremos que 
 $x$ es un \textbf{punto de adherencia/clausura} de $C$ si $\forall{r>0} \spac B_r (x) \cap C \neq \emptyset
 $ y el conjunto de puntos que cumplen esta condición se denota:
@@ -454,4 +458,27 @@ $ y el conjunto de puntos que cumplen esta condición se denota:
 \vspace{3mm}
 
 \indent \indent(3) Si $C$ es cerrado $C = \overline{C}$.
+\vspace{5mm}
+
+\underline{Ejercicio 3:} Sea $C = \left \{ \left ( \bfrac{1}{k} , \bfrac{1}{k} \right ) \right \}_{k \in \N}
+$probar que $C \in \overline{C}$.
+
+$\displaystyle \lim_{k \to 0} \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) = (0, 0) \Rightarrow \forall{\epsilon > 0} \exists N \text{ tal que  } \| \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) - (0, 0) \| < \epsilon \\ \indent
+\forall k > N. \text{ Basta tomar } r = \epsilon \Rightarrow \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) \in
+ B_\epsilon (0, 0) \forall{k \geq N} \Rightarrow \\ \indent \Rightarrow C \cap B_r (0, 0) \neq \emptyset$
+\vspace{5mm}
+
+%Punto de acumulación
+
+\noindent-\underline{Definición:} Sea C un conjunto cualquiera de $\R^n$ y $x \in \R^n$. Diremos que $x$ es un \textbf{punto de acumulación} de $C$ si $\forall{r > 0} B_r(x) \setminus \{x\} \cap C \neq \emptyset 0$. A los puntos de acumulación se los denota por $C'$.
+\vspace{3mm}
+
+\underline{Propiedades:}
+\vspace{3mm}
+
+\indent \indent (1) $C' \subset \overline{C}$
+\vspace{3mm}
+
+\indent \indent (2) En general $\overline{C} \not\subset C'$
+
 \end{document}
