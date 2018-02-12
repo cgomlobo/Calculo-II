@@ -17,6 +17,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\bfrac}[2]{\scalebox{1.4}{$\frac{#1}{#2}$}}
 \newcommand{\spac}{\, \, \,}
+\newcommand{\definicion}{\noindent-\underline{Definición:} }
 
 \begin{document}
 
@@ -468,7 +469,7 @@ $\displaystyle \lim_{k \to 0} \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) = (0, 
  B_\epsilon (0, 0) \forall{k \geq N} \Rightarrow \\ \indent \Rightarrow C \cap B_r (0, 0) \neq \emptyset$
 \vspace{5mm}
 
-%Punto de acumulación
+%DEFINICIONES
 
 \noindent-\underline{Definición:} Sea C un conjunto cualquiera de $\R^n$ y $x \in \R^n$. Diremos que $x$ es un \textbf{punto de acumulación} de $C$ si $\forall{r > 0} B_r(x) \setminus \{x\} \cap C \neq \emptyset 0$. A los puntos de acumulación se los denota por $C'$.
 \vspace{3mm}
@@ -480,5 +481,94 @@ $\displaystyle \lim_{k \to 0} \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) = (0, 
 \vspace{3mm}
 
 \indent \indent (2) En general $\overline{C} \not\subset C'$
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Los puntos de adherencia que no son de acumulación ($\overline{C}
+ \setminus C'$) se llaman \textbf{puntos aislados}, es decir, $x \in R^n$ es un punto aislado de un conjunto
+$C \subset \R^n \text{ si } \exists{r > 0} \text{ tal que } B_r (x) \cap C = \{x\}$.
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Sea $C \subset \R^n$, diremos que un punto $x \in \R^n$ es un
+ \textbf{punto frontera} de $C$ si $\forall{r > 0} \text{ se tiene que } B_r (x) \cap C \neq \emptyset$, y este 
+conjunto de puntos se denotan por $\partial C$.
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Un conjunto cualquiera $C \subset \R^n$ está \textbf{acotado} si
+$\exists{M \in \R}, \\ M > 0 \text{ tal que } \forall{x \in C} \text{ se tiene que } \|x\| < M \text{, es decir, }
+C \subset B_M (0,..., 0)$.
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Un \textbf{recubrimiento numerable por abiertos} de un conjunto $S 
+\subset \R^n$ es una colección numerable de abiertos $\{A_i\} \text{ tal que } S \subset \displaystyle 
+\bigcup_{i=1}^\infty A_i$.
+\vspace{3mm}
+
+\noindent-\underline{Definición:} Un conjunto es \textbf{compacto} si para todo recubrimiento por abiertos 
+del conjunto se puede extraer un subrecubrimiento finito.
+\vspace{5mm}
+
+%Teorema de Heine-Borel
+
+\noindent$\bullet$ \underline{Teorema de Heine-Borel:} $C \subset \R^n$ es compacto $\iff C$ es cerrado 
+y acotado en $\R^n$.
+\vspace{3mm}
+
+\underline{Ejemplo 1:} $B_r (x_0, y_0)$ no compactos (n son cerrados).
+\vspace{3mm}
+
+\underline{Ejemplo 2:} $\overline{B_r (x_0, y_0)}$ si son compactos.
+\vspace{3mm}
+
+\underline{Ejemplo 3:} $S = \left \{ \left ( \bfrac{(-1)^k}{k}, \bfrac{1}{k^2} \right ) \right  \}_{k \in \N}$
+
+\indent \indent Por la proposición 2, como $\displaystyle \lim_{k \to \infty} \left ( \bfrac{(-1)^k}{k},
+ \bfrac{1}{k^2} \right ) = (0, 0) \text{ y } (0, 0) \not\in S$, \indent \indent no es  cerrado y por el teorema 
+de Heine-Borel no es compacto.
+\vspace{3mm}
+
+\underline{Ejemplo 4:} $S = \{(k, k^2+1)\}_{k \in \N}$ no está acotado, por tanto por el teorema \indent
+ de Heine-Borel tampoco es compacto.
+\vspace{5mm}
+
+%Teorema de Bolzano-Weierstrass
+
+\noindent$\bullet$ \underline{Teorema de Bolzano-Weierstrass:} Si $C$ es un conjunto de infinitos 
+elementos y acotado $\Rightarrow C' \neq \emptyset$. Es decir, toda sucesión $\{A_k\}_{k \in \N}$ definida 
+en un compacto $C$ posee una subsucesión convergente en $C$.
+\vspace{3mm}
+
+%FUNCIONES DE VARIAS VARIABLES Y SUPERFICIES DE NIVEL
+
+\subsection{Funciones de varias variables y superficies de nivel}
+\vspace{5mm}
+
+\noindent-\underline{Definición:} Llamamos \textbf{función de varias variables} a la función:
+\[
+\boxed{
+\begin{array}{c}
+
+f : D \subset \R^n \to \R^m \\
+(x_1, x_2, x_n) \to (f_1(x_1,..., x_n),..., f_n(x_1,...x_n))\\
+
+\end{array}
+}
+\]
+
+Si $m > 1$, entonces $f (x_1, x_2,..., x_n) \in \R$ y se llama \textbf{función escalar}.
+\vspace{3mm}
+
+Si $m > 1$, entonces se llama \textbf{función vectorial}.
+\vspace{5mm}
+
+\definicion Sea $f : D \subset \R^n \to \R$, llamaremos \textbf{gráfica} de $f$ al subconjunto de $\R^
+{n+1} : (x_1, x_2,..., x_n, f (x_1, x_2,..., x_n)) \in \R^{n+1}$.
+\vspace{5mm}
+
+\definicion Sea $f : D \subset \R^n \to \R \text{ y  } C \in \R$, el \textbf{conunto de nivel} del valor $C$ son 
+los puntos : $\{x \in D : f (x) = C\}$.
+
+$n = 2$ : curvas de nivel.
+
+$n = 3$ : superficies de nivel.
 
 \end{document}
