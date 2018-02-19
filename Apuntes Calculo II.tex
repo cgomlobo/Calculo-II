@@ -8,6 +8,7 @@
 \usepackage{cancel}
 \usepackage{graphicx}
 \usepackage{accents}
+\usepackage{xcolor}
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 \newcommand{\eqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{=}}
 \newcommand{\leqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\leq}}
@@ -18,9 +19,12 @@
 \newcommand{\bfrac}[2]{\scalebox{1.4}{$\frac{#1}{#2}$}}
 \newcommand{\spac}{\, \, \,}
 \newcommand{\definicion}{\noindent-\underline{Definición:} }
-\newcommand{\teorema}[1][Teorema]{\noindent$\bullet$ \underline{#1:} }
-\newcommand{\lema}[1][Lema]{\noindent$\bullet$ \underline{#1:} }
+\newcommand{\teorema}[1][\!\!]{\noindent$\bullet$ \underline{Teorema #1:} }
+\newcommand{\lema}[1][\!\!]{\noindent$\bullet$ \underline{Lema #1:} }
+\newcommand{\proposicion}[1][\!\!]{\noindent$\bullet$ \underline{Proposición #1:} }
 \newcommand{\observacion}{\noindent$\star$ \underline{Observación:} }
+\newcommand{\dindent}{\indent\indent}
+\newcommand{\tindent}{\indent\indent\indent}
 
 \begin{document}
 
@@ -597,13 +601,19 @@ $n = 3$ : superficies de nivel.
 
 %TEMA 2. CÁLCULO DIFERENCIAS EN VARIAS VARIABLES
 
-\section*{Tema 2. Cálculo diferencial en varias variables}
+\part*{Tema 2. Cálculo diferencial en varias variables}
 \vspace{5mm}
 
-\subsection{Límites y continuidad}
+\setcounter{section}{0}
+
+%Límites y continuidad
+
+\section{Límites y continuidad}
 \vspace{5mm}
 
-\subsubsection{Límites}
+%Límites
+
+\subsection{Límites}
 \vspace{5mm}
 
 \definicion Sea $A  \subset \R^n$ un conjunto abierto, $x_0 \in A' \text{ y } f : A \subset \R^n \to \R$ una
@@ -646,14 +656,281 @@ y^2 | < 2 (x^2 + y^2) \leq 2\delta^2 < \epsilon$, por tanto bastará \indent \in
 \epsilon$, por tanto \indent\indent bastará con tomar $\delta < \bfrac{\epsilon}{5}$.
 \vspace{5mm}
 
-\teorema El límite de una función, si existe, es único.
+\teorema El límite de una función $f (x)$, si existe, es único.
 \vspace{3mm}
 
 \underline{Demostración:} $\displaystyle \lim_{x \to x_0} f (x) = L_1 \neq L_2 = \lim_{x \to x_0} f (x)$
 
 \indent\indent$2 \epsilon < |L_1 - L_2| = |L_1 - f(x) + f(x) - L_2| \leq \underbrace{|L_1 - f(x)|}_{< \epsilon} + \underbrace{|f (x) - L_2|}_{< \epsilon} < \\ \indent\indent < 2 \epsilon \text{ \underline{Contradicción} }
  2 \epsilon < 2 \epsilon$
+\vspace{5mm}
 
+\teorema{Propiedades de los límites} Sean $f, g : A \text{(abierto)} \subset \R^n \to \R$, $\displaystyle
+\lim_{x \to x_0} f (x) = L_1 \text{ y } \lim_{x \to x_0} g (x) = L_2$:
+\vspace{3mm}
 
+(1) $\displaystyle \lim_{x \to x_0} (f (x) \pm g (x)) = L_1 + L_2$
+\vspace{3mm}
+
+(2) $\displaystyle \lim_{x \to x_0} (f (x) \cdot g (x)) = L_1 \cdot L_2$
+\vspace{3mm}
+
+(3) $\displaystyle \lim_{x \to x_0} \bfrac{f (x)}{g (x)} = \bfrac{L_1}{L_2} \text{ si } L_2 \neq 0 \text{ y } 
+g (x) \neq 0$ en un entorno de $x_0$.
+\vspace{3mm}
+
+(4) $\displaystyle \lim_{x \to x_0} \lambda f (x) = \lambda L_1$
+\vspace{3mm}
+
+(5) $\displaystyle \lim_{x \to x_0} [f (x)]^{g (x)} = L_1^{L_2}$ si tiene sentido.
+\vspace{3mm}
+
+\observacion Si $\exists \displaystyle \lim_{x \to x_0} f (x) = L \Rightarrow f (x)$ está acotada en un entorno
+ de $x_0$.
+\vspace{1mm}
+
+\underline{Demostracion:} $| f (x) | - L \leq |f (x) - L|< \epsilon \Rightarrow |f (x)| \leq L + \epsilon$
+\vspace{5mm}
+
+\teorema[Proposición 1] Sea $f : A \text{ (abierto) }  \subset \R^n \rightarrow \R^m \text{ una función 
+vectorial , } x_0 \in A' \text{ y } L \in L \in \R^m$, entonces:
+\[
+\boxed{
+\displaystyle \lim_{x \to x_0}^{} f (x_1, x_2,...,x_n) = L \iff \lim_{x \to x_0} f_i (x_1, x_2,..., x_n) = l_i
+}
+\]
+\[
+\\\left \{\begin{array}{lc}
+f (x_1, x_2,...,x_n) = (f_1 (x_1, x_2,..., x_n), f_2 (x_1, x_2,..., x_n),..., f_m (x_1, x_2,..., x_n)) \\
+L = (l_1, l_2,..., l_m)
+\end{array}\right.
+\]
+\vspace{3mm}
+
+%Caracterización de límites de funciones por sucesiones
+
+{\color{red}\teorema[Proposición 2] "Caracterización de límites de funciones por  sucesiones"}
+
+Sea $f : A \text{(abierto)} \subset \R^n \to \R, x_0 \in A' \text{ y } L \in \R$, entonces:
+\[
+\boxed{
+\displaystyle \lim_{x \to x_0}^{} f (x) = L \iff \forall \{x_k\}_{k \in \N} \in A \lim_{k \to \infty} x_k = x_0 \text{ y } x_k \neq x_0 \Rightarrow \lim_{k \to \infty} f (x_k) = L
+}
+\]
+\vspace{3mm}
+
+\underline{Demostración:}
+
+$\Rightarrow$) $\forall \{x_k\} \text{ tal que } \displaystyle \lim_{k \to \infty} x_k = x_0$, ¿se tiene que 
+$\displaystyle \lim_{k \to \infty} f (x_k) = L$?
+
+Por convergencia de sucesiones tenemos 	que $\forall{\epsilon_1 > 0} \spac \exists{N_1 \in \N} : \\ \indent
+\|x_k - x_0\| < \epsilon_1 \forall{k \geq N_1} \text{, tomando } \epsilon_1 = \delta \Rightarrow |f (x_k) - 
+L| < \epsilon$.
+
+$\Leftarrow$) Argumentamos por reducción a lo absurdo. 
+
+Suponemos que $\displaystyle \lim_{x \to x_0} 
+f (x) \neq L \text{, es decir, } \exists{\epsilon_2 > 0} \text{ tal que } \forall{\delta > 0} \text{  se tiene que } 
+\\ \indent \|x - x_0\| < \delta \Rightarrow |f (x) - L| < \epsilon_2 \text{( es decir, } f (b_\delta) \cap 
+ B_{\epsilon_2} (L) \neq \emptyset)$.
+
+Se cumple $\forall \delta$, en particular para $\delta = \left \{ \bfrac{1}{k} \right \} \Rightarrow 
+\text{tomamos una sucesión } \\ \indent \{x_k\} \in b_{\sfrac{1}{k}} (x_0) \text{ tal que } \displaystyle 
+ \lim_{k \to \infty} x_k = x_0 \Rightarrow |f (x_k) - L| < \epsilon \spac \text{\underline{Contradicción}} \\
+\indent (II \Rightarrow I)$.
+\vspace{3mm}
+
+\observacion La caracterización de límites por sucesiones será muy útil para demostrar la NO existencia de 
+límites, encontrando dos sucesiones con límites diferentes.
+\vspace{3mm}
+
+%Continuidad
+
+\subsection{Continuidad}
+\vspace{5mm}
+
+\definicion Una función $f : A \text{ (abierto) } \subset \R^n \to \R \text{ es \textbf{continua} en } \\ x_0 \in 
+A$ si:
+\[
+\boxed{
+\forall{\epsilon > 0} \spac \exists{\delta > 0} : \|x - x_0\| < \delta \Rightarrow |f (x) - f (x_0)| 
+< \epsilon
+}
+\]
+
+Es decir:
+\vspace{3mm}
+
+(1) $\exists f (x_0)$
+\vspace{3mm}
+
+(2) $\exists \displaystyle \lim_{x \to x_0} f (x)$
+\vspace{2mm}
+
+(3) $f (x_0) = \displaystyle \lim_{x \to x_0} f (x)$
+\vspace{5mm}
+
+\observacion Una función vectorial $f : A \text{ (abierto) } \subset \R^n \to \R^m \text{ es continua } \iff 
+f_i \text{ es continua } \forall{i = 1, 2,..., m}$.
+\vspace{5mm}
+
+\underline{Propiedades:} Sean $f \text{ y } g$ funciones continuas en $x_0$, entonces:
+\vspace{3mm}
+
+\indent \indent (1) $(f \pm g) (x) \text{ es continua en } x_0$.
+\vspace{3mm}
+
+\indent \indent (2) $(\lambda f) (x) \text{ es continua en } x_0 \forall{\lambda \in \R}$.
+\vspace{3mm}
+
+\indent \indent (3) $(f \cdot g) (x) \text{ es continua en } x_0$.
+\vspace{3mm}
+
+\indent \indent (4) $\left ( \bfrac{f}{g} \right ) (x) \text{ es continua en } x_0 \text{ si } g (x_0) \neq 0$.
+\vspace{3mm}
+
+\indent \indent (5) $[f (x)]^{g (x)} \text{ es continua en } x_0$ si tiene sentido.
+\vspace{5mm}
+\\
+
+%Caracterización de funciones continuas por sucesiones
+
+\proposicion[1] "Caracterización de las funciones continuas por sucesiones"
+
+Sea $x_0 \in A \text{ y } f : A \subset \R^n \to \R$:
+\[
+\boxed{
+f \text{ continua en } x_0 \iff \forall{\{x_k\}_{k \in \N}} : \displaystyle \lim_{k \to  \infty} x_k = x_0 \text{ y }
+ x_k \neq x_0 \Rightarrow \lim_{k \to \infty} f (x_k) = f (x_0)
+}
+\]
+\vspace{3mm}
+
+\underline{Ejemplo 1:} ¿Es continua en $\R^2$ la siguiente función $f$?:
+
+\[
+f (x, y) = \left \{
+\begin{array}{ccc}
+
+\bfrac{5x^2y}{x^2 + y^2} & \text{ si } & (x, y) \neq (0, 0) \\
+0 & \text{ si } & (x, y) = (0, 0)\\
+
+\end{array}\right.
+\]
+
+(1) $f (0, 0) = 0$
+\vspace{3mm}
+
+(2) $\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{5x^2y}{x^2 + y^2} = 0$
+\vspace{3mm}
+
+(3) $f (0, 0) = \displaystyle \lim_{(x, y) \to (0, 0)} f (x, y)$
+\vspace{3mm}
+
+$f (x, y) \text{ es continua en todo } \R^2$.
+\vspace{5mm}
+
+\teorema Sean $f : \R^n \to \R^m \text{ y } g : \R^m \to \R^p$:
+
+\[
+\boxed{
+f (x) \text{ continua en } x_0 \in \R^n \text{ y } g (y) \text{ continua en } f (x_0) \in R^m \Rightarrow 
+(g \circ f) (x) \text{ continua en } x_0
+}
+\]
+\vspace{0mm}
+
+%Conjuntos abiertos, cerrados y funciones continuas
+
+\subsection{Conjuntos abiertos, cerrados y funciones continuas}
+\vspace{3mm}
+
+\definicion Sea $f : \R^n \to \R^m, \, X \subset \R^n \text{ e } Y \subset \R^m$, se define la 
+\textbf{imagen inversa} o \textbf{preimagen} del conunto $Y$ mediante la función $f$ como:
+\[
+\boxed{
+f^{-1} (Y) = \{x \in \R^n : f (x) \subset Y\}
+}
+\]
+\vspace{3mm}
+
+\underline{Propiedades:}
+\vspace{3mm}
+
+\dindent (1) Si $X = f^{-1} (Y) \Rightarrow f (X) \subset Y \Rightarrow f (f^{-1} (Y)) \subset Y$
+\vspace{3mm}
+
+\tindent \underline{Ejemplo:} $f = 
+\left \{ \begin{array}{ccc}
+
+-1 & \text{si} & x < 0\\
+1 & \text{si} & x>0\\
+
+\end{array}\right.$
+\vspace{2mm}
+
+\tindent $f^{-1} \underbrace{([0, 2])}_{Y} : \underbrace{[0, \infty)}_{X} \Rightarrow f ([0, +\infty)) = {1} \subset 
+[0, 2]$
+\vspace{3mm}
+
+\dindent (2) Si $Y = f (X) \Rightarrow X \subset f^{-1} (Y) \Rightarrow X \subset f^{-1} (f (X))$
+\vspace{3mm}
+
+\tindent \underline{Ejemplo:} $f (x) = x^2$
+\vspace{2mm}
+
+\tindent $f (\{2\}) = 4 \Rightarrow \{2\} \subset f^{-1} (\{4\}) = \{2, 2\}$
+\vspace{5mm}
+
+\underline{Ejemplo 1:} $
+f = 
+\left \{ \begin{array}{ccc}
+
+-1 & \text{si} & x < 0\\
+1 & \text{si} & x>0\\
+
+\end{array}\right.
+$
+\vspace{3mm}
+
+\[
+\begin{array}{lccrc}
+
+f^{-1} (\{1\}) = [0, +\infty) & \quad & f^{-1} (\{-1\}) = (- \infty, 0)\\
+f^{-1} ([-1, 1]) = \R & \quad & f^{-1} ([0, 2]) = [0, +\infty)\\
+f^{-1} ([-2, 0]) = (-\infty, 0) & \quad &\\
+
+\end{array}
+\]
+
+\underline{Ejemplo 2:} Sea $f (x, y) = 2x^2 + y^2 - 4 \text{ ¿}f^{-1} (\{3\}), f^{-1} ([-\infty, 0])\text{?}$
+\vspace{2mm}
+
+$f^{-1} (\{3\}) = \{(x, y) \in \R^2 : 2x^2+ y^2 = 1\} \rightarrow$ Elipse de altura $z =1$
+
+$f^{-1} ((-\infty, 0]) = \{(x, y) \in \R^2 : 2x^2+ y^2 \leq 4\} \rightarrow$ Elipses de alturas desde \indent 
+0 hasta -4.
+
+Esto tiene sentido dado que la función forma un paraboloide elíptico.
+\vspace{5mm}
+
+\teorema[1] Dada $f : \R^n \to \R^m$:
+\[
+\boxed{
+f \text{ es continua} \iff \forall \, V \subset \R^m \text{ abierto } : f^{-1} (V) \subset \R^n \text{ es 
+abierto }
+}
+\]
+\vspace{5mm}
+
+\teorema[2] Dada $f : \R^n \to \R^m$:
+\[
+\boxed{
+f \text{ es continua} \iff \forall \, C \subset \R^m \text{ cerrado } : f^{-1} (V) \subset \R^n \text{ es 
+cerrado }
+}
+\]
+\vspace{5mm}
 
 \end{document}
