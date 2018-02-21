@@ -14,6 +14,7 @@
 \newcommand{\leqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\leq}}
 \newcommand{\geqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\geq}}
 \newcommand{\inc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\in}}
+\newcommand{\gsc}[2]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#2}}}}{#1}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\bfrac}[2]{\scalebox{1.4}{$\frac{#1}{#2}$}}
@@ -904,6 +905,7 @@ f^{-1} ([-2, 0]) = (-\infty, 0) & \quad &\\
 
 \end{array}
 \]
+\vspace{3mm}
 
 \underline{Ejemplo 2:} Sea $f (x, y) = 2x^2 + y^2 - 4 \text{ ¿}f^{-1} (\{3\}), f^{-1} ([-\infty, 0])\text{?}$
 \vspace{2mm}
@@ -923,6 +925,83 @@ f \text{ es continua} \iff \forall \, V \subset \R^m \text{ abierto } : f^{-1} (
 abierto }
 }
 \]
+\vspace{3mm}
+
+\underline{Demostrción:} $\Rightarrow$) Hipótesis $
+\left \{\begin{array}{lc}
+
+\text{(I)} \, \forall{\epsilon > 0} \spac \exists{\delta > 0} : f (B_\delta (x)) \subset B_\epsilon (f (x))\\
+\text{(II)} \, \forall y \in V \subset \R^m \spac \exists \delta > 0 \spac B_\delta (y) \subset V \subset \R^m\\
+
+\end{array} \right.
+$
+\vspace{3mm}
+
+¿$f^{-1} (V) \text{ abierto en } \R^n \text{, es decir, } \forall{x \in f^{-1}} \spac \exists{r > 0} : B_r (x) 
+\subset f^{-1} (V)$?
+
+$\forall{x \in f^{-1} (V)} \spac \exists{y \in V} : y = f (x) \subset V \xRightarrow{\text{I}} \epsilon = \delta 
+\Rightarrow B_\epsilon ( f (x)) \subset V$.
+
+Por II $f (B_\delta (x)) \subset B_\epsilon ( f(x)) \in V$ y tomamos preimágenes $B_\delta (x) \gsc{\subset}
+{Prop. (2)} \\ \indent \subset f^{-1} (f (B_\delta (x))) \subset f^{-1} (B_\epsilon ( f (x))) \subset f^{-1} (V)$. 
+Basta con $r = \delta$. \checkmark
+\vspace{3mm}
+
+$\Leftarrow$) Hipótesis: Sea $f : \R^n \to \R^m$ se tiene que $V \in \R^m \text{ abierto } \Rightarrow \\
+\indent \Rightarrow f^{-1} (V) \text{ abierto en } \R^n$.
+
+¿$f \text{ es continua, es decir, } \forall{ \epsilon > 0} \spac \exists{ \delta > 0} : f (B_\epsilon (x)) \subset 
+B_\epsilon (f (x))$? 
+\vspace{3mm}
+
+$\forall{x \in f^{-1} (V)} \subset \R^n \exists y \in V \subset \R^m : y f (x) \text{ y } B_\epsilon ( f (x)) 
+\text{ abierto en } \R^m \xRightarrow{hip.} \\ \indent \Rightarrow f^{-1} (\underbrace{B_\epsilon (f (x))}
+_{V}) \text{ abierto en }
+\R^n$.
+
+$\exists r : B_r (x) \subset f^{-1} (B_\epsilon (f (x))) \text{ tenemos } r = \delta : B_\delta (x) \subset f^{-1} 
+(B_\epsilon ( f (x))) \Rightarrow \\ \indent \Rightarrow f (B_\delta (x)) \subset f (f^{-1} (B_\epsilon ( f (x)))) 
+\gsc{\subset}{Prop.(1)} B_\epsilon ( f (x))$. \checkmark
+\vspace{5mm}
+
+\underline{Ejemplo 1:} $A = \{(x , y, z) \in \R^3 : x^3 - 4y^2 + z^2 = 5\} = \{(x, y, z) \in \R^3 : \\ \indent 
+f (x, y, z) = 5\} = f^{-1} (\underbrace{\{5\}}_{\text{cerrado}}) \xRightarrow{T.2} A$ es un cerrado.
+\vspace{3mm}
+
+\underline{Ejemplo 2:} $B = \{(x, y) \in \R^2 : x^2 - y^2 < 1 + \cos{y}\} = \vspace{2mm} \\ \indent = 
+\{(x, y) \in \R^2 : x^2 - y^2 - \cos{y} < 1\} = f^{-1} ((-\infty, 1)) \Rightarrow B \text{ es un abierto en } 
+\R^2$.
+\vspace{3mm}
+
+\underline{Ejemplo 3:} $f (x) = 7, f : \R \to \R$
+\vspace{2mm}
+
+$f (\underbrace{(-\infty, +\infty)}_{\text{abierto}}) = \{7\} \to$ cerrado.
+\vspace{3mm}
+
+\underline{Ejemplo 4:} Sea $f : [a, b] \to \R \text{ una función continua en } [a, b] \Rightarrow G (f) = 
+\vspace{2mm} \\ \indent = \{(x, f (x)) \in \R^2 : x \in [a, b]\}$ es un cerrado.
+
+Usamos la caracterización de cerrados por sucesiones.
+
+Sea $\{A_k\} = \{(x_k, y_k)\}_{k \in \N} \text{ tal que } y_k = f (x_k) \text{ y } x_k \in [a, b] 
+\text{ (¡cerrado!)} : \indent \{A_k\}_k = \{(x_k, y_k)\} \xrightarrow[k \to \infty]{} (x_0, y_0) \inc{\text{?}} 
+G (f)$.
+
+Como $\{A_k\} \xrightarrow[k \to \infty]{} (x_0, y_0) \Rightarrow \| (x_k, y_k) - (x_0, y_0)\| < \epsilon 
+\Rightarrow (x_k - x_0) + \\ \indent + (y_k - y_0) \rightarrow 0 \Rightarrow 
+\left\{\begin{array}{lc}
+
+x_k \xrightarrow[k \to \infty]{} x_0 \in [a, b]\\
+f (x_k) \xrightarrow[k \to \infty]{} y_0 \xrightarrow{f \text{ cont}} f (x_0) = y_0\\
+
+\end{array}\right.
+$
+\vspace{2mm}
+
+$\{(x_k, \underbrace{f (x_k)}_{\in G (f)})\} \xrightarrow[k \to \infty]{} \{(x_0, f (x_0)) : x_0 \in [a, b]\} \, 
+\exists G (f) \rightarrow$ cerrado. \checkmark
 \vspace{5mm}
 
 \teorema[2] Dada $f : \R^n \to \R^m$:
@@ -932,6 +1011,28 @@ f \text{ es continua} \iff \forall \, C \subset \R^m \text{ cerrado } : f^{-1} (
 cerrado }
 }
 \]
+\vspace{0mm}
+
+\underline{Demostración:} Es igual que la del Teorema 1 pero usando la premisa de que un conjunto es 
+cerrado si su complementario es abierto.
 \vspace{5mm}
+
+%Dieferencial, derivadas parciales y gradientes
+
+\section{Diferencial, derivadas parciales y gradiente}
+\vspace{3mm}
+
+En $\R$ se tiene que:
+\[
+\boxed{
+\text{Derivabilidad} \Rightarrow \text{Continuidad}
+}
+\vspace{3mm}
+\]
+
+\subsection{Derivadas parciales}
+\vspace{5mm}
+
+\definicion Sea
 
 \end{document}
