@@ -1033,6 +1033,87 @@ En $\R$ se tiene que:
 \subsection{Derivadas parciales}
 \vspace{5mm}
 
-\definicion Sea
+\definicion Sea $f : U \text{ (abierto) } \subset \R^n \to \R$, definimos la \textbf{derivada parcial i-ésima} de 
+$f, \bfrac{\partial f}{\partial x_i}$, como la derivada de $f (x_1, x_2,..., x_n)$ respecto a la variable $x_i$, manteniendo fijas el resto de variables, es decir:
+
+\[
+\boxed{
+\bfrac{\partial f (x_1, x_2,..., x_n)}{\partial x_i} = \displaystyle \lim_{h \to 0} \bfrac{f (x_1,..., x_i+h,...,x_n)  
+- f (x_1, x_2,..., x_n)}{h}
+}
+\]
+\vspace{3mm}
+
+Notación en $\R^2$ y $\R^3$:
+\vspace{3mm}
+
+$\bfrac{\partial f (x, y)}{\partial x} \eqc{not} f_x (x, y), \bfrac{\partial f (x, y)}{\partial y} \eqc{not} f_y (x, y) 
+$
+\vspace{3mm}
+
+$\bfrac{\partial f (x, y, z)}{\partial x} \eqc{not} f_x (x, y, z), \bfrac{\partial f (x, y, z)}{\partial y} \eqc{not} f_y (x, y, z) , \bfrac{\partial f (x, y, z)}{\partial z} \eqc{not} f_z (x, y, z)
+$
+\vspace{5mm}
+
+\underline{Ejemplo:} Hallar las derivadas parciales de la función $f (x, y) = x^2 + \vspace{1mm} \\ \indent 
++ y^4 \text{ en el punto } (1, 0)$.
+\vspace{3mm}
+
+$\left.\bfrac{\partial f(x, y)}{\partial x}\right |_{(1, 0)} = 2x |_{(1, 0)} = 2$
+
+$\left.\bfrac{\partial f(x, y)}{\partial y}\right |_{(1, 0)} = 4y^3 |_{(1, 0)} = 0$
+\vspace{5mm}
+
+\noindent\underline{Interpretación geométrica:} $f : \R^2 \to \R$
+\vspace{3mm}
+
+Fijamos $y = y_0$ e intersecamos dicho plano con la gráfica $z = f (x, y)$ y obtenemos una curva $C (x)$.
+
+$\bfrac{\partial f}{\partial x} (x_0, y_0)$ es la pendiente de la recta tangente a la curva $C (x)$ en el punto 
+$(x_0, y_0)$.
+\vspace{3mm}
+
+\observacion La existencia de derivadas parciales no garantiza que el plano tangente sea "bueno", es decir, 
+que sea una buena aproximación a la curva:
+\vspace{3mm}
+
+En $\R^n, n >1, \exists \text{derivadas parciales} \not\Rightarrow$ Continuidad.
+\vspace{5mm}
+
+\subsection{Diferenciación}
+\vspace{3mm}
+
+$f : \R^2 \to \R$
+
+Para que la función sea diferenciable tiene que existirr un plano que se aproxime muy bien a la curva en el 
+punto $(x_0, y_0)$, es decir:
+\vspace{3mm}
+
+$\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{f (x, y) - \overbrace{(ax +by + c)}^{\text{plano}}}{\| (x, y) 
+- (x_0, y_0)\|} = 0$ ¿$a, b, c$?
+\vspace{3mm}
+
+De esta forma estamos "pidiendo" al numerador que se acerque a cero más rápido que el denominador, es decir, que el plano se acerque a la curva más rápido de lo que lo hace hacen $x$ e $y$ al punto.
+\vspace{3mm}
+
+- En $(x_0, y_0) \rightarrow  z = f (x_0, y_0)$ siendo $z$ el plano y $f (x_0, y_0)$ la gráfica. $f (x_0, y_0) = 
+a x_0 + b y_0 + c \Rightarrow c = f (x_0, y_0) - a x_0 - b y_0$. (1)
+\vspace{3mm}
+
+- Con $y = y_0$ la pendiente de la grafíca $f (x, y)$ en $(x_0, y_0) \text{ es } "a" \Rightarrow a = \\ =
+\bfrac{\partial f (x_0, y_0)}{\partial x}$. (2)
+\vspace{3mm}
+
+- De igual forma $b = \bfrac{\partial f (x_0, y_0)}{\partial y}$. (3)
+\vspace{3mm}
+
+De (1), (2), y (3) obtenemos la ecuación del plano tangente a la curva:
+
+\[
+\boxed{
+z = f (x_0, y_0) + \bfrac{\partial f (x_0, y_0)}{\partial x} (x - x_0) + \bfrac{\partial f (x_0, y_0)}{\partial y} 
+(y - y_0)
+}
+\]
 
 \end{document}
