@@ -479,7 +479,9 @@ $\displaystyle \lim_{k \to 0} \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) = (0, 
 
 %DEFINICIONES
 
-\noindent-\underline{Definición:} Sea C un conjunto cualquiera de $\R^n$ y $x \in \R^n$. Diremos que $x$ es un \textbf{punto de acumulación} de $C$ si $\forall{r > 0} B_r(x) \setminus \{x\} \cap C \neq \emptyset 0$. A los puntos de acumulación se los denota por $C'$.
+\noindent-\underline{Definición:} Sea $C$ un conjunto cualquiera de $\R^n$ y $x \in \R^n$. Diremos que 
+$x$ es un \textbf{punto de acumulación} de $C$ si $\forall{r > 0} \spac B_r(x) \setminus \{x\} \cap C \neq 
+\emptyset $. A los puntos de acumulación se los denota por $C'$.
 \vspace{3mm}
 
 \underline{Propiedades:}
@@ -497,8 +499,8 @@ $C \subset \R^n \text{ si } \exists{r > 0} \text{ tal que } B_r (x) \cap C = \{x
 \vspace{5mm}
 
 \noindent-\underline{Definición:} Sea $C \subset \R^n$, diremos que un punto $x \in \R^n$ es un
- \textbf{punto frontera} de $C$ si $\forall{r > 0} \text{ se tiene que } B_r (x) \cap C \neq \emptyset$, y este 
-conjunto de puntos se denotan por $\partial C$.
+ \textbf{punto frontera} de $C$ si $\forall{r > 0} \text{ se tiene que } B_r (x) \cap C \neq \emptyset 
+\text{ y } x \not\in \mathring{C}$.A este conjunto de puntos se le denota por $\partial C$.
 \vspace{5mm}
 
 \noindent-\underline{Definición:} Un conjunto cualquiera $C \subset \R^n$ está \textbf{acotado} si
@@ -1111,17 +1113,17 @@ De (1), (2), y (3) obtenemos la ecuación del plano tangente a la curva:
 
 \[
 \boxed{
-z = f (x_0, y_0) + \bfrac{\partial f (x_0, y_0)}{\partial x} (x - x_0) + \bfrac{\partial f (x_0, y_0)}{\partial y} 
+z = f (x_0, y_0) + \bfrac{\partial f}{\partial x} (x_0, y_0) (x - x_0) + \bfrac{\partial f}{\partial y} (x_0, y_0) 
 (y - y_0)
 }
 \]
 
-Por tanto, la condición de diferenciabilidad para la función $f : \R^2 \to \R$ es:
+Por tanto, la condición de diferenciabilidad para la función $f : \R^2 \to \R$ \indent es:
 
 \[
 \boxed{
-\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{f (x, y) - f  (x_0, y_0) - \frac{\partial f (x_0, y_0)}{\partial x} 
-(x - x_0) - \frac{\partial f (x_0, y_0)}{\partial y} (y - y_0)}{\|(x, y) - (x_0, y_0)\|} = 0
+\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{f (x, y) - f  (x_0, y_0) - \frac{\partial f}{\partial x} (x_0, y_0)
+(x - x_0) - \frac{\partial f}{\partial y} (x_0, y_0) (y - y_0)}{\|(x, y) - (x_0, y_0)\|} = 0
 }
 \]
 \vspace{3mm}
@@ -1134,7 +1136,51 @@ $i) \, \bfrac{\partial f}{\partial x} = 2x |_{(1, 0)} = 2 \spac \bfrac{\partial 
 0 \Rightarrow z = 1 + 2(x -1) - 0 \cdot (y - 0) \Rightarrow \\ \indent \Rightarrow z = 2x -1$
 \vspace{3mm}
 
-$ii) \, \displaystyle \lim_{(x, y) \to (1, 0)} \bfrac{f (x, y) - f(1, 0) - \frac{\partial f (1, 0)}{\partial x} (x -1) - 
-\frac{\partial f (1, 0)}{\partial y} (y - 0)}{\|(x, y) - (1, 0)\|} = 0$
+$ii) \, \displaystyle \lim_{(x, y) \to (1, 0)} \bfrac{f (x, y) - f(1, 0) - \frac{\partial f}{\partial x} (1, 0) (x -1) - 
+\frac{\partial f}{\partial y} (1, 0) (y - 0)}{\|(x, y) - (1, 0)\|} \eqc{\text{?}} 0$
+\vspace{2mm}
+
+$\displaystyle \lim_{(x, y) \to (1, 0)} \bfrac{(x^2 + y^4) - 1 - 2x + 2}{\sqrt{ (x - 1)^2 + y^2}} = \lim_{(x, 
+y) \to (1, 0)} \bfrac{(x^2 + y^4) - (2x - 1)}{\sqrt{(x - 1)^2 + y^2}} = \lim_{(x, y) \to (1, 0)} \bfrac{
+(x - 1)^2 + y^4}{\sqrt{(x -1)^2 + y^2}}$
+\vspace{3mm}
+
+Ahora comprobamos si da 0 a partir de la definición de límite.
+\vspace{2mm}
+
+$\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x - y) - (1, 0)\| < \delta \Rightarrow \left | \bfrac{(x - 1)^2 
++ y^2}{\sqrt{(x - 1)^2 + y^2}} - 0 \right | < \epsilon$
+\vspace{3mm}
+
+$\left | \bfrac{(x - 1)^2 + y^2}{\sqrt{(x - 1)^2 + y^2}} - 0 \right | \leq \bfrac{(x - 1)^2}{\sqrt{(x - 1)^2 + 
+y^2}} + \bfrac{y^4}{\sqrt{(x - 1)^2 + y^2}} \leq \bfrac{(x - 1)^2 + y^2}{\sqrt{(x - 1)^2 + y^2}} + \\ + 
+\bfrac{{[(x - 1)^2 + y^2]}^3}{\sqrt{(x - 1)^2 + y^2}} \leq \sqrt{(x - 1)^2 + y^2} + \sqrt{{[(x - 1)^2 + 
+y^2]}^3} < \delta + \underbrace{\delta^2}_{< \delta} < 2 \delta$
+\vspace{2mm}
+
+Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$.
+\vspace{5mm}
+
+\definicion Sea $U$ un abierto en $\R^n$ decimos que $f : U  \to \R^m$ es \underline{diferenciable} en un 
+punto $x_0 = (x_0^1, x_0^2,..., x_0^n) \in U$ si existen todas las derivadas parciales de $f \text{ en } x_0$, 
+y se cumple:
+
+\[
+\boxed{
+Df(x_0) = 
+\left ( \begin{array}{cccc}
+
+\bfrac{\partial f_1}{\partial x_1} & \bfrac{\partial f_1}{\partial x_2} & \cdots & \bfrac{\partial f_1}{\partial 
+x_n}\vspace{2mm}\\
+\bfrac{\partial f_2}{\partial x_1} & \bfrac{\partial f_2}{\partial x_2} & \cdots & \bfrac{\partial f_2}{\partial 
+x_n}\vspace{2mm}\\
+\vdots & \vdots & \ddots & \vdots\vspace{2mm}\\
+\bfrac{\partial f_m}{\partial x_1} & \bfrac{\partial f_m}{\partial x_2} & \cdots & \bfrac{\partial f_m}{\partial 
+x_n}\\
+
+\end{array} \right )
+}
+\]
+
 
 \end{document}
