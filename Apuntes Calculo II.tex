@@ -1032,6 +1032,8 @@ En $\R$ se tiene que:
 \vspace{3mm}
 \]
 
+%Derivadas parciales
+
 \subsection{Derivadas parciales}
 \vspace{5mm}
 
@@ -1082,17 +1084,17 @@ que sea una buena aproximación a la curva:
 En $\R^n, n >1, \exists \text{derivadas parciales} \not\Rightarrow$ Continuidad.
 \vspace{5mm}
 
+%Diferenciación
+
 \subsection{Diferenciación}
 \vspace{3mm}
 
-$f : \R^2 \to \R$
-
-Para que la función sea diferenciable tiene que existirr un plano que se aproxime muy bien a la curva en el 
-punto $(x_0, y_0)$, es decir:
+Sea $f : \R^2 \to \R$ ,para que la función sea diferenciable tiene que existirr un plano que se aproxime muy 
+bien a la curva en el punto $(x_0, y_0)$, es decir:
 \vspace{3mm}
 
-$\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{f (x, y) - \overbrace{(ax +by + c)}^{\text{plano}}}{\| (x, y) 
-- (x_0, y_0)\|} = 0$ ¿$a, b, c$?
+$\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{f (x, y) - \overbrace{\scalebox{0.7}{$(ax +by + c)$}}
+^{\text{plano}}}{\| (x, y) - (x_0, y_0)\|} = 0$ ¿$a, b, c$?
 \vspace{3mm}
 
 De esta forma estamos "pidiendo" al numerador que se acerque a cero más rápido que el denominador, es decir, que el plano se acerque a la curva más rápido de lo que lo hace hacen $x$ e $y$ al punto.
@@ -1180,7 +1182,122 @@ x_n}\\
 
 \end{array} \right )
 }
+\vspace{5mm}
 \]
+
+\observacion A $Df (x_0)$, además de derivada de $f \text{ en } x_0$, también se le llama \underline{matriz 
+jacobiana} de $f \text{ en } x_0$.
+\vspace{5mm}
+
+\definicion Un caso particular de $Df$ es cuando $m = 1$, es decir, el conunto de llegada de la función es 
+$\R$. A esta matriz jacobiana se le llama \underline{gradiente} y se denota:
+\[
+\boxed{
+\nabla f (x_1, x_2,..., x_n) = \left ( \bfrac{\partial f}{\partial x_1}, \bfrac{\partial f}{\partial x_2},..., \bfrac{ 
+\partial f}{\partial x_n}\right )
+\vspace{5mm}
+}
+\]
+
+\teorema Sea $U \subset \R^n$, $f : U \to \R^m$ es diferenciable en $x_0 \in U \Rightarrow f \text{ es 
+continua en un entorno del punto } x_o \in U$.
+\vspace{3mm}
+
+\underline{Demostración:} $\displaystyle \lim_{x \to x_0} \|f (x) - f (x_0)\| = \\ = \lim_{x \to x_0} 
+\bfrac{\|f (x) - f (x_0) - Df (x_0) (x - x_0) + Df (x_0) (x - x_0)\| \cdot \|x - x_0\|}{\|x - x_0\|} \leqc{D. T.} \\ 
+\leq{D. T.} \lim_{x \to x_0} \cancelto{0 \text{ por ser diferenciable}}{\bfrac{\|f (x) - f (x_0) - Df (x_0) 
+(x - x_0)\|}{\|x - x_0\|}} \cancelto{0}{\|x - x_0\|} + \\ + \lim_{x \to x_0} \bfrac{\|Df (x_0) (x - x_0)\|}
+{\|x - x_0\|} \|x - x_0\| = \lim_{x - x_0} \|Df (x_0) (x - x_0)\| = \\ = \lim_{x - x_0} \underbrace{\|Df (x_0)\|}
+_{\text{es un número}} \cancelto{0}{\|x - x_0\|} = 0$
+\vspace{5mm}
+
+\teorema[1] Sea $U \subset \R^n$ un abierto y $f : U \to \R^m$: 
+\[
+\boxed{
+f \text{ diferenciable} \Rightarrow f \text{ continua}
+}
+\]
+\vspace{5mm}
+
+\teorema[2] Sea $U \subset \R^n$ un abierto, $f : U \to \R^m$ y $x_0 \in U$, si $\, \exists \bfrac{\partial f_j 
+(x_0)}{\partial x_i} \\ \forall i =1,..., n \text{ y } \forall  j = 1,..., m$ y son continuas en un entorno de 
+$x_0$, entonces $f (x)$ es diferenciable en $x_0$.
+\vspace{3mm}
+
+\underline{Ejemplo:} $f (x, y) = \left \{
+\begin{array}{ccc}
+
+\bfrac{xy^2}{\sqrt{x^2 + y^2}} & \text{si} & (x , y) \neq \indent (0, 0)\\
+0 & \text{si} & (x, y) = (0, 0)\\
+
+\end{array}\right .
+$
+\vspace{3mm}
+
+(1) Probar que es continua en todo $\R^2$ (en el origen).
+
+(2) Probar que es diferenciable en todo $\R^2$ (en el origen).
+
+(3) Probar que existen las derivadas parciales pero no son continuas en $(0, 0)$.
+\vspace{3mm}
+
+(1) $\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{xy^2}{\sqrt{x^2 + y^2}} \eqc{?} 0$
+
+$\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x , y) - (0, 0)\| < \delta \Rightarrow \left | \bfrac{xy^2}{\sqrt
+{x^2 + y^2}} - 0 \right | < \epsilon$
+\vspace{3mm}
+
+$\left | \bfrac{xy^2}{\sqrt{x^2 + y^2}} - 0 \right | \leqc{*} \bfrac{1}{2} \bfrac{\overbrace{\scalebox{0.7}{$(x^2 + y^2)$}}^{\text{plano}}|y|}{\sqrt{x^2 + y^2}} \leqc{**} \bfrac{1}{2} \delta^2 < \delta$. Bastará 
+con tomar $\delta \sqrt{2 \epsilon}$.
+\vspace{3mm}
+
+$\displaystyle \lim_{(x, y) \to (x_0, y_0)} f (x, y) = f (0, 0) = 0$
+\vspace{3mm}
+
+$\star xy \leq \bfrac{x^2 + y^2}{2}$
+\vspace{2mm}
+
+$\star \star |y| \leq \|(x, y)\| < \delta$
+\vspace{5mm}
+
+(2) $\lim_{(x, y) \to (0, 0)} \bfrac{f (x, y) - f (0, 0) - f_x (0, 0) (x - 0) - f_y (0, 0) (y - 0)}{\|(x, y) - (0, 0)\|}$
+\vspace{5mm}
+
+$f_x (0, 0) = \bfrac{\partial f}{\partial x} (0, 0) = \displaystyle \lim_{h \to 0} \bfrac{f (h, 0) - f (0, 0)}{h} = 
+\lim_{h \to 0} \bfrac{\frac{h \cdot 0^2}{\sqrt{h^2 + 0^2}} - 0}{h} = \\ \indent = \lim_{h \to 0} \bfrac{0}{h^2} = 0$
+\vspace{3mm}
+
+$f_y (0, 0) = \bfrac{\partial f}{\partial y} (0, 0)= \displaystyle \lim_{h \to 0} \bfrac{f (0, h) - f (0, 0)}{h} = 
+\lim_{h \to 0} \bfrac{\frac{0 \cdot h^2}{\sqrt{0^2 + h^2}} - 0}{h} = \\ = \lim_{h \to 0}  \bfrac{0}{h^2} = 
+0$
+\vspace{3mm}
+
+$\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{\frac{xy^2}{\sqrt{x^2 + y^2}} - 0 - 0 - 0}{\sqrt{x^2 + y^2}} = 
+\lim_{(x, y) \to (0, 0)} \bfrac{xy^2}{x^2 + y^2} \eqc{?} 0$
+\vspace{3mm}
+
+$\forall \epsilon >0 \spac \exists \delta > 0 : \left | \bfrac{xy^2}{x^2 + y^2} - 0 \right | \leq \bfrac{1}{2} 
+\bfrac{(x^2 + y^2) |y|}{x^2 + y^2} \leq \bfrac{1}{2} \|(x, y)\| \leq \bfrac{1}{2} \delta < \epsilon$. \\
+\vspace{3mm}
+
+Bastará con tomar $\delta = \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$.
+\vspace{5mm}
+
+$f_x = \bfrac{y^2 \sqrt{x^2 + y^2} - xy^2 \frac{x}{\sqrt{x^2 + y^2}}}{x^2 + y^2} = \bfrac{y^2 (x^2 
++ y^2) - x^2y^2}{(x^2 + y^2) \sqrt{x^2 + y^2}} = \bfrac{\cancel{{(yx)}^2} \sqrt{x^2 + y^2} + 
+y^4 - \cancel{{(xy)^2}}}{\sqrt{{(x^2 - y^2)}^3}} = \\ \indent = \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}}$
+\vspace{3mm}
+
+$\bfrac{\partial f}{\partial x} (x, y) = \left \{
+\begin{array}{ccc}
+
+\bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}} & si & (x, y) \neq (0, 0)\\
+0 & si & (x, y) = (0, 0)\\
+
+\end{array}\right .
+$
+
+
 
 
 \end{document}
