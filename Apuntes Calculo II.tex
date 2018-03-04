@@ -1,4 +1,4 @@
-\documentclass[12pt, titlepage]{article}
+\documentclass[10pt, titlepage]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
 \usepackage{xfrac}
@@ -9,6 +9,16 @@
 \usepackage{graphicx}
 \usepackage{accents}
 \usepackage{xcolor}
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm} 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 \newcommand{\eqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{=}}
 \newcommand{\leqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\leq}}
@@ -50,19 +60,24 @@
 
 \item En $\displaystyle \mathbb{R}^3$ los puntos, $p \in\displaystyle  \mathbb{R}^3$, se representan mediante ternas ordenadas de números reales, $p=(a, b, c)$. \\$\displaystyle \mathbb{R}^3 = \{(x, y, z):x, y, z \in \displaystyle \mathbb{R}\}$.
 
-\item En $\mathbb{R}^n$ los puntos, $p \in \displaystyle \mathbb{R}^n$, se representan mediante pares ordenados de números reales, $p=(x_1, x_2, ..., x_n)$.\\ $\displaystyle \mathbb{R}^n = \{(x_1, x_2, ..., x_n):x_1 \in \displaystyle \mathbb{R}, i=1, 2, ..., n\}$.
+\item En $\mathbb{R}^n$ los puntos, $p \in \displaystyle \mathbb{R}^n$, se representan mediante pares ordenados de números reales, \\ $p=(x_1, x_2, ..., x_n)$.\\ $\displaystyle \mathbb{R}^n = \{(x_1, x_2, ..., 
+x_n):x_1 \in \displaystyle \mathbb{R}, i=1, 2, ..., n\}$.
+\vspace{3mm}
 
 \end{itemize}
 
 \noindent -\underline{Definición:} Geométricamente, un \textbf{vector} se define como un segmento de recta "orientado" con punto inicial en el origen de coordenadas y punto final en un punto de $\displaystyle \mathbb{R}^n$.
 
-\vspace{3mm}
+\vspace{5mm}
 
-\noindent *\underline{Observación:} Si n=3, la notación habitual parala base canónica es: \\$\vec{i}=(1, 0, 0), \vec{j}=(0, 1, 0), \vec{k}=(0, 0, 1)$.
+\noindent *\underline{Observación:} Si n=3, la notación habitual parala base canónica es: $\vec{i}=(1, 0, 0), \vec{j}=(0, 1, 0), \vec{k}=(0, 0, 1)$.
+\vspace{3mm}
 
 %Operaciones en Rn
 
-\subsection{Operaciones entre elementos de $\mathbf{\displaystyle \mathbb{R}^n : \vec{x}=(x_1, x_2, ..., x_n),} \\ \mathbf{ \vec{y}=(y_1, y_2, ... y_n)}$}
+\subsection{Operaciones entre elementos de $\mathbf{\displaystyle \mathbb{R}^n : \boldsymbol{\vec{x}} 
+=(x_1, x_2, ..., x_n),} \mathbf{\boldsymbol{\vec{y}}=(y_1, y_2, ... y_n)}$}
+\vspace{5mm}
 
 \begin {enumerate}
 
@@ -78,6 +93,8 @@
 %Propiedades
 
 \subsubsection*{Propiedades}
+\vspace{3mm}
+
  Sean $\vec{x}, \vec{y}, \vec{z} \quad y \quad \lambda , \beta \in \displaystyle \mathbb{R}$
 
 \begin{enumerate}
@@ -89,29 +106,40 @@
 \item $< \vec{x}, \vec{x} > \geq 0  \, \, \mathrm{y} < \vec{x}, \vec{x} > = 0 \iff \vec{x} = \vec{0} = (0, 0,..., 0)$
 
 \end{enumerate}
+\vspace{5mm}
 
 %La norma euclídea
 
-\noindent -\underline{Definición:} La \textbf{norma euclídea} de un vector $\vec{x} \in \displaystyle \mathbb{R}^n$(y se escribe $\|\vec{x}\| \mathrm{)}$ como: $\|\vec{x}\| = \sqrt{<\vec{x}, \vec{x}>} = \Big{(}\displaystyle \sum_{i = 1}^{n} x_i^{\,2}\Big{)}^{^1/_2}$.
+-\underline{Definición:} La \textbf{norma euclídea} de un vector $\vec{x} \in \displaystyle \mathbb{R}^n$(y se escribe $\|\vec{x}\| \mathrm{)}$ como: $\|\vec{x}\| = \sqrt{<\vec{x}, \vec{x}>} = \Big{(}\displaystyle \sum_{i = 1}^{n} x_i^{\,2}\Big{)}^{^1/_2}$.
+\vspace{5mm}
 
-\vspace{3mm}
-
-*\underline{Observación:} Sea $\vec{x} \in \displaystyle \mathbb{R}^n$ tal que $\|\vec{x}\| = 1$, se dice que es \textbf{unitario}. Sea  $\vec{x} \in \displaystyle \mathbb{R}^n$ un vector no unitario, podemos \textbf{normalizarlo}:\\
+\observacion Sea $\vec{x} \in \displaystyle \mathbb{R}^n$ tal que $\|\vec{x}\| = 1$, se dice que es \textbf{unitario}. Sea  $\vec{x} \in \displaystyle \mathbb{R}^n$ un vector no unitario, podemos \textbf{normalizarlo}:\\
 {\large$\frac{\vec{x}}{\|\vec{x}\|} \rightarrow$} vector unitario.
+\vspace{5mm}
 
 \subsubsection*{Significado geométrico de la norma euclídea}
+\vspace{3mm}
 
 La norma $\|\vec{x}\|$ representa la \textbf{longitud} del vector $\vec{x}$. Not.: $long(\vec{x}) = |x| = d(0, x)$.
+\vspace{3mm}
 
 %Desigualdad de Cauchy-Schwarz
 
 \subsubsection*{Desigualdad de Cauchy-Schwarz en $\mathbf{\mathbb{R}^n}$}
-
-Sean $\vec{x}, \vec{y} \in \displaystyle \mathbb{R}^n$\\  $$\boxed{|<\vec{x}, \vec{y}>| \leq \|\vec{x}\| \cdot \|\vec{y}\| = \bigg{|}\displaystyle \sum_{i=1}^n x_i \, y_i \bigg{|} \leq \bigg{(}  \sum_{i=1}^n x_i^2 \bigg{)}^{\sfrac{1}{2}} \cdot \bigg{(} \sum_{i=1}^n y_i^2 \bigg{)}^{\sfrac{1}{2}}}$$
-
 \vspace{3mm}
 
-\noindent\underline{Demostración:} Tomamos $a= \vec{y} \cdot \vec{y} = \|\vec{y}\|^2 \quad \mathrm{y} \quad b = -\vec{x} \cdot \vec{y} \,$ y aplicamos propiedades del producto escalar al vector $a  \vec{x} + b \vec{y}$.
+Sean $\vec{x}, \vec{y} \in \displaystyle \mathbb{R}^n$
+\[
+\boxed{|<\vec{x}, \vec{y}>| \leq \|\vec{x}\| \cdot \|\vec{y}\| = \bigg{|}\displaystyle \sum_{i=1}^n x_i \, 
+ y_i \bigg{|} \leq \bigg{(}  \sum_{i=1}^n x_i^2 \bigg{)}^{\sfrac{1}{2}} \cdot \bigg{(} \sum_{i=1}^n 
+y_i^2 \bigg{)}^{\sfrac{1}{2}}
+}
+\]
+\vspace{5mm}
+
+\noindent\underline{Demostración:} Tomamos $a= \vec{y} \cdot \vec{y} = \|\vec{y}\|^2 \quad \mathrm{y} 
+\quad b = -\vec{x} \cdot \vec{y} \,$ y aplicamos propiedades del producto escalar al vector $a  \vec{x} + b 
+\vec{y}$.
 
 \vspace{3mm}
 
@@ -119,21 +147,37 @@ Sean $\vec{x}, \vec{y} \in \displaystyle \mathbb{R}^n$\\  $$\boxed{|<\vec{x}, \v
 
 \vspace{1mm}
 
--Si $a \neq 0 \Rightarrow 0 \leq ( a\vec{x} + b \vec{y} ) (a \vec{x} + b \vec{y} ) = a^2 \vec{x}\, \vec{x} + 2ab \vec{x} \vec{y} + b^2 \vec{y} \vec{y} = \\ = \|\vec{y}\|^4 \cdot \|\vec{x}\|^2-2 \, \|\vec{y}\|^2 \, ( \vec{x} \cdot \vec{y} )^2 + ( -\vec{x} \cdot \vec{y} )^2 \cdot \|\vec{y} \|^2 = \|\vec{y} \|^4 \cdot \|\vec{x}\|^2 - \|\vec{y}\|^2 \cdot ( \vec{x} \cdot \vec{y} )^2 \Rightarrow \\ \Rightarrow 0 \leq \|\vec{y}\|^2 \cdot \|\vec{x}\|^2 - ( \vec{x} \cdot \vec{y} )^2 \Rightarrow ( \vec{x} \cdot \vec{y} )^2 \leq \|\vec{x}\|^2 \cdot \|\vec{y}\|^2 \Rightarrow |\vec{x} \cdot \vec{y} |\leq \|\vec{x}\| \cdot \|\vec{y}\| \, \checkmark \\
--\|\vec{x}\| \cdot \|\vec{y}\| \leq < \vec{x}, \vec{y} > \leq \|\vec{x}\| \cdot \|\vec{y}\| \Rightarrow -1 \leq \bfrac{<\vec{x}, \vec{y}>}{\|\vec{x}\| \cdot \|\vec{y}\|} \leq 1 \Rightarrow \\ \Rightarrow \cos{\theta} \eqc{def}  \bfrac{\vec{x} \cdot \vec{y}}{\|\vec{x}\| \cdot \|\vec{y}\|} \iff < \vec{x}, \vec{y} > = \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}$
+-Si $a \neq 0 \Rightarrow 0 \leq ( a\vec{x} + b \vec{y} ) (a \vec{x} + b \vec{y} ) = a^2 \vec{x}\, \vec{x} + 
+2ab \vec{x} \vec{y} + b^2 \vec{y} \vec{y} = \|\vec{y}\|^4 \cdot \|\vec{x}\|^2-2 \, \|\vec{y}\|^2 \, ( 
+\vec{x} \cdot \vec{y} )^2 + ( -\vec{x} \cdot \vec{y} )^2 \cdot \|\vec{y} \|^2 = \\ \indent = \|\vec{y} \|^4 
+\cdot \|\vec{x}\|^2 - \|\vec{y}\|^2 \cdot ( \vec{x} \cdot \vec{y} )^2 \Rightarrow 0 \leq \|\vec{y}\|^2 \cdot 
+\|\vec{x}\|^2 - ( \vec{x} \cdot \vec{y} )^2 \Rightarrow ( \vec{x} \cdot \vec{y} )^2 \leq \|\vec{x}\|^2 \cdot 
+\|\vec{y}\|^2 \Rightarrow |\vec{x} \cdot \vec{y} |\leq \|\vec{x}\| \cdot \|\vec{y}\| \, \checkmark$
 
+- $\|\vec{x}\| \cdot \|\vec{y}\| \leq < \vec{x}, \vec{y} > \leq \|\vec{x}\| \cdot \|\vec{y}\| \Rightarrow -1 \leq 
+\bfrac{<\vec{x}, \vec{y}>}{\|\vec{x}\| \cdot \|\vec{y}\|} \leq 1 \Rightarrow \cos{\theta} \eqc{def} 
+\bfrac{\vec{x} \cdot \vec{y}}{\|\vec{x}\| \cdot \|\vec{y}\|} \iff < \vec{x}, \vec{y} > = \\ \indent = \|\vec{x} 
+\| \, \|\vec{y}\| \, \cos{\theta}$
+\vspace{7mm}
+
+- \underline{Definición:} Dos vectores $\vec{x}, \vec{y} \in \mathbb{R}^n$ son \textbf{perpendiculares/ortogonales} si y solo si $< \vec{x}, \vec{y}> = 0$. \\ Not.: $\vec{x} \perp \vec{y}$.
 \vspace{3mm}
-
-\noindent-\underline{Definición:} Dos vectores $\vec{x}, \vec{y} \in \mathbb{R}^n$ son \textbf{perpendiculares/ortogonales} si y solo si $< \vec{x}, \vec{y}> = 0$. Not.: $\vec{x} \perp \vec{y}$.
 
 %Teorema de Pitágoras
 
 \subsubsection*{Teorema de Pitágoras en $\mathbf{\mathbb{R}^n}$}
 
 Sean $\vec{x}, \vec{y} \in \mathbb{R}^n$ tal que $\vec{x} \perp \vec{y}$, entonces: 
-$$\boxed{\|\vec{x} + \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2}$$
+\[
+\boxed{
+\|\vec{x} + \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2
+}
+\]
+\vspace{3mm}
 
-\noindent\underline{Demostración:} $\|\vec{x} + \vec{y}\|^2 = (\vec{x}+ \vec{y}) (\vec{x}+ \vec{y}) = \vec{x}  \vec{x} + \cancelto{0}{2 \vec{x} \vec{y}}+ \vec{y} \vec{y} = \|\vec{x}\|^2 + \|\vec{y}\|^2 \, \checkmark$
+\noindent\underline{Demostración:} $\|\vec{x} + \vec{y}\|^2 = (\vec{x}+ \vec{y}) (\vec{x}+ \vec{y}) = 
+\vec{x}  \vec{x} + \cancelto{0}{2 \vec{x} \vec{y}}+ \vec{y} \vec{y} = \|\vec{x}\|^2 + \|\vec{y}\|^2 \, 
+\checkmark$
 
 \vspace{3mm}
 
@@ -142,7 +186,13 @@ $$\boxed{\|\vec{x} + \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2}$$
 \subsubsection*{Teorema del coseno}
 
 Sean $\vec{x}, \vec{y} \in \mathbb{R}^n$ vectores cualesquiera, entonces:
-$$\boxed{\|\vec{x} - \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}}$$
+\[
+\boxed{
+\|\vec{x} - \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta}
+}
+\]
+\vspace{3mm}
+
 \underline{Demostración:} $\|\vec{x} - \vec{y}\|^2 = (\vec{x} - \vec{y}) (\vec{x} - \vec{y}) = \vec{x} \vec{x} - 2 \vec{x} \vec{y} + \vec{y} \vec{y} = \vspace{1mm} \\ 
 =\|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x}\| \, \|\vec{y}\| \, \cos{\theta} \, \checkmark$
 
@@ -151,38 +201,64 @@ $$\boxed{\|\vec{x} - \vec{y}\|^2 = \|\vec{x}\|^2 + \|\vec{y}\|^2 - 2 \, \|\vec{x
 %Propiedades de la norma euclídea
 
 \subsubsection*{Propiedades de la norma euclídea}
+
 Sea $\vec{x} \in \mathbb{R}^n$ y $\lambda \in \mathbb{R}$: \\ 
 
-$(i) \|\vec{x}\| \geq 0$ y $ \|\vec{x}\| = 0 \iff \vec{x} = \vec{0}$ \vspace{1mm}
+$(i) \|\vec{x}\| \geq 0$ y $ \|\vec{x}\| = 0 \iff \vec{x} = \vec{0}$ \vspace{3mm}
 
-$(ii) \| \lambda \vec{x}\| = |\lambda| \cdot \|\vec{x}\|$ \vspace{1mm}
+$(ii) \| \lambda \vec{x}\| = |\lambda| \cdot \|\vec{x}\|$ \vspace{3mm}
 
-$(iii)$Desigualdad tiangular: $\|\vec{x} + \vec{y}\| \leq \|\vec{x}\| + \|\vec{y}\|$ \vspace{1mm}
+$(iii)$Desigualdad tiangular: $\|\vec{x} + \vec{y}\| \leq \|\vec{x}\| + \|\vec{y}\|$ \vspace{3mm}
 
 $(iv)$Desigualdad triangular al revés: $\big{|} \|\vec{x}\| - \|\vec{y}\|\big{|} \leq \|\vec{x}- \vec{y}\|$
+\vspace{5mm}
+
+\underline{Demostraciones:}
+\vspace{5mm}
+
+\dindent $(i) \, \|\vec{x}\| = \sqrt{x_1^2 + x_2^2+...+ x_n^2} \geq 0$ y $ \|\vec{x}\| = \sqrt{x_1^2 + 
+x_2^2 + ...+ x_n^2} = 0 \iff x_1, x_2,..., x_n = 0  \Rightarrow \\ \dindent \Rightarrow \vec{x} = \vec{0}$
 \vspace{3mm}
 
-\noindent\underline{Demostraciones:}\vspace{5mm}
+\dindent $(ii) \, \displaystyle \|\lambda \vec{x}\| = \Big{(} \sum_{i=1}^n \lambda ^2 \, x_i^2 \Big{)} 
+^{\sfrac{1}{2}} = \sqrt{\lambda^2} \, \Big{(} \sum_{i=1}^n x_i^2 \Big{)}^{\sfrac{1}{2}} = |\lambda| \, 
+\|\vec{x}\|$
+\vspace{3mm}
 
-$(i) \, \|\vec{x}\| = \sqrt{x_1^2 + x_2^2+...+ x_n^2} \geq 0$ y $ \|\vec{x}\| = \sqrt{x_1^2 + x_2^2 + ...+ x_n^2} = 0 \iff  \indent \iff x_1, x_2,..., x_n = 0 \Rightarrow \vec{x} = \vec{0}$
+\dindent $(iii) \, \|\vec{x} + \vec{y}\|^2 = (\vec{x} + \vec{y})(\vec{x} + \vec{y}) = \vec{x} \vec{x} + 2 
+\vec{x} \vec{y} + \vec{y} \vec{y} \leqc{C-S} \|\vec{x}\|^2 + 2 \, \|\vec{x}\| \, \|\vec{y}\| + \|\vec{y}\|^2 
+(\|\vec{x}\| + \|\vec{y}\|)^2 \Rightarrow \\ \dindent \Rightarrow \|\vec{x} + \vec{y}\| \leq \|\vec{x}\| + 
+\|\vec{y}\|$ 
+\vspace{7mm}
 
-$(ii) \, \displaystyle \|\lambda \vec{x}\| = \Big{(} \sum_{i=1}^n \lambda ^2 \, x_i^2 \Big{)}^{\sfrac{1}{2}} = \sqrt{\lambda^2} \, \Big{(} \sum_{i=1}^n x_i^2 \Big{)}^{\sfrac{1}{2}} = |\lambda| \, \|\vec{x}\|$
+\noindent-\underline{Definición:} Una \textbf{distancia/métrica} es una función $d:\mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}^+$ tal que cumple: \vspace{3mm}
 
-$(iii) \|\vec{x} + \vec{y}\|^2 = (\vec{x} + \vec{y})(\vec{x} + \vec{y}) = \vec{x} \vec{x} + 2 \vec{x} \vec{y} + \vec{y} \vec{y} \leqc{C-S} \|\vec{x}\|^2 + 2 \, \|\vec{x}\| \, \|\vec{y}\| + \|\vec{y}\|^2 = \indent = (\|\vec{x}\| + \|\vec{y}\|)^2 \Rightarrow \|\vec{x} + \vec{y}\| \leq \|\vec{x}\| + \|\vec{y}\|$ \vspace{5mm}
+(1) $ d(x, y) = 0 \iff x=y$ \vspace{3mm}
 
-\noindent-\underline{Definición:} Una \textbf{distancia/métrica} es una función $d:\mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}^+$ tal que cumple: \vspace{2mm}
+(2) $ d(x, y) = d(y, x)$ \vspace{3mm}
 
-(1) $ d(x, y) = 0 \iff x=y$ \vspace{1mm}
+(3) $d(x, z) \leq d(x, y) + d(y, z)$
+\vspace{7mm}
 
-(2) $ d(x, y) = d(y, x)$ \vspace{1mm}
+\noindent-\underline{Definición:} La \textbf{distancia euclídea} entre dos puntos $x = (x_1, x_2,..., x_n)$ e 
+$y = (y_1, y_2,..., y_n)$ de $\mathbb{R}^n$ se define como:
 
-(3) $d(x, z) \leq d(x, y) + d(y, z)$ \\
+\[
+\boxed{
+d(x, y) = \sqrt{(x_1-y_1)^2+(x_2+y_2)^2+...+(x_n+y_n)^2}=\bigg{(} \sum_{i=1}^n (x_i - y_i)^2 \bigg{)} 
+^{\sfrac{1}{2}} = \|\vec{x} - \vec{y}\|
+}
+\]
+\vspace{3mm}
 
-\noindent-\underline{Definición:} La \textbf{distancia euclídea} entre dos puntos $x = (x_1, x_2,..., x_n)$ e $y = (y_1, y_2,..., y_n)$ de $\mathbb{R}^n$ se define como:
-$$\boxed{d(x, y) = \sqrt{(x_1-y_1)^2+(x_2+y_2)^2+...+(x_n+y_n)^2}=\bigg{(} \sum_{i=1}^n (x_i - y_i)^2 \bigg{)}^{\sfrac{1}{2}} = \|\vec{x} - \vec{y}\|}$$\break
-(1) $\|\vec{x} - \vec{y}\| = 0 \iff \vec{x} = \vec{y}$\\
-(2) $\|\vec{x} - \vec{y}\| = \|\vec{y} - \vec{x}\|$ \\
+(1) $\|\vec{x} - \vec{y}\| = 0 \iff \vec{x} = \vec{y}$
+\vspace{3mm}
+
+(2) $\|\vec{x} - \vec{y}\| = \|\vec{y} - \vec{x}\|$
+\vspace{3mm}
+
 (3) $\|\vec{x} - \vec{z}\| \leq \|\vec{x} - \vec{y}\| + \|\vec{y} - \vec{z}\|$
+\vspace{5mm}
 
 %CONCEPTOS MÉTRICOS EN EL ESPACIO EUCLÍDEO
 
