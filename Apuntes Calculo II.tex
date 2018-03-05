@@ -271,86 +271,114 @@ d(x, y) = \sqrt{(x_1-y_1)^2+(x_2+y_2)^2+...+(x_n+y_n)^2}=\bigg{(} \sum_{i=1}^n (
 \vspace{3mm}
 
 -\underline{Definiciones:}
-
 \vspace{5mm}
-\noindent
-(1) Dado un punto $x_0 \in \mathbb{R}^n$ y un número real $r>0$, llamaremos \textbf{bola abierta} de centro $x_0$ y radio $r$ (y escribiremos $B_r (x_0) $ o $B(x_0, r)$al conjunto:
-$$\boxed{B_r (x_0)  \eqc{not} B(x_0, r) = \{ x \in \mathbb{R}^n : \|x-x_0\|<r\}}$$
-\vspace{1mm}
 
-\noindent
-$n=1 \rightarrow x_o \in \mathbb{R} \quad -r<x-x_o<r \\ B_r(x_0) = \{ x \in \mathbb{R} : |x-x_0|<r\} = \{ x \in \mathbb{R} : x \in (x_0-r, x_0+r) \}$
+(1) Dado un punto $x_0 \in \mathbb{R}^n$ y un número real $r>0$, llamaremos \textbf{bola abierta} de 
+centro $x_0$ y radio \\ \indent $r$ (y escribiremos $B_r (x_0) $ o $B(x_0, r)$al conjunto:
+\[
+\boxed{
+B_r (x_0)  \eqc{not} B(x_0, r) = \{ x \in \mathbb{R}^n : \|x-x_0\|<r\}
+}
+\]
+\vspace{3mm}
 
+$n=1 \rightarrow x_o \in \mathbb{R} \quad -r<x-x_o<r$
+
+$B_r(x_0) = \{ x \in \mathbb{R} : |x-x_0| <r\} = \{ x \in \mathbb{R} : x \in (x_0-r, x_0+r) \}$
 \vspace{5mm}
-\noindent
-$n=2 \rightarrow (x_0, y_0) \in \mathbb{R}^2 \\ B_r (x_0, y_0) = \{ (x, y) \in \mathbb{R}^2 : \underbrace{\|(x-y) - (x_0 - y_0) \|}_{(x-x_0)^2 + (y - y_0)^2} < r\}$
 
-\noindent
-$n=3 \rightarrow (x_0, y_0, z_0) \in \mathbb{R}^3 \\
-B_r (x_0, y_0, z_0) = \{ (x, y, z) \in \mathbb{R}^3 : (x-x_0)^2 + (y - y_0)^2 + (z - z_0)^2 < r$
+$n=2 \rightarrow (x_0, y_0) \in \mathbb{R}^2$
 
+$B_r (x_0, y_0) = \{ (x, y) \in \mathbb{R}^2 : \underbrace{\|(x-y) - (x_0 - y_0) \|}_{(x-x_0)^2 + (y + 
+y_0)^2} < r\}$
+
+$n=3 \rightarrow (x_0, y_0, z_0) \in \mathbb{R}^3$
+
+$B_r (x_0, y_0, z_0) = \{ (x, y, z) \in \mathbb{R}^3 : (x-x_0)^2 + (y - y_0)^2 + (z - z_0)^2 < r$
 \vspace{5mm}
-\noindent
+
 (2) Decimos que $A \in \mathbb{R}^n$ es un \textbf{conjunto abierto} si $\forall x_0 \in A \, \, \exists r>0$ tal que $B_r (x_0) \subset A$.
-
 \vspace{5mm}
-\noindent
+
 (3) Un \textbf{entorno} del punto $x \in \mathbb{R}^n$ es un conjunto abierto que lo contiene.
+\vspace{7mm}
 
 %Proposiciones
 
-\begin{itemize}
+\proposicion[1] Si $x_0 \in \mathbb{R}^n$ y $r>0 \Rightarrow$ la bola abierta $B_r(x_0)$ es un conjunto abierto.
+\vspace{5mm}
 
-\item \underline{Proposición 1:} Si $x_0 \in \mathbb{R}^n$ y $r>0 \Rightarrow$ la bola abierta $B_r(x_0)$ es un conjunto abierto.
+\indent \underline{Demostración:} $\forall x \in B_r(x_0) \, \exists s \in \R , s>0$ tal que $B_s(x) \subset B_r(x_0)$.
+\vspace{3mm}
 
-\quad\underline{Demostración:} $\forall x \in B_r(x_0) \, \exists s \in \R , s>0$ tal que $B_s(x) \subset B_r(x_0)$.
+\dindent Basta con tomar $s = r - \|x-x_0\|$, entonces $\forall y \in B_s(x) \quad \|y - x_0\| = \\
+\dindent = \|y -x +x -x_0\| \leq \|y-x\| + \|x - x_0\| < s + \|x - x_0\| = r - \|x - x_0\| + \|x - x_0\| = r$
+\vspace{5mm}
 
-Basta con tomar $s = r - \|x-x_0\|$, entonces $\forall y \in B_s(x) \quad \|y - x_0\| = \\
- = \|y -x +x -x_0\| \leq \|y-x\| + \|x - x_0\| < s + \|x - x_0\| = r - \|x - x_0\| + \|x - x_0\| = r$
-\vspace{2mm}
+\underline{Ejemplo:} Demostrar que $A = \{ (x, y) \in \R^2 : y>0\}$ es un conjunto abierto.
+\vspace{3mm}
 
-\quad\underline{Ejemplo:} Demostrar que $A = \{ (x, y) \in \R^2 : y>0\}$ es un conjunto abierto.
+$\forall (x_0, y_0) \in A \spac \exists r : B_r(x_0, y_0) \subset A$, es decir, $y_0 > 0$
 
-$\forall (x_0, y_0) \in A \spac \exists r : B_r(x_0, y_0) \subset A$, es decir, $y_0 > 0$\\
-Basta con tomar $r = y_0 > 0$.\\
-$\forall (a, b) \in B_r(x_0, y_0) \Rightarrow$ ¿$(a, b) \in A$, es decir, $b>0$?\\
-Como $ (a, b) \in B_r(x_0, y_0) \Rightarrow \|(a, b) - (x_0, y_0)\| < r = y_0 \Rightarrow \\
-\Rightarrow (a - x_0)^2 + (b - y_0)^2 < y_0^2 \Rightarrow (b - y_0)^2 < y_0 ^2 \Rightarrow -y_0 < b-y_0 < y_0 \Rightarrow \\
- \Rightarrow 0< b < 2 y_0 \Rightarrow b > 0 \Rightarrow (a, b) \in A$
+Basta con tomar $r = y_0 > 0$.
+\vspace{3mm}
 
-\item \underline{Proposición 2:} La unión (finita o infinita) de conjuntos abiertos es un conjunto abierto.
+$\forall (a, b) \in B_r(x_0, y_0) \Rightarrow$ ¿$(a, b) \in A$, es decir, $b>0$?
+Como $ (a, b) \in B_r(x_0, y_0) \Rightarrow$
 
-\item \underline{Proposición 3:} La intersección finita de abiertos es un conjunto abierto.\vspace{1mm}
+$\Rightarrow \|(a, b) - (x_0, y_0)\| < r = y_0 \Rightarrow (a - x_0)^2 + (b - y_0)^2 < y_0^2 \Rightarrow 
+(b - y_0)^2 < y_0 ^2 \Rightarrow$
 
-\noindent *\underline{Observación:} La intersección finita de abiertos no es, en general, un abierto.
+$\Rightarrow -y_0 < b-y_0 < y_0 \Rightarrow 0< b < 2 y_0 \Rightarrow b > 0 \Rightarrow (a, b) \in A$
+\vspace{5mm}
+
+\proposicion[2] La unión (finita o infinita) de conjuntos abiertos es un conjunto abierto.
+\vspace{5mm}
+
+\proposicion[3] La intersección finita de abiertos es un conjunto abierto.
+\vspace{5mm}
+
+\observacion La intersección finita de abiertos no es, en general, un abierto.
+\vspace{3mm}
 
 \underline{Demostración:} $\{A_1, A_2,..., A_n\}$ conjuntos abiertos y $A = \displaystyle \bigcap_{i = 1}^n A_i$.  ¿A es un conjunto abierto? 
 
-Dado $x \in A \Rightarrow x \in A_1, x \in A_2,..., x \in A_n \Rightarrow \exists r_1, r_2,..., r_n$ tal que $ B_{r_1}(x) \subset  A_1, B_{r_2}(x) \subset A_2,..., B_{r_n}(x) \subset A_n$, tomando $r \leq min \{r_i\}^{n_i=1} \Rightarrow B_r(x) \subset \displaystyle \bigcap_{i = 1}^n A_i = A$.
+\dindent Dado $x \in A \Rightarrow x \in A_1, x \in A_2,..., x \in A_n \Rightarrow \exists r_1, r_2,..., r_n$ tal que $ B_{r_1}(x) \subset  A_1, B_{r_2}(x) \subset$
 
-\end{itemize}
+\dindent $\subset A_2,..., B_{r_n}(x) \subset A_n$, tomando $r \leq min \{r_i\}^{n_i=1} \Rightarrow B_r(x) 
+\subset \displaystyle \bigcap_{i = 1}^n A_i = A$.
+\vspace{3mm}
+
 
 %LIMITES DE SUCESIONES EN Rn. COMPLETITUD.
 
 \subsection{Límites de sucesiones en $\mathbf{\R^n}$. Completitud.}
 \vspace{3mm}
 
--\underline{Definición:} Una \textbf{sucesión en} $\mathbf{\R^n}$ es una colección de n sucesiones en $\R : \{A_k\}_{k \in \N} = \{(a_1^k, a_2^k,..., a_n^k)\}_{k \in \N}$.
-\vspace{1mm}
+-\underline{Definición:} Una \textbf{sucesión en} $\mathbf{\R^n}$ es una colección de n sucesiones en $\R 
+: \{A_k\}_{k \in \N} = \{(a_1^k, a_2^k,..., a_n^k)\}_{k \in \N}$.
+\vspace{3mm}
 
-\indent \underline{Ejemplos:} $\{A_k\}_{k \in \N} = \left\{ \left (k, \bfrac{1}{k^2}, e^{-k}\right ) \right \}_{k \in \N}; \{A_k\}_{k \in \N} = \left \{ \left (\bfrac{3k^2}{k^2-1}, \bfrac{1}{k}, \log \bfrac{k+1}{k} \right )\right \}_{k \in \N}$.\vspace{5mm}
+\indent \underline{Ejemplos:} $\{A_k\}_{k \in \N} = \left\{ \left (k, \bfrac{1}{k^2}, e^{-k}\right ) \right \} 
+_{k \in \N}; \{A_k\}_{k \in \N} = \left \{ \left (\bfrac{3k^2}{k^2-1}, \bfrac{1}{k}, \log \bfrac{k+1}{k} \right 
+)\right \}_{k \in \N}$.\vspace{5mm}
 
-\noindent-\underline{Definición:} Dada una sucesión $\{A_k\}_{k \in \N} \in \R^n$ y un punto $L \in \R^n$, diremos que el límite de $\{A_k\}_{k \in \N}$ es $L$ y escribimos: 
+\noindent-\underline{Definición:} Dada una sucesión $\{A_k\}_{k \in \N} \in \R^n$ y un punto $L \in \R^n$, 
+diremos que el límite de $\{A_k\}_{k \in \N}$ es $L$ y escribimos: 
 \[
-\boxed{\displaystyle \lim_{k \to \infty} A_k = L \iff \forall \epsilon > 0 \spac \exists N \in \N : \|A_k - L\| < \epsilon \spac \forall k > N\text{, es decir, } \forall k > N \spac A_k \in B_\epsilon (l)}
-\]\vspace{2mm}
+\boxed{\displaystyle \lim_{k \to \infty} A_k = L \iff \forall \epsilon > 0 \spac \exists N \in \N : \|A_k - L\| < 
+\epsilon \spac \forall k > N\text{, es decir, } \forall k > N \spac A_k \in B_\epsilon (l)}
+\]
 
 %LEMA
 
-\noindent $\bullet$ \underline{Lema:} Dada una sucesión en $\R^n : \{A_k\}_{k \in \N} = \{(a^k_1, a^k_2,..., a^k_n)\}_{k \in \N}$ y un punto $L = (l_1, l_2,..., l_n) \in \R^n$, se tiene:
+\lema Dada una sucesión en $\R^n : \{A_k\}_{k \in \N} = \{(a^k_1, a^k_2,..., a^k_n)\}_{k \in \N}$ y un 
+punto $L = (l_1, l_2,..., l_n) \in \R^n$, se tiene:
+
 \[
 \boxed{\displaystyle \lim_{k \to \infty} A_k = L \iff \lim_{k \to \infty} a_i^k = l_i \spac \forall i = 1, 2,..., n}
 \]
+\vspace{3mm}
 
 \underline{Demostración:}
 $\Rightarrow$) Queremos ver que $\forall \epsilon > 0 \spac \exists N \in \N : |a_i^k - l_i| < \epsilon \spac \forall k > N \forall i = 1, 2,..., n$.\vspace{1mm}\\
@@ -1202,6 +1230,8 @@ z = f (x_0, y_0) + \bfrac{\partial f}{\partial x} (x_0, y_0) (x - x_0) + \bfrac{
 
 Por tanto, la condición de diferenciabilidad para la función $f : \R^2 \to \R$ \indent es:
 
+%Condición de diferenciabilidad
+
 \[
 \boxed{
 \displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{f (x, y) - f  (x_0, y_0) - \frac{\partial f}{\partial x} (x_0, y_0)
@@ -1243,7 +1273,9 @@ y^2]}^3} < \delta + \underbrace{\delta^2}_{< \delta} < 2 \delta$
 Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$.
 \vspace{5mm}
 
-\definicion Sea $U$ un abierto en $\R^n$ decimos que $f : U  \to \R^m$ es \underline{diferenciable} en un 
+%Diferenciabilidad y matriz jacobiana
+
+\definicion Sea $U$ un abierto en $\R^n$ decimos que $f : U  \to \R^m$ es \textbf{diferenciable} en un 
 punto $x_0 = (x_0^1, x_0^2,..., x_0^n) \in U$ si existen todas las derivadas parciales de $f \text{ en } x_0$, 
 y se cumple:
 
@@ -1265,19 +1297,23 @@ x_n}\\
 \vspace{5mm}
 \]
 
-\observacion A $Df (x_0)$, además de derivada de $f \text{ en } x_0$, también se le llama \underline{matriz 
+\observacion A $Df (x_0)$, además de derivada de $f \text{ en } x_0$, también se le llama \textbf{matriz 
 jacobiana} de $f \text{ en } x_0$.
 \vspace{7mm}
 
+%Gradiente
+
 \definicion Un caso particular de $Df$ es cuando $m = 1$, es decir, el conunto de llegada de la función es 
-$\R$. A esta matriz jacobiana se le llama \underline{gradiente} y se denota:
+$\R$. A esta matriz jacobiana se le llama \textbf{gradiente} y se denota:
 \[
 \boxed{
-\nabla f (x_1, x_2,..., x_n) = \left ( \bfrac{\partial f}{\partial x_1}, \bfrac{\partial f}{\partial x_2},..., \bfrac{ 
-\partial f}{\partial x_n}\right )
+\vec{\nabla} f (x_1, x_2,..., x_n) = \left ( \bfrac{\partial f}{\partial x_1}, \bfrac{\partial f}{\partial x_2},..., 
+\bfrac{\partial f}{\partial x_n}\right )
 }
 \]
 \vspace{5mm}
+
+%Diferenciabilidad y continuidad
 
 \teorema Sea $U \subset \R^n$, $f : U \to \R^m$ es diferenciable en $x_0 \in U \Rightarrow f \text{ es 
 continua en un entorno del punto } x_o \in U$.
@@ -1429,7 +1465,7 @@ $ \, \star 2xy < x^2 + y^2$
 Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$, por lo que $f_y$ también es continua.
 \vspace{7mm}
 
-\definicion Sea $U \subset \R^n$ un abierto y $f : U \to \R^m$, decimos que $f$ es de \underline{clase 
+\definicion Sea $U \subset \R^n$ un abierto y $f : U \to \R^m$, decimos que $f$ es de \textbf{clase 
 $C' (U)$}, y escribimos $f \in C' (U)$ si:
 \[
 \boxed{
@@ -1437,6 +1473,8 @@ $C' (U)$}, y escribimos $f \in C' (U)$ si:
 }
 \]
 \vspace{3mm}
+
+%Propiedades de la matriz jacobiana
 
 \teorema Sean $U \subset \R^n$ un abierto y $f, g : U \to \R^m$ tales que $\exists Df (x_0) \text{, } Dg 
 (x_0)$ matrices acobianas:
@@ -1458,15 +1496,65 @@ $C' (U)$}, y escribimos $f \in C' (U)$ si:
 \vspace{7mm}
 
 \subsection{Derivadas direccionales}
+\vspace{3mm}
 
 \definicion Dado un vector $\vec{u}$ unitario en $\R^n \text{, un abierto } U \subset \R^n \text{ y } \\
-f : U \to \R^m$, se define la \underline{derivada direccional} de $f$, según el vector $\vec{u}$, en un punto 
+f : U \to \R^m$, se define la \textbf{derivada direccional} de $f$, según el vector $\vec{u}$, en un punto 
 $x_0 \in U$ como:
+\vspace{3mm}
+
 \[
 \boxed{
 D_{\vec{u}} f (x_0) = \displaystyle \lim_{t \to 0} \bfrac{f (x_0 + t \vec{u}) - f (x_0)}{t} = \bfrac{d}{dt} 
 f (x_0 + t \vec{u}) |_{t = 0}
 }
 \]
+\vspace{5mm}
+
+\underline{Ejemplo:}  Hallar la derivada direccional de $f : (x, y) = x^2 + y^2$ en la dirección del vector 
+$\vec{v} = 2 \vec{i} - 3 \vec{j}$.
+\vspace{3mm}
+
+$\vec{u} = \bfrac{\vec{v}}{\|\vec{v}} = \bfrac{2}{\sqrt{13}} \vec{i} - \bfrac{3}{\sqrt{13}} \vec{j}$
+\vspace{3mm}
+
+$D_{\vec{u}} f (1, 2) = \bfrac{d}{dt} \left .\left [f \left ( 1 + \bfrac{2t}{\sqrt{13}} , 2 - \bfrac{3t}{\sqrt{13}} 
+\right ) \right ] \right |_{t =0} = \bfrac{d}{dt} \left . \left [ {\left ( 1 + \bfrac{2t}{\sqrt{13}} \right )}^2 
++ {\left ( 2 - \bfrac{3t}{\sqrt{13}} \right )}^2 \right ] \right |_{t = 0} = \\ \indent = \bfrac{4 - 12}
+{\sqrt{13}} = \bfrac{-8}{\sqrt{13}}$
+\vspace{5mm}
+
+\proposicion Sean $U \subset \R^n \text{, } f : U \to \R \text{ diferenciable  en } x_0 \in U \text{ y } \vec{u} 
+$ un vector unitario, entonces:
+\vspace{3mm}
+
+\[
+\boxed{
+D_{\vec{u}} f (x_0) = < \vec{\nabla} f (x_0), \vec{u} >
+}
+\]
+\vspace{3mm}
+
+\boxed{$n =2$} \spac $f : U \subset \R^2 \to \R$
+\vspace{3mm}
+
+$D_{\vec{u}} f (x_0, y_0) = \displaystyle \lim_{t \to 0} \bfrac{f ( (x_0, y_0) + t (u_1, u_2) ) - f (x_0, y_0)}
+{t} = \\ \indent = \lim_{t \to 0} \bfrac{f (x_0 - t u_1, y_0 - tu_2) - f (x_0, y_0) + f (x_0, y_0 + tu_2) - f (x_0, y_0 - tu_2)}{t} = \\ \indent = \lim_{t \to 0} \bfrac{f (x_0 + tu_1, y_0- tu_2) - f (x_0, y_0 - tu_2)}{t} + 
+\lim_{t \to 0} \bfrac{f (x_0, y_0 - tu_2) - f (x_0, y_0)}{t} =$
+\vspace{3mm}
+
+$h =tu_1 \quad t \to 0 \iff h \to 0 \hspace{1.5cm} h' = tu_2 \quad t \to 0 \iff h \to 0 \hspace{1.5cm} 
+\hat{y}_0 = y_0 + tu_2 \xrightarrow[t \to 0]{} y_0$
+\vspace{3mm}
+
+$=\displaystyle \underbrace{\lim_{h \to 0} \bfrac{f (x_0 + h, \hat{y}_0) - f (x_0, \hat{y}_0)}{h}} 
+_{\bfrac{\partial f}{\partial x} (x_0, y_0)} u_1 + \underbrace{\lim_{h \to 0} \bfrac{f (x_0, y_0 + h') - 
+f (x_0, y_0)}{h'}}_{\bfrac{\partial f}{\partial y} (x_0, y_0)} u_2$
+\vspace{7mm}
+
+\subsection{Más sobre funciones diferenciables y el vector gradiente}
+\vspace{3mm}
+
+(I) Dirección de máximo crecimiento de $f : U \subset \R^n \to \R$.
 
 \end{document}
