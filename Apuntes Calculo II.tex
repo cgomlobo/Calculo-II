@@ -33,7 +33,7 @@
 \newcommand{\teorema}[1][\!\!]{\noindent$\bullet$ \underline{Teorema #1:} }
 \newcommand{\lema}[1][\!\!]{\noindent$\bullet$ \underline{Lema #1:} }
 \newcommand{\proposicion}[1][\!\!]{\noindent$\bullet$ \underline{Proposición #1:} }
-\newcommand{\observacion}{\noindent$\star$ \underline{Observación:} }
+\newcommand{\observacion}[1][\!\!]{\noindent$\ast$ \underline{Observación #1:} }
 \newcommand{\dindent}{\indent\indent}
 \newcommand{\tindent}{\indent\indent\indent}
 \newcommand{\limdef}[2]{$\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x ,y) - #1\| < \delta \Rightarrow 
@@ -355,15 +355,15 @@ $\Rightarrow -y_0 < b-y_0 < y_0 \Rightarrow 0< b < 2 y_0 \Rightarrow b > 0 \Righ
 \subsection{Límites de sucesiones en $\mathbf{\R^n}$. Completitud.}
 \vspace{3mm}
 
--\underline{Definición:} Una \textbf{sucesión en} $\mathbf{\R^n}$ es una colección de n sucesiones en $\R 
+\definicion Una \textbf{sucesión en} $\mathbf{\R^n}$ es una colección de n sucesiones en $\R 
 : \{A_k\}_{k \in \N} = \{(a_1^k, a_2^k,..., a_n^k)\}_{k \in \N}$.
 \vspace{3mm}
 
-\indent \underline{Ejemplos:} $\{A_k\}_{k \in \N} = \left\{ \left (k, \bfrac{1}{k^2}, e^{-k}\right ) \right \} 
-_{k \in \N}; \{A_k\}_{k \in \N} = \left \{ \left (\bfrac{3k^2}{k^2-1}, \bfrac{1}{k}, \log \bfrac{k+1}{k} \right 
-)\right \}_{k \in \N}$.\vspace{5mm}
+\underline{Ejemplos:} $\{A_k\}_{k \in \N} = \left\{ \left (k, \bfrac{1}{k^2}, e^{-k}\right ) \right \}_{k \in \N}; \{A_k\}_{k \in \N} = \left \{ \left (\bfrac{3k^2}{k^2-1}, \bfrac{1}{k}, \log \bfrac{k+1}{k} \right 
+)\right \}_{k \in \N}$.
+\vspace{5mm}
 
-\noindent-\underline{Definición:} Dada una sucesión $\{A_k\}_{k \in \N} \in \R^n$ y un punto $L \in \R^n$, 
+\definicion Dada una sucesión $\{A_k\}_{k \in \N} \in \R^n$ y un punto $L \in \R^n$, 
 diremos que el límite de $\{A_k\}_{k \in \N}$ es $L$ y escribimos: 
 \[
 \boxed{\displaystyle \lim_{k \to \infty} A_k = L \iff \forall \epsilon > 0 \spac \exists N \in \N : \|A_k - L\| < 
@@ -381,49 +381,71 @@ punto $L = (l_1, l_2,..., l_n) \in \R^n$, se tiene:
 \vspace{3mm}
 
 \underline{Demostración:}
-$\Rightarrow$) Queremos ver que $\forall \epsilon > 0 \spac \exists N \in \N : |a_i^k - l_i| < \epsilon \spac \forall k > N \forall i = 1, 2,..., n$.\vspace{1mm}\\
-$|a_i^k - l_i| =\sqrt{(a_i^k - l_i)^2} \leq \sqrt{(a_1^k - l_1)^2 + (a_1^k - l_2)^2 + ... + (a_i^k - l_i)^2 +... + (a_n - l_n)^2} = \quad = \|A_k - L\| \leq \epsilon \spac \checkmark$\vspace{3mm}
+\vspace{3mm}
 
-\noindent $\Leftarrow$) Como $\displaystyle \lim_{k \to \infty} a_i^k = l \spac \forall i = 1, 2,..., n$, sabemos que $\forall \epsilon > 0 :$
+$\Rightarrow$) Queremos ver que $\forall \epsilon > 0 \spac \exists N \in \N : |a_i^k - l_i| < \epsilon \spac 
+\forall k > N \forall i = 1, 2,..., n$.
+\vspace{3mm}
 
-$\exists N_1 \in \N \text{ tal que } |a_1^k - l_1| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_1$
+$|a_i^k - l_i| =\sqrt{(a_i^k - l_i)^2} \leq \sqrt{(a_1^k - l_1)^2 + (a_1^k - l_2)^2 + ... + (a_i^k - l_i)^2 +... 
++ (a_n - l_n)^2} =
+$
 
-$\exists N_2 \in \N \text{ tal que } |a_2^k - l_2| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_2$
+$ = \|A_k - L\| \leq \epsilon \spac \checkmark$
+\vspace{3mm}
 
-\quad \quad \quad \quad \quad \quad \quad \quad \vdots
+$\Leftarrow$) Como $\displaystyle \lim_{k \to \infty} a_i^k = l \spac \forall i = 1, 2,..., n$, sabemos que $\forall \epsilon > 0 :$
+\vspace{3mm}
 
-$\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_n$
+$
+\begin{array}{c}
+\exists N_1 \in \N \text{ tal que } |a_1^k - l_1| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_1 
+\vspace{1mm}\\
+\exists N_2 \in \N \text{ tal que } |a_2^k - l_2| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_2 \\
+\vdots\\
+\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall k > N_n\\
+\end{array}
+$
+\vspace{3mm}
+
+\noindent Entonces, $\forall k \geq \max \{N_1, N_2,..., N_n\}$ tenemos simultáneamente que $|a_i^k - l_k| 
+< \bfrac{\epsilon}{\sqrt{n}} \spac \forall i = 1, 2,..., n$, por tanto:
 \vspace{1mm}
 
-\noindent Entonces, $\forall k \geq \max \{N_1, N_2,..., N_n\}$ tenemos simultáneamente que $|a_i^k - l_k| < \bfrac{\epsilon}{\sqrt{n}} \spac \forall i = 1, 2,..., n$, por tanto:
-\vspace{1mm}
+\noindent$\|A_k - L\| = \sqrt{(a_1^k - l_1)^2 + (a_1^k - l_2)^2 + ... + (a_i^k - l_i)^2 +... + (a_n - l_n)^2} 
+\leq \sqrt{n \left (\bfrac{\epsilon}{\sqrt{n}}\right )^2} = \epsilon \spac \checkmark$
+\vspace{3mm}
 
-\noindent$\|A_k - L\| = \sqrt{(a_1^k - l_1)^2 + (a_1^k - l_2)^2 + ... + (a_i^k - l_i)^2 +... + (a_n - l_n)^2} \leq \vspace{1mm} \\ \leq \sqrt{n \left (\bfrac{\epsilon}{\sqrt{n}}\right )^2} = \epsilon \spac \checkmark$
-
-\underline{Ejemplo:} Hallar el límite $\displaystyle \lim_{k \to \infty} \left \{\left ( \bfrac{\log{x}}{x^2}, \bfrac{x^2-1}{5 x^2} \right )\right \}_{k \in \N}$.
+\underline{Ejemplo:} Hallar el límite $\displaystyle \lim_{k \to \infty} \left \{\left ( \bfrac{\log{x}}{x^2}, 
+\bfrac{x^2-1}{5 x^2} \right )\right \}_{k \in \N}$.
+\vspace{3mm}
 
 \[
 \left.\begin{array}{lc}\displaystyle
 
-\lim_{k \to \infty} \bfrac{\log{k}}{k^2} \eqc{L'H} \lim_{k \to \infty} \bfrac{\sfrac{1}{k}}{2 k} = \lim_{k \to \infty} \bfrac{1}{2 k^2} = 0 \\
+\lim_{k \to \infty} \bfrac{\log{k}}{k^2} \eqc{L'H} \lim_{k \to \infty} \bfrac{\sfrac{1}{k}}{2 k} = \lim_{k \to 
+\infty} \bfrac{1}{2 k^2} = 0 \\
 
 \lim_{k \to \infty} \bfrac{x^2 - 1}{5 x^2} = \bfrac{1}{5}
 
 \end{array}\right \}
-\displaystyle \lim_{k \to \infty} \left \{\left ( \bfrac{\log{x}}{x^2}, \bfrac{x^2-1}{5 x^2} \right )\right \} = (0, 5)
+\displaystyle \lim_{k \to \infty} \left \{\left ( \bfrac{\log{x}}{x^2}, \bfrac{x^2-1}{5 x^2} \right )\right \} = 
+(0, 5)
 \]
-\vspace{3mm}
+\vspace{5mm}
 
 %Propiedad de completitud
 
-\noindent-\underline{Definición:} La \textbf{propiedad de completitud} dice que toda sucesión de Cauchy converge en el espacio.
+\definicion La \textbf{propiedad de completitud} dice que toda sucesión de Cauchy converge en el espacio.
 \vspace{5mm}
 
-\noindent-\underline{Definición:} Una sucesión $\{ A_k\}_{k \in \N}$ es de \textbf{Cauchy} en $\R^n$ si $\forall \epsilon >0 \spac \exists N \in \N : \|A_{k_1} - A-{k_2}\| < \epsilon \spac \forall k_1, k_2 > N$.
+\definicion Una sucesión $\{ A_k\}_{k \in \N}$ es de \textbf{Cauchy} en $\R^n$ si $\forall \epsilon >0 \spac 
+\exists N \in \N : \|A_{k_1} - A_{k_2}\| < \epsilon \spac \forall k_1, k_2 > N$.
 \vspace{5mm}
 
-\noindent $\bullet$ \underline{Teorema:} El espacio euclídeo $\R^n$ es \textbf{completo}, es decir, toda sucesión de Cauchy es convergente.
-\vspace{2mm}
+\teorema El espacio euclídeo $\R^n$ es \textbf{completo}, es decir, toda sucesión de Cauchy es 
+convergente.
+\vspace{3mm}
 
 \underline{Demostrción:} Pendiente como ejercicio.
 \vspace{5mm}
@@ -431,32 +453,43 @@ $\exists N_n \in \N \text{ tal que } |a_n^k - l_n| < \bfrac{\epsilon}{\sqrt{n}} 
 \subsection{Más sobre la topología de $\mathbf{\R^n}$}
 \vspace{5mm}
 
-%Punto interior
+%Más sobre la topología de Rn
 
--\underline{Definición:} Sea $A$ un conjunto de $\R^n$. Diremos que un punto $x \in A$  es un \textbf{punto interior} de $A$ si $\exists r > 0 \text{ tal que } B_r (x) \in A$. Al conjunto de puntos interiores de $A$ se le denota $\mathring{A} \eqc{not} int(A)$.
+\definicion Sea $A$ un conjunto de $\R^n$. Diremos que un punto $x \in A$  es un \textbf{punto interior} 
+de $A$ si $\exists r > 0 \text{ tal que } B_r (x) \in A$. Al conjunto de puntos interiores de $A$ se le denota $ 
+\mathring{A} \eqc{not} int(A)$.
 \vspace{3mm}
 
-\underline{Ejercicio 1:} Dado $A = \{(x, y) \in \R^n : |x|<1, |y| \leq 1 \}$. Hallar $\mathring{A}$.
+\underline{Ejemplo 1:} Dado $A = \{(x, y) \in \R^n : |x|<1, |y| \leq 1 \}$, hallar $\mathring{A}$.
 \vspace{3mm}
 
-1) $\forall (x, y) \N A : |y| = 1 \Rightarrow (x, \pm 1) (\text{ con } |x| < 1) \spac (x, 1) \in A, \forall r > 0 \rightarrow \\ \rightarrow (x, 1 + \sfrac{r}{2}) \inc{?} A \spac |1 + \sfrac{r}{2}| = 1 + \sfrac{r}{2} > 1 \Rightarrow B_r(x, 1) \not \subset A$
+\dindent 1) $\forall (x, y) \N A : |y| = 1 \Rightarrow (x, \pm 1) (\text{ con } |x| < 1) \spac (x, 1) \in A, \forall 
+r > 0 \rightarrow (x, 1 + \sfrac{r}{2}) \inc{?} A \spac |1 + \sfrac{r}{2}| =$
 
-2) $\forall (x, y) \subset A \spac |x|, |y| < 1$:
-\[
-*\left. \begin{array}{rc}
+\dindent $= 1 + \sfrac{r}{2} > 1 \Rightarrow B_r(x, 1) \not\subset A$
+\vspace{3mm}
 
-r \leq 1- |x| donde |y| \leq |x|\\
-r \leq 1- |y| donde |x| \leq |y|
+\dindent 2) $\forall (x, y) \subset A \spac |x|, |y| < 1$:
 
-\end{array}\right \}\spac\parbox{10cm}{en cualquier caso $r = 1 - \max{\{|x|, |y|\}} = \\ =\min{\{1 - |x|,
+ \[
+\dindent *\left. \begin{array}{rccc}
+
+r \leq 1- |x| & \text{donde} & |y| \leq |x|\\
+r \leq 1- |y| & \text{donde} & |x| \leq |y|
+
+\end{array}\right \}\spac\parbox{10cm}{en cualquier caso $r = 1 - \max{\{|x|, |y|\}} = \min{\{1 - |x|, 
  1 - |y|\}}$}
 \]
+\vspace{3mm}
 
-Tenemos que ver que $B_r (x, y) \subset A$, es decir, $\forall (a, b) \in B_r(x, y)$ se tiene que $|a| < 1
- \text{ y } |b| \leq 1 \Rightarrow (a, b) \in A$
+Tenemos que ver que $B_r (x, y) \subset A$, es decir, $\forall (a, b) \in B_r(x, y)$ se tiene que $|a| < 1 
+\text{ y } |b| \leq 1 \Rightarrow$
 
-$|a| = |a - x + x| \leqc{D.T.} \underbrace{|a-x|}_{\sqrt{(a - x)^2}} + |x| \leq \underbrace{\|(a, b) - (x, y
-)\|}_{\sqrt{(a -x)^2 + (b - y)^2}} + |x| < r + |x| \leqc{*} \\ \leqc{*} 1 - |x| +|x| =1$
+$\Rightarrow (a, b) \in A$
+\vspace{3mm}
+
+$|a| = |a - x + x| \leqc{D.T.} \underbrace{|a-x|}_{\sqrt{(a - x)^2}} + |x| \leq \underbrace{\|(a, b) - 
+(x, y)\|}_{\sqrt{(a -x)^2 + (b - y)^2}} + |x| < r + |x| \leqc{*} 1 - |x| +|x| =1$
 \vspace{3mm}
 
 $|b| = |b - y + y| \leqc{D.T.} |b - y| +|y| < r + |y| \leq 1 - |y| + |y| = 1$
@@ -481,116 +514,136 @@ $\forall (a, b) \in B_r(x, y)$ se tiene que $(a, b) \in A \, \checkmark$
 
 %Conjunto cerrado
 
-\noindent-\underline{Definición:} Diremos que un conjunto $C \subset \R^n$ es un \textbf{conjunto
- cerrado} si su complementario $C^c \subset \R^n$, es un conjunto abierto.
+\definicion Diremos que un conjunto $C \subset \R^n$ es un \textbf{conjunto cerrado} si su complementario 
+$C^c \subset \R^n$, es un conjunto abierto.
 \vspace{3mm}
 
-\underline{Ejercicio 2:} Demostrar que la bola $C = \{ (x, y) : \underbrace{x^2 + y^2 \leq R^2}_{\|(x, y
+\underline{Ejemplo 2:} Demostrar que la bola $C = \{ (x, y) : \underbrace{x^2 + y^2 \leq R^2}_{\|(x, y
 )\|} \leq R\}$ es un conjunto cerrado en $\R^2$.
 \vspace{3mm}
 
 $C$  cerrado en $\R^2 \text{ si } C^c = \{(x, y) \in \R^2 : \underbrace{x^2 + y^2}_{\|(x, y)\|} > R\}$ es
- un conjunto abierto en $\R^2$, es decir, $\forall (x_0, y_0) \in C^c \spac \exists r > 0 : B_r (x_0, y_0)
- \subset C^c$.
+ un conjunto abierto en $\R^2$, es decir, 
+
+$\forall (x_0, y_0) \in C^c \spac \exists r > 0 : B_r (x_0, y_0) \subset C^c$.
 \vspace{3mm}
 
-Tomamos $r = \| (x_0, y_0) \| - R \Rightarrow \forall (a, b) \in B_r (x_0, y_0) \text{, ¿} a, b \in C^c \text{,
- es decir, } \| (a, b) \| > \quad > R$?
+Tomamos $r = \| (x_0, y_0) \| - R \Rightarrow \forall (a, b) \in B_r (x_0, y_0) \text{, ¿} a, b \in C^c 
+\text{, es decir, } \| (a, b) \| >R$?
 \vspace{2mm}
 
 $\| (x_0, y_0) \| = \| (x_0, y_0) - (a, b) + (a, b) \| \leqc{D.T.} \underbrace{\| (x_0, y_0) - (a, b) \|}_{< r =
- \| (x_0, y_0) \| - R} + \| (a, b) \| < \quad < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \| (x_0, y_0) \| <
- \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow \\ \Rightarrow R < \| (a, b) \| \, \checkmark$
-\vspace{5mm}
+ \| (x_0, y_0) \| - R} + \| (a, b) \| < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow$
 
-\noindent$\bullet$ \underline{Proposición 1:}
+$\Rightarrow \| (x_0, y_0) \| < \| (x_0, y_0) \| - R + \| (a, b) \| \Rightarrow R < \| (a, b) \| \, \checkmark$
+\vspace{7mm}
+
+\proposicion[1]
 \vspace{3mm}
 
 (i) La unión finita de conjuntos cerrados es un conjunto cerrado.
 \vspace{3mm}
 
-(ii) La intersección (infinita o finita) de conjuntos cerrados, es un conjunto \indent cerrado.
-\vspace{3mm}
+(ii) La intersección (infinita o finita) de conjuntos cerrados, es un conjunto cerrado.
+\vspace{5mm}
 
-$\ast$\underline{Observación:} La unión infinita de conjuntos cerrados no es, en general, \indent un
- conjunto cerrado.
-\vspace{3mm}
+\observacion La unión infinita de conjuntos cerrados no es, en general, un conjunto cerrado.
+\vspace{5mm}
 
 -Bolas \textbf{abiertas} en $\R^2: \spac B_R (x_0, y_0) = \{ (x, y) \in \R^2 : \underbrace{(x-x_0)^2 + (y -
  y_0)^2 < R^2}_{\| (x, y) - (x_0, y_0)\| <R}\}$
+\vspace{3mm}
 
 -Bolas \textbf{cerradas} en $\R^2:  \spac \overline{B_R (x_0, y_0)} = \{(x , y) \in \R^2 : \underbrace{(x -
  x_0)^2 + (y - y_0)^2 \leq R^2}_{\|(x, y) - (x_0, y_0)\| \leq R}\}$
 \vspace{3mm}
 
-\noindent$\ast$\underline{Observación 1:} No todos los conjuntos de $\R^n$ son necesariamente abiertos 
-o cerrados.
-\vspace{3mm}
+\observacion[1] No todos los conjuntos de $\R^n$ son necesariamente abiertos o cerrados.
+\vspace{5mm}
 
-\noindent$\ast$\underline{Observación 2:} El vacío y $\R^n$ (por convención) son abiertos y cerrados al
+\observacion[2] El vacío y $\R^n$ (por convención) son abiertos y cerrados al
  mismo tiempo.
-\vspace{3mm}
+\vspace{5mm}
 
-\noindent$\bullet$ \underline{Proposición 2 (Caracterización de los conjuntos cerrados por sucesiones):}
+\proposicion[2 (Caracterización de los conjuntos cerrados por sucesiones)]
+\vspace{3mm}
 
 \[
 \boxed{C \subset \R^n \text{ es un cerrado } \iff \forall {A_k}_{k \in \N} \subset C \text{ con }
  \displaystyle \lim_{k \to \infty}^{} A_k = L \text{ se tiene que } \\ L \in C}
 \]
-
-\underline{Demostrción:} Argumentamos (en ambas implicaciones) por reducción al absurdo:
-\vspace{2mm}
-
-$\Rightarrow$ ) Supongamos que $L \not\in C \Rightarrow L \in C^c \text{ abierto } \Rightarrow \exists 
-r > 0 \text{ tal que } B_r (L) \subset C^c \text{. Como} \displaystyle \lim_{k \to \infty} A_k = L, \spac
-\forall \epsilon > 0  \exists N \in \N \text{ tal que }|A_k - L| > \epsilon \spac \forall k > N \text{, es decir, 
-}A_k \in B_\epsilon (L) \spac \forall k>N \text{. Si tomamos } \epsilon = r : A_k \in B_r (L) \text{
- \underline{Contradicción}}\spac A_k \in C \text{ y } \\ B_r (L) \subset C^c$
 \vspace{3mm}
 
-$\Leftarrow$ ) Supongamos que $C$ no es un cerrado $\Rightarrow C^c$ no es un abierto $\Rightarrow \\
-\Rightarrow \exists x_0 \in C^c \text{ tal que } \forall r>0 \spac B_r (x) \not\subset C^c \text{, es decir, }
-B_r (x_0) \cap C \neq \emptyset \spac  \forall{ r > 0 }\text{. Tomamos } \\ r =  \bfrac{1}{k}
- \Rightarrow B_{\sfrac{1}{k}} (x_0) \cap C \neq \emptyset \Rightarrow \exists \{A_k\}_{k \in \N} \subset
- B_{\sfrac{1}{k}} \cap C, \{A_k\}_{k \in \N} \rightarrow x_0 \in C \\ \text{\underline{Contradicción} porque } x_0 \subset C^c$.
+\underline{Demostrción:} Argumentamos (en ambas implicaciones) por reducción al absurdo:
+\vspace{3mm}
+
+$\Rightarrow$ ) Supongamos que $L \not\in C \Rightarrow L \in C^c \text{ abierto } \Rightarrow \exists 
+r > 0 \text{ tal que } B_r (L) \subset C^c \text{. Como} \displaystyle \lim_{k \to \infty} A_k = L,$
+
+$\forall \epsilon > 0  \spac \exists N \in \N \text{ tal que }|A_k - L| > \epsilon \spac \forall k > N \text{, es 
+decir, }A_k \in B_\epsilon (L) \spac \forall k>N \text{. Si tomamos }$
+
+$\epsilon = r : A_k \in B_r (L)$
+\vspace{3mm}
+
+\underline{Contradicción} $A_k \in C \text{ y } B_r (L) \subset C^c$
+\vspace{3mm}
+
+$\Leftarrow$ ) Supongamos que $C$ no es un cerrado $\Rightarrow C^c$ no es un abierto $\Rightarrow \exists x_0 \in C^c \text{ tal que } \forall r>0$
+
+$B_r (x) \not\subset C^c \text{, es decir, }
+B_r (x_0) \cap C \neq \emptyset \spac  \forall{ r > 0 }\text{. Tomamos } r =  \bfrac{1}{k}
+ \Rightarrow B_{\sfrac{1}{k}} (x_0) \cap C \neq \emptyset \Rightarrow$
+
+$\Rightarrow \exists \{A_k\}_{k \in \N} \subset B_{\sfrac{1}{k}} \cap C, \{A_k\}_{k \in \N} \rightarrow x_0 
+\in C$
+\vspace{3mm}
+
+\underline{Contradicción} $x_0 \in C^c$.
 \vspace{5mm}
 
 %Punto de adherencia
 
-\noindent-\underline{Definición:} Sea $C$ un conjunto cualquiera en $\R^n$ y $x \in \R^n$, diremos que 
-$x$ es un \textbf{punto de adherencia/clausura} de $C$ si $\forall{r>0} \spac B_r (x) \cap C \neq \emptyset
-$ y el conjunto de puntos que cumplen esta condición se denota:
+\definicion Sea $C$ un conjunto cualquiera en $\R^n$ y $x \in \R^n$, diremos que 
+$x$ es un \textbf{punto de adherencia o clausura} de $C$ si $\forall{r>0} \spac B_r (x) \cap C \neq \emptyset$ y el conjunto de puntos que cumplen esta condición se denota:
+
 \[
 \boxed{\overline{C} = \{x \in \R^n : \forall{r>0} \spac B_r (x 
 \cap C \neq \emptyset\}}
 \]
+\vspace{3mm}
 
 \underline{Propiedades:} 
 \vspace{3mm}
 
-\indent \indent (1) $\overline{C}$ es un conjunto cerrado.
+\dindent (1) $\overline{C}$ es un conjunto cerrado.
 \vspace{3mm}
 
-\indent \indent(2) $C \subset \overline{C}$.
+\dindent (2) $C \subset \overline{C}$.
 \vspace{3mm}
 
-\indent \indent(3) Si $C$ es cerrado $C = \overline{C}$.
+\dindent (3) Si $C$ es cerrado $C = \overline{C}$.
 \vspace{5mm}
 
-\underline{Ejercicio 3:} Sea $C = \left \{ \left ( \bfrac{1}{k} , \bfrac{1}{k} \right ) \right \}_{k \in \N}
+\underline{Ejemplo 3:} Sea $C = \left \{ \left ( \bfrac{1}{k} , \bfrac{1}{k} \right ) \right \}_{k \in \N}
 $probar que $C \in \overline{C}$.
+\vspace{3mm}
 
-$\displaystyle \lim_{k \to 0} \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) = (0, 0) \Rightarrow \forall{\epsilon > 0} \exists N \text{ tal que  } \| \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) - (0, 0) \| < \epsilon \\ \indent
-\forall k > N. \text{ Basta tomar } r = \epsilon \Rightarrow \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) \in
- B_\epsilon (0, 0) \forall{k \geq N} \Rightarrow \\ \indent \Rightarrow C \cap B_r (0, 0) \neq \emptyset$
-\vspace{5mm}
+\dindent $\displaystyle \lim_{k \to 0} \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) = (0, 0) \Rightarrow 
+\forall{\epsilon > 0} \exists N \text{ tal que  } \| \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) - (0, 0) \| < \epsilon 
+\forall k > N.$
+\vspace{3mm}
+
+$\text{ Basta tomar } r = \epsilon \Rightarrow \left (\bfrac{1}{k} , \bfrac{1}{k} \right ) \in B_\epsilon (0, 0) 
+\forall{k \geq N} \Rightarrow C \cap B_r (0, 0) \neq \emptyset$
+\vspace{7mm}
 
 %DEFINICIONES
 
-\noindent-\underline{Definición:} Sea $C$ un conjunto cualquiera de $\R^n$ y $x \in \R^n$. Diremos que 
-$x$ es un \textbf{punto de acumulación} de $C$ si $\forall{r > 0} \spac B_r(x) \setminus \{x\} \cap C \neq 
+\definicion Sea $C$ un conjunto cualquiera de $\R^n$ y $x \in \R^n$. Diremos que $x$ es un 
+\textbf{punto de acumulación} de $C$ si $\forall{r > 0} \spac B_r(x) \setminus \{x\} \cap C \neq 
 \emptyset $. A los puntos de acumulación se los denota por $C'$.
-\vspace{3mm}
+\vspace{5mm}
 
 \underline{Propiedades:}
 \vspace{3mm}
@@ -601,66 +654,67 @@ $x$ es un \textbf{punto de acumulación} de $C$ si $\forall{r > 0} \spac B_r(x) 
 \indent \indent (2) En general $\overline{C} \not\subset C'$
 \vspace{5mm}
 
-\noindent-\underline{Definición:} Los puntos de adherencia que no son de acumulación ($\overline{C}
- \setminus C'$) se llaman \textbf{puntos aislados}, es decir, $x \in R^n$ es un punto aislado de un conjunto
-$C \subset \R^n \text{ si } \exists{r > 0} \text{ tal que } B_r (x) \cap C = \{x\}$.
-\vspace{5mm}
+\definicion Los puntos de adherencia que no son de acumulación ($\overline{C} \setminus C'$) se llaman 
+\textbf{puntos aislados}, es decir, $x \in R^n$ es un punto aislado de un conjunto$ C \subset \R^n 
+\text{ si } \exists{r > 0} \text{ tal que } B_r (x) \cap C = \{x\}$.
+\vspace{7mm}
 
-\noindent-\underline{Definición:} Sea $C \subset \R^n$, diremos que un punto $x \in \R^n$ es un
- \textbf{punto frontera} de $C$ si $\forall{r > 0} \text{ se tiene que } B_r (x) \cap C \neq \emptyset 
-\text{ y } x \not\in \mathring{C}$.A este conjunto de puntos se le denota por $\partial C$.
-\vspace{5mm}
+\definicion Sea $C \subset \R^n$, diremos que un punto $x \in \R^n$ es un \textbf{punto frontera} de $C$ 
+si $\forall{r > 0} \text{ se tiene que } \\ B_r (x) \cap C \neq \emptyset \text{ y } x \not\in \mathring{C}$.A 
+este conjunto de puntos se le denota por $\partial C$.
+\vspace{7mm}
 
-\noindent-\underline{Definición:} Un conjunto cualquiera $C \subset \R^n$ está \textbf{acotado} si
-$\exists{M \in \R}, \\ M > 0 \text{ tal que } \forall{x \in C} \text{ se tiene que } \|x\| < M \text{, es decir, }
-C \subset B_M (0,..., 0)$.
-\vspace{5mm}
+\definicion Un conjunto cualquiera $C \subset \R^n$ está \textbf{acotado} si $\exists{M \in \R}, M > 0 
+\text{ tal que } \forall{x \in C} \text{ se tiene que } \\ \|x\| < M \text{, es decir, } C \subset B_M (0,..., 0)$.
+\vspace{7mm}
 
-\noindent-\underline{Definición:} Un \textbf{recubrimiento numerable por abiertos} de un conjunto $S 
+\definicion Un \textbf{recubrimiento numerable por abiertos} de un conjunto $S 
 \subset \R^n$ es una colección numerable de abiertos $\{A_i\} \text{ tal que } S \subset \displaystyle 
 \bigcup_{i=1}^\infty A_i$.
-\vspace{3mm}
+\vspace{5mm}
 
-\noindent-\underline{Definición:} Un conjunto es \textbf{compacto} si para todo recubrimiento por abiertos 
+\definicion Un conjunto es \textbf{compacto} si para todo recubrimiento por abiertos 
 del conjunto se puede extraer un subrecubrimiento finito.
 \vspace{5mm}
 
 %Teorema de Heine-Borel
 
-\noindent$\bullet$ \underline{Teorema de Heine-Borel:} $C \subset \R^n$ es compacto $\iff C$ es cerrado 
+\teorema[de Heine-Borel]$C \subset \R^n$ es compacto $\iff C$ es cerrado 
 y acotado en $\R^n$.
-\vspace{3mm}
+\vspace{5mm}
 
 \underline{Ejemplo 1:} $B_r (x_0, y_0)$ no compactos (n son cerrados).
-\vspace{3mm}
+\vspace{5mm}
 
 \underline{Ejemplo 2:} $\overline{B_r (x_0, y_0)}$ si son compactos.
-\vspace{3mm}
+\vspace{5mm}
 
 \underline{Ejemplo 3:} $S = \left \{ \left ( \bfrac{(-1)^k}{k}, \bfrac{1}{k^2} \right ) \right  \}_{k \in \N}$
-
-\indent \indent Por la proposición 2, como $\displaystyle \lim_{k \to \infty} \left ( \bfrac{(-1)^k}{k},
- \bfrac{1}{k^2} \right ) = (0, 0) \text{ y } (0, 0) \not\in S$, \indent \indent no es  cerrado y por el teorema 
-de Heine-Borel no es compacto.
 \vspace{3mm}
 
-\underline{Ejemplo 4:} $S = \{(k, k^2+1)\}_{k \in \N}$ no está acotado, por tanto por el teorema \indent
- de Heine-Borel tampoco es compacto.
+\dindent Por la proposición 2, como $\displaystyle \lim_{k \to \infty} \left ( \bfrac{(-1)^k}{k},
+ \bfrac{1}{k^2} \right ) = (0, 0) \text{ y } (0, 0) \not\in S$,  no es  cerrado y por el \dindent teorema de 
+Heine-Borel no es compacto.
 \vspace{5mm}
+
+\underline{Ejemplo 4:} $S = \{(k, k^2+1)\}_{k \in \N}$ no está acotado, por tanto por el teorema de 
+Heine-Borel \\ \indent tampoco es compacto.
+\vspace{7mm}
 
 %Teorema de Bolzano-Weierstrass
 
-\noindent$\bullet$ \underline{Teorema de Bolzano-Weierstrass:} Si $C$ es un conjunto de infinitos 
-elementos y acotado $\Rightarrow C' \neq \emptyset$. Es decir, toda sucesión $\{A_k\}_{k \in \N}$ definida 
-en un compacto $C$ posee una subsucesión convergente en $C$.
-\vspace{3mm}
+\teorema[de Bolzano-Weierstrass] Si $C$ es un conjunto de infinitos elementos y acotado $\Rightarrow C' 
+\neq \emptyset$. Es decir, toda sucesión $\{A_k\}_{k \in \N}$ definida en un compacto $C$ posee una 
+subsucesión convergente en $C$.
+\vspace{5mm}
 
 %FUNCIONES DE VARIAS VARIABLES Y SUPERFICIES DE NIVEL
 
 \subsection{Funciones de varias variables y superficies de nivel}
 \vspace{5mm}
 
-\noindent-\underline{Definición:} Llamamos \textbf{función de varias variables} a la función:
+\definicion Llamamos \textbf{función de varias variables} a la función:
+
 \[
 \boxed{
 \begin{array}{c}
@@ -671,44 +725,52 @@ f : D \subset \R^n \to \R^m \\
 \end{array}
 }
 \]
+\vspace{3mm}
 
 Si $m > 1$, entonces $f (x_1, x_2,..., x_n) \in \R$ y se llama \textbf{función escalar}.
 \vspace{3mm}
 
 Si $m > 1$, entonces se llama \textbf{función vectorial}.
-\vspace{5mm}
+\vspace{7mm}
 
 \definicion Sea $f : D \subset \R^n \to \R$, llamaremos \textbf{gráfica} de $f$ al subconjunto de $\R^
-{n+1} : (x_1, x_2,..., x_n, f (x_1, x_2,..., x_n)) \in \R^{n+1}$.
+{n+1} : \\ (x_1, x_2,..., x_n, f (x_1, x_2,..., x_n)) \in \R^{n+1}$.
 \vspace{5mm}
 
 \definicion Sea $f : D \subset \R^n \to \R \text{ y  } C \in \R$, el \textbf{conjunto de nivel} del valor $C$ son 
-los puntos : $\{x \in D : f (x) = C\}$.
+los puntos : \\ $\{x \in D : f (x) = C\}$.
+\vspace{3mm}
 
 $n = 2$ : curvas de nivel.
+\vspace{3mm}
 
 $n = 3$ : superficies de nivel.
-\vspace{3mm}
+\vspace{5mm}
 
 \underline{Ejemplo 1:} Usando curvas de nivel. describir la gráfica $f (x, y) = x^2 + y^2$.
 \vspace{3mm}
 
-\indent Curvas de nivel: $\{ (x, y) \in \R^2 : x^2 + y^2 = C, C \geq 0\}$
-
-\indent$C = 0 \to x^2 + y^2 = 0 \Rightarrow (x, y) = 0$
-
-\indent$C = 1 \to x^2 + y^2 = 1^2 \Rightarrow$ Circunferencia de radio 1
-
-\indent$C = 4 \to x^2 + y^2 = 2^2 \Rightarrow$ Circunferencia de radio 2
-
-\indent$C = 9 \to x^2 + y^2 = 3^2 \Rightarrow$ Circunferencia de radio 3
+\dindent Curvas de nivel: $\{ (x, y) \in \R^2 : x^2 + y^2 = C, C \geq 0\}$
 \vspace{3mm}
+
+\dindent$C = 0 \to x^2 + y^2 = 0 \Rightarrow (x, y) = 0$
+\vspace{3mm}
+
+\dindent$C = 1 \to x^2 + y^2 = 1^2 \Rightarrow$ Circunferencia de radio 1
+\vspace{3mm}
+
+\dindent$C = 4 \to x^2 + y^2 = 2^2 \Rightarrow$ Circunferencia de radio 2
+\vspace{3mm}
+
+\dindent$C = 9 \to x^2 + y^2 = 3^2 \Rightarrow$ Circunferencia de radio 3
+\vspace{5mm}
 
 \underline{Ejemplo 2:} Describir las superficies de nivel de $f (x, y, z) = x^2 + y^2 + z^2$.
 \vspace{3mm}
 
-\indent \indent Superficies de nivel: $\{ (x, y, z) \in \R^3 : x^2 + y^2 + z^2 = C, C \geq 0\} =$  \indent \indent $=$ esferas de radio $\sqrt{C}$.
-\vspace{5mm}
+\dindent Superficies de nivel: $\{ (x, y, z) \in \R^3 : x^2 + y^2 + z^2 = C, C \geq 0\} =$ esferas de radio $ 
+\sqrt{C}$.
+\vspace{7mm}
 
 %TEMA 2. CÁLCULO DIFERENCIAS EN VARIAS VARIABLES
 
@@ -735,8 +797,10 @@ función escalar. Dado $L \in \R$ diremos que el \textbf{límite} de $f (x)$ es 
  \|x - x_0\| < \delta \Rightarrow |f (x) - L| < \epsilon \spac \forall{x \in A}
 }
 \]
+\vspace{3mm}
 
 O lo que es lo mismo:
+
 \[
 \boxed{
 \displaystyle \lim_{x \to x_0}^{} f (x) =L \iff \forall{x \in B_\delta (x_0)} \Rightarrow f (x) \in B_\epsilon(L)
@@ -748,60 +812,65 @@ O lo que es lo mismo:
 y^2 = 0$.
 \vspace{3mm}
 
-\indent \indent{$\forall{\epsilon > 0} \spac \exists \delta > 0 : \| (x, y) - (0, 0) \| < \delta \Rightarrow 
+\dindent{$\forall{\epsilon > 0} \spac \exists \delta > 0 : \| (x, y) - (0, 0) \| < \delta \Rightarrow 
 | (2x^2 + y^2) - 0 | < \epsilon$}
-
-\indent \indent$\underbrace{\sqrt{x^2 + y^2} < \delta}_{x^2 - y^2 < \delta^2} \Rightarrow | 2x^2 + 
-y^2 | < 2 (x^2 + y^2) \leq 2\delta^2 < \epsilon$, por tanto bastará \indent \indent con tomar $\delta <
-\sqrt{\bfrac{\epsilon}{2}}$
 \vspace{3mm}
+
+\dindent$\underbrace{\sqrt{x^2 + y^2} < \delta}_{x^2 + y^2 < \delta^2} \Rightarrow | 2x^2 + 
+y^2 | < 2 (x^2 + y^2) < 2\delta^2 < \epsilon$, por tanto bastará con tomar $\delta <
+\sqrt{\bfrac{\epsilon}{2}}$.
+\vspace{5mm}
 
 \underline{Ejemplo 2:} Demuestra, usando la definición, que $\displaystyle \lim_{ (x, y) \to (0, 0) } 
 \bfrac{5x^2y}{x^2 + y^2} =0$.
 \vspace{3mm}
 
-\indent\indent $\forall{\epsilon > 0} \spac \exists{\delta > 0} : \underbrace{\| (x, y) - (0, 0) \| < \delta}_
+\dindent $\forall{\epsilon > 0} \spac \exists{\delta > 0} : \underbrace{\| (x, y) - (0, 0) \| < \delta}_
 {\sqrt{x^2 + y^2} < \delta} \Rightarrow \left | \bfrac{5x^2y}{x^2 + y^2} \right |< \epsilon$
+\vspace{3mm}
 
-\indent\indent$\left |\bfrac{5x^2 y}{x^2 + y^2} \right | \leq \left | \bfrac{5x^2 y}{x^2} \right | = \underbrace{|5 y|}_{5 \sqrt{y^2}} \leq 5 \underbrace {\|(x, y) - (0, 0)\|}_{\sqrt{x^2 + y^2}} < 5 \delta < 
-\epsilon$, por tanto \indent\indent bastará con tomar $\delta < \bfrac{\epsilon}{5}$.
-\vspace{5mm}
+\dindent$\left |\bfrac{5x^2 y}{x^2 + y^2} \right | \leq \left | \bfrac{5x^2 y}{x^2} \right | =  
+\underbrace{|5 y|}_{5 \sqrt{y^2}} \leq 5 \underbrace {\|(x, y) - (0, 0)\|}_{\sqrt{x^2 + y^2}} < 5 \delta < 
+\epsilon$, por tanto bastará con tomar $\delta < \bfrac{\epsilon}{5}$.
+\vspace{7mm}
 
 \teorema El límite de una función $f (x)$, si existe, es único.
-\vspace{3mm}
+\vspace{5mm}
 
 \underline{Demostración:} $\displaystyle \lim_{x \to x_0} f (x) = L_1 \neq L_2 = \lim_{x \to x_0} f (x)$
+\vspace{3mm}
 
-\indent\indent$2 \epsilon < |L_1 - L_2| = |L_1 - f(x) + f(x) - L_2| \leq \underbrace{|L_1 - f(x)|}_{< \epsilon} + \underbrace{|f (x) - L_2|}_{< \epsilon} < \\ \indent\indent < 2 \epsilon \text{ \underline{Contradicción} }
- 2 \epsilon < 2 \epsilon$
+\dindent$2 \epsilon < |L_1 - L_2| = |L_1 - f(x) + f(x) - L_2| \leq \underbrace{|L_1 - f(x)|}_{< \epsilon} + \underbrace{|f (x) - L_2|}_{< \epsilon} < 2 \epsilon$
+
+\dindent\underline{Contradicción:} $2 \epsilon < 2 \epsilon$
+\vspace{7mm}
+
+\underline{Propiedades:} Sean $f, g : A \text{(abierto)} \subset \R^n \to \R$, $\displaystyle \lim_{x \to x_0} 
+f (x) = L_1 \text{ y } \lim_{x \to x_0} g (x) = L_2$:
+\vspace{3mm}
+
+\dindent (1) $\displaystyle \lim_{x \to x_0} (f (x) \pm g (x)) = L_1 + L_2$
+\vspace{3mm}
+
+\dindent (2) $\displaystyle \lim_{x \to x_0} (f (x) \cdot g (x)) = L_1 \cdot L_2$
+\vspace{3mm}
+
+\dindent (3) $\displaystyle \lim_{x \to x_0} \bfrac{f (x)}{g (x)} = \bfrac{L_1}{L_2} \text{ si } L_2 \neq 0 
+\text{ y } g (x) \neq 0$ en un entorno de $x_0$.
+\vspace{3mm}
+
+\dindent (4) $\displaystyle \lim_{x \to x_0} \lambda f (x) = \lambda L_1$
+\vspace{3mm}
+
+\dindent (5) $\displaystyle \lim_{x \to x_0} [f (x)]^{g (x)} = L_1^{L_2}$ si tiene sentido.
+\vspace{7mm}
+
+\observacion Si $\exists \displaystyle \lim_{x \to x_0} f (x) = L \Rightarrow f (x)$ está acotada en un entorno 
+de $x_0$.
 \vspace{5mm}
-
-\underline{Propiedades:} Sean $f, g : A \text{(abierto)} \subset \R^n \to \R$, $\displaystyle
-\lim_{x \to x_0} f (x) = L_1 \text{ y } \\ \indent \lim_{x \to x_0} g (x) = L_2$:
-\vspace{3mm}
-
-(1) $\displaystyle \lim_{x \to x_0} (f (x) \pm g (x)) = L_1 + L_2$
-\vspace{3mm}
-
-(2) $\displaystyle \lim_{x \to x_0} (f (x) \cdot g (x)) = L_1 \cdot L_2$
-\vspace{3mm}
-
-(3) $\displaystyle \lim_{x \to x_0} \bfrac{f (x)}{g (x)} = \bfrac{L_1}{L_2} \text{ si } L_2 \neq 0 \text{ y } 
-g (x) \neq 0$ en un entorno de $x_0$.
-\vspace{3mm}
-
-(4) $\displaystyle \lim_{x \to x_0} \lambda f (x) = \lambda L_1$
-\vspace{3mm}
-
-(5) $\displaystyle \lim_{x \to x_0} [f (x)]^{g (x)} = L_1^{L_2}$ si tiene sentido.
-\vspace{3mm}
-
-\observacion Si $\exists \displaystyle \lim_{x \to x_0} f (x) = L \Rightarrow f (x)$ está acotada en un entorno
- de $x_0$.
-\vspace{1mm}
 
 \underline{Demostracion:} $| f (x) | - L \leq |f (x) - L|< \epsilon \Rightarrow |f (x)| \leq L + \epsilon$
-\vspace{5mm}
+\vspace{7mm}
 
 \proposicion[1] Sea $f : A \text{ (abierto) }  \subset \R^n \rightarrow \R^m \text{ una función 
 vectorial , } \vspace{1mm} \\  x_0 \in A' \text{ y } L \in L \in \R^m$, entonces:
@@ -810,20 +879,22 @@ vectorial , } \vspace{1mm} \\  x_0 \in A' \text{ y } L \in L \in \R^m$, entonces
 \displaystyle \lim_{x \to x_0}^{} f (x_1, x_2,...,x_n) = L \iff \lim_{x \to x_0} f_i (x_1, x_2,..., x_n) = l_i
 }
 \]
+\vspace{3mm}
 \[
-\\\left \{\begin{array}{lc}
+\left \{\begin{array}{lc}
 f (x_1, x_2,...,x_n) = (f_1 (x_1, x_2,..., x_n), f_2 (x_1, x_2,..., x_n),..., f_m (x_1, x_2,..., x_n)) \\
 L = (l_1, l_2,..., l_m)
 \end{array}\right.
 \]
-\vspace{3mm}
+\vspace{10mm}
 
 %Caracterización de límites de funciones por sucesiones
 
 {\color{red}\proposicion[2] "Caracterización de límites de funciones por  sucesiones"}
-\vspace{2mm}
+\vspace{3mm}
 
 Sea $f : A \text{(abierto)} \subset \R^n \to \R, x_0 \in A' \text{ y } L \in \R$, entonces:
+
 \[
 \boxed{
 \displaystyle \lim_{x \to x_0}^{} f (x) = L \iff \forall \{x_k\}_{k \in \N} \in A \lim_{k \to \infty} x_k = x_0 \text{ y } x_k \neq x_0 \Rightarrow \lim_{k \to \infty} f (x_k) = L
@@ -832,44 +903,51 @@ Sea $f : A \text{(abierto)} \subset \R^n \to \R, x_0 \in A' \text{ y } L \in \R$
 \vspace{3mm}
 
 \underline{Demostración:}
-
-$\Rightarrow$) $\forall \{x_k\} \text{ tal que } \displaystyle \lim_{k \to \infty} x_k = x_0$, ¿se tiene que 
-$\displaystyle \lim_{k \to \infty} f (x_k) = L$?
-
-Por convergencia de sucesiones tenemos 	que $\forall{\epsilon_1 > 0} \spac \exists{N_1 \in \N} : \\ \indent
-\|x_k - x_0\| < \epsilon_1 \forall{k \geq N_1} \text{, tomando } \epsilon_1 = \delta \Rightarrow |f (x_k) - 
-L| < \epsilon$.
-
-$\Leftarrow$) Argumentamos por reducción a lo absurdo. 
-
-Suponemos que $\displaystyle \lim_{x \to x_0} 
-f (x) \neq L \text{, es decir, } \exists{\epsilon_2 > 0} \text{ tal que } \forall{\delta > 0} \text{  se tiene que } 
-\\ \indent \|x - x_0\| < \delta \Rightarrow |f (x) - L| < \epsilon_2 \text{( es decir, } f (b_\delta) \cap 
- B_{\epsilon_2} (L) \neq \emptyset)$.
-
-Se cumple $\forall \delta$, en particular para $\delta = \left \{ \bfrac{1}{k} \right \} \Rightarrow 
-\text{tomamos una sucesión } \\ \indent \{x_k\} \in b_{\sfrac{1}{k}} (x_0) \text{ tal que } \displaystyle 
- \lim_{k \to \infty} x_k = x_0 \Rightarrow |f (x_k) - L| < \epsilon \spac \text{\underline{Contradicción}} \\
-\indent (II \Rightarrow I)$.
 \vspace{3mm}
+
+\dindent $\Rightarrow$) $\forall \{x_k\} \text{ tal que } \displaystyle \lim_{k \to \infty} x_k = x_0$, ¿se tiene 
+que $\displaystyle \lim_{k \to \infty} f (x_k) = L$?
+\vspace{3mm}
+
+\dindent Por convergencia de sucesiones tenemos 	que $\forall{\epsilon_1 > 0} \spac \exists{N_1 \in \N} : 
+\|x_k - x_0\| < \epsilon_1 \spac \forall{k \geq N_1} \\ \dindent\text{, tomando } \epsilon_1 = \delta 
+\Rightarrow |f (x_k) - L| < \epsilon$.
+\vspace{3mm}
+
+\dindent $\Leftarrow$) Argumentamos por reducción a lo absurdo. 
+\vspace{3mm}
+
+\dindent Suponemos que $\displaystyle \lim_{x \to x_0} f (x) \neq L \text{, es decir, } \exists{\epsilon_2 > 0} \text{ tal que } \forall{\delta > 0} \text{  se tiene que } \|x - x_0\| < \delta \Rightarrow \\ \dindent 
+\Rightarrow|f (x) - L| < \epsilon_2 \text{( es decir, } f (b_\delta) \cap B_{\epsilon_2} (L) \neq \emptyset)$.
+\vspace{3mm}
+
+\dindent Se cumple $\forall \delta$, en particular para $\delta = \left \{ \bfrac{1}{k} \right \} \Rightarrow 
+\text{tomamos una sucesión } \{x_k\} \in b_{\sfrac{1}{k}} (x_0) \text{ tal que } \\ \dindent \displaystyle 
+ \lim_{k \to \infty} x_k = x_0 \Rightarrow |f (x_k) - L| < \epsilon$
+\vspace{3mm}
+
+\dindent \underline{Contradicción:} $(II \Rightarrow I)$.
+\vspace{5mm}
 
 \observacion La caracterización de límites por sucesiones será muy útil para demostrar la NO existencia de 
 límites, encontrando dos sucesiones con límites diferentes.
-\vspace{3mm}
+\vspace{7mm}
 
 %Continuidad
 
 \subsection{Continuidad}
 \vspace{5mm}
 
-\definicion Una función $f : A \text{ (abierto) } \subset \R^n \to \R \text{ es \textbf{continua} en } \\ x_0 \in 
+\definicion Una función $f : A \text{ (abierto) } \subset \R^n \to \R \text{ es \textbf{continua} en } x_0 \in 
 A$ si:
+
 \[
 \boxed{
 \forall{\epsilon > 0} \spac \exists{\delta > 0} : \|x - x_0\| < \delta \Rightarrow |f (x) - f (x_0)| 
 < \epsilon
 }
 \]
+\vspace{3mm}
 
 Es decir:
 \vspace{3mm}
@@ -893,7 +971,7 @@ f_i \text{ es continua } \forall{i = 1, 2,..., m}$.
 \indent \indent (1) $(f \pm g) (x) \text{ es continua en } x_0$.
 \vspace{3mm}
 
-\indent \indent (2) $(\lambda f) (x) \text{ es continua en } x_0 \forall{\lambda \in \R}$.
+\indent \indent (2) $(\lambda f) (x) \text{ es continua en } x_0 \spac \forall{\lambda \in \R}$.
 \vspace{3mm}
 
 \indent \indent (3) $(f \cdot g) (x) \text{ es continua en } x_0$.
@@ -903,14 +981,15 @@ f_i \text{ es continua } \forall{i = 1, 2,..., m}$.
 \vspace{3mm}
 
 \indent \indent (5) $[f (x)]^{g (x)} \text{ es continua en } x_0$ si tiene sentido.
-\vspace{5mm}
-\\
+\vspace{7mm}
 
 %Caracterización de funciones continuas por sucesiones
 
 \proposicion[1] "Caracterización de las funciones continuas por sucesiones"
+\vspace{3mm}
 
 Sea $x_0 \in A \text{ y } f : A \subset \R^n \to \R$:
+
 \[
 \boxed{
 f \text{ continua en } x_0 \iff \forall{\{x_k\}_{k \in \N}} : \displaystyle \lim_{k \to  \infty} x_k = x_0 \text{ y }
@@ -930,6 +1009,7 @@ f (x, y) = \left \{
 
 \end{array}\right.
 \]
+\vspace{3mm}
 
 (1) $f (0, 0) = 0$
 \vspace{3mm}
@@ -941,7 +1021,7 @@ f (x, y) = \left \{
 \vspace{3mm}
 
 $f (x, y) \text{ es continua en todo } \R^2$.
-\vspace{5mm}
+\vspace{7mm}
 
 \teorema Sean $f : \R^n \to \R^m \text{ y } g : \R^m \to \R^p$:
 
@@ -951,9 +1031,10 @@ f (x) \text{ continua en } x_0 \in \R^n \text{ y } g (y) \text{ continua en } f 
 (g \circ f) (x) \text{ continua en } x_0
 }
 \]
-\vspace{0mm}
+\vspace{3mm}
 
 %Conjuntos abiertos, cerrados y funciones continuas
+\vspace{5mm}
 
 \subsection{Conjuntos abiertos, cerrados y funciones continuas}
 \vspace{3mm}
@@ -982,17 +1063,17 @@ f^{-1} (Y) = \{x \in \R^n : f (x) \subset Y\}
 \end{array}\right.$
 \vspace{2mm}
 
-\tindent $f^{-1} \underbrace{([0, 2])}_{Y} : \underbrace{[0, \infty)}_{X} \Rightarrow f ([0, +\infty)) = {1} \subset 
-[0, 2]$
+\tindent \indent $f^{-1} \underbrace{([0, 2])}_{Y} : \underbrace{[0, \infty)}_{X} \Rightarrow f ([0, +\infty)) 
+= {1} \subset [0, 2]$
 \vspace{3mm}
 
 \dindent (2) Si $Y = f (X) \Rightarrow X \subset f^{-1} (Y) \Rightarrow X \subset f^{-1} (f (X))$
 \vspace{3mm}
 
 \tindent \underline{Ejemplo:} $f (x) = x^2$
-\vspace{2mm}
+\vspace{3mm}
 
-\tindent $f (\{2\}) = 4 \Rightarrow \{2\} \subset f^{-1} (\{4\}) = \{2, 2\}$
+\tindent \indent $f (\{2\}) = 4 \Rightarrow \{2\} \subset f^{-1} (\{4\}) = \{2, 2\}$
 \vspace{5mm}
 
 \underline{Ejemplo 1:} $
@@ -1009,8 +1090,8 @@ $
 \[
 \begin{array}{lccrc}
 
-f^{-1} (\{1\}) = [0, +\infty) & \quad & f^{-1} (\{-1\}) = (- \infty, 0)\\
-f^{-1} ([-1, 1]) = \R & \quad & f^{-1} ([0, 2]) = [0, +\infty)\\
+f^{-1} (\{1\}) = [0, +\infty) & \quad & f^{-1} (\{-1\}) = (- \infty, 0) \vspace{3mm}\\
+f^{-1} ([-1, 1]) = \R & \quad & f^{-1} ([0, 2]) = [0, +\infty)\vspace{3mm}\\
 f^{-1} ([-2, 0]) = (-\infty, 0) & \quad &\\
 
 \end{array}
@@ -1018,15 +1099,17 @@ f^{-1} ([-2, 0]) = (-\infty, 0) & \quad &\\
 \vspace{3mm}
 
 \underline{Ejemplo 2:} Sea $f (x, y) = 2x^2 + y^2 - 4 \text{ ¿}f^{-1} (\{3\}), f^{-1} ([-\infty, 0])\text{?}$
-\vspace{2mm}
+\vspace{3mm}
 
-$f^{-1} (\{3\}) = \{(x, y) \in \R^2 : 2x^2+ y^2 = 1\} \rightarrow$ Elipse de altura $z =1$
+\dindent $f^{-1} (\{3\}) = \{(x, y) \in \R^2 : 2x^2+ y^2 = 1\} \rightarrow$ Elipse de altura $z =1$
+\vspace{3mm}
 
-$f^{-1} ((-\infty, 0]) = \{(x, y) \in \R^2 : 2x^2+ y^2 \leq 4\} \rightarrow$ Elipses de alturas desde \indent 
+\dindent $f^{-1} ((-\infty, 0]) = \{(x, y) \in \R^2 : 2x^2+ y^2 \leq 4\} \rightarrow$ Elipses de alturas desde 
 0 hasta -4.
+\vspace{3mm}
 
-Esto tiene sentido dado que la función forma un paraboloide elíptico.
-\vspace{5mm}
+\dindent Esto tiene sentido dado que la función forma un paraboloide elíptico.
+\vspace{7mm}
 
 \teorema[1] Dada $f : \R^n \to \R^m$:
 \[
@@ -1045,7 +1128,7 @@ abierto }
 
 \end{array} \right.
 $
-\vspace{3mm}
+\vspace{5mm}
 
 ¿$f^{-1} (V) \text{ abierto en } \R^n \text{, es decir, } \forall{x \in f^{-1}} \spac \exists{r > 0} : B_r (x) 
 \subset f^{-1} (V)$?
