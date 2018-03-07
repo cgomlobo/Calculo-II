@@ -18,7 +18,9 @@
 {10pt}                           % altura de los encabezados
 {1cm}                           % espacio entre el texto y los encabezados
 {0pt}                             % altura del pie de página
-{2cm} 
+{2cm}
+
+
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 \newcommand{\eqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{=}}
 \newcommand{\leqc}[1]{\stackrel{\mathclap{\normalfont\mbox{\scriptsize{#1}}}}{\leq}}
@@ -1112,6 +1114,7 @@ f^{-1} ([-2, 0]) = (-\infty, 0) & \quad &\\
 \vspace{7mm}
 
 \teorema[1] Dada $f : \R^n \to \R^m$:
+
 \[
 \boxed{
 f \text{ es continua} \iff \forall \, V \subset \R^m \text{ abierto } : f^{-1} (V) \subset \R^n \text{ es 
@@ -1130,85 +1133,94 @@ abierto }
 $
 \vspace{5mm}
 
-¿$f^{-1} (V) \text{ abierto en } \R^n \text{, es decir, } \forall{x \in f^{-1}} \spac \exists{r > 0} : B_r (x) 
-\subset f^{-1} (V)$?
+\dindent ¿$f^{-1} (V) \text{ abierto en } \R^n \text{, es decir, } \forall{x \in f^{-1}} \spac \exists{r > 0} : 
+B_r (x) \subset f^{-1} (V)$?
 
-$\forall{x \in f^{-1} (V)} \spac \exists{y \in V} : y = f (x) \subset V \xRightarrow{\text{I}} \epsilon = \delta 
-\Rightarrow B_\epsilon ( f (x)) \subset V$.
+\dindent $\forall{x \in f^{-1} (V)} \spac \exists{y \in V} : y = f (x) \subset V \xRightarrow{\text{I}} \epsilon = 
+\delta \Rightarrow B_\epsilon ( f (x)) \subset V$.
 
-Por II $f (B_\delta (x)) \subset B_\epsilon ( f(x)) \in V$ y tomamos preimágenes $B_\delta (x) \gsc{\subset}
-{Prop. (2)} \\ \indent \subset f^{-1} (f (B_\delta (x))) \subset f^{-1} (B_\epsilon ( f (x))) \subset f^{-1} (V)$. 
-Basta con $r = \delta$. \checkmark
+\dindent Por II $f (B_\delta (x)) \subset B_\epsilon ( f(x)) \in V$ y tomamos preimágenes $B_\delta (x) 
+\gsc{\subset}{Prop. (2)} f^{-1} (f (B_\delta (x))) \subset \\ \dindent \subset f^{-1} (B_\epsilon ( f (x))) 
+\subset f^{-1} (V) $. 
 \vspace{3mm}
 
-$\Leftarrow$) Hipótesis: Sea $f : \R^n \to \R^m$ se tiene que $V \in \R^m \text{ abierto } \Rightarrow \\
-\indent \Rightarrow f^{-1} (V) \text{ abierto en } \R^n$.
-
-¿$f \text{ es continua, es decir, } \forall{ \epsilon > 0} \spac \exists{ \delta > 0} : f (B_\epsilon (x)) \subset 
-B_\epsilon (f (x))$? 
-\vspace{3mm}
-
-$\forall{x \in f^{-1} (V)} \subset \R^n \exists y \in V \subset \R^m : y f (x) \text{ y } B_\epsilon ( f (x)) 
-\text{ abierto en } \R^m \xRightarrow{hip.} \\ \indent \Rightarrow f^{-1} (\underbrace{B_\epsilon (f (x))}
-_{V}) \text{ abierto en }
-\R^n$.
-
-$\exists r : B_r (x) \subset f^{-1} (B_\epsilon (f (x))) \text{ tenemos } r = \delta : B_\delta (x) \subset f^{-1} 
-(B_\epsilon ( f (x))) \Rightarrow \\ \indent \Rightarrow f (B_\delta (x)) \subset f (f^{-1} (B_\epsilon ( f (x)))) 
-\gsc{\subset}{Prop.(1)} B_\epsilon ( f (x))$. \checkmark
+\dindent Basta con $r = \delta$. \checkmark
 \vspace{5mm}
 
-\underline{Ejemplo 1:} $A = \{(x , y, z) \in \R^3 : x^3 - 4y^2 + z^2 = 5\} = \{(x, y, z) \in \R^3 : \\ \indent 
-f (x, y, z) = 5\} = f^{-1} (\underbrace{\{5\}}_{\text{cerrado}}) \xRightarrow{T.2} A$ es un cerrado.
+\dindent $\Leftarrow$) Hipótesis: Sea $f : \R^n \to \R^m$ se tiene que $V \in \R^m \text{ abierto } 
+\Rightarrow f^{-1} (V) \text{ abierto en } \R^n$.
 \vspace{3mm}
 
-\underline{Ejemplo 2:} $B = \{(x, y) \in \R^2 : x^2 - y^2 < 1 + \cos{y}\} = \vspace{2mm} \\ \indent = 
-\{(x, y) \in \R^2 : x^2 - y^2 - \cos{y} < 1\} = f^{-1} ((-\infty, 1)) \Rightarrow B \text{ es un abierto en } 
-\R^2$.
+\dindent ¿$f \text{ es continua, es decir, } \forall{ \epsilon > 0} \spac \exists{ \delta > 0} : f (B_\epsilon (x)) 
+\subset B_\epsilon (f (x))$? 
 \vspace{3mm}
+
+\dindent $\forall{x \in f^{-1} (V)} \subset \R^n \exists y \in V \subset \R^m : y f (x) \text{ y } B_\epsilon 
+( f (x)) \text{ abierto en } \R^m \xRightarrow{hip.}f^{-1} (\underbrace{B_\epsilon (f (x))}_{V}) 
+\text{ abierto en }\R^n$.
+
+
+\dindent $\exists r : B_r (x) \subset f^{-1} (B_\epsilon (f (x))) \text{ tenemos } r = \delta : B_\delta (x) 
+\subset f^{-1} (B_\epsilon ( f (x))) \Rightarrow \\ \dindent \Rightarrow f (B_\delta (x)) \subset f (f^{-1} 
+(B_\epsilon ( f (x)))) \gsc{\subset}{Prop.(1)} B_\epsilon ( f (x))$. \checkmark
+\vspace{7mm}
+
+\underline{Ejemplo 1:} $A = \{(x , y, z) \in \R^3 : x^3 - 4y^2 + z^2 = 5\} = \{(x, y, z) \in \R^3 : 
+f (x, y, z) = 5\} = \\ \indent = f^{-1} (\underbrace{\{5\}}_{\text{cerrado}}) \xRightarrow{T.2} A$ es un 
+cerrado.
+\vspace{5mm}
+
+\underline{Ejemplo 2:} $B = \{(x, y) \in \R^2 : x^2 - y^2 < 1 + \cos{y}\} = \{(x, y) \in \R^2 : x^2 - y^2 - 
+\cos{y} < 1\} = \\ \indent = f^{-1} ((-\infty, 1)) \Rightarrow B \text{ es un abierto en } \R^2$.
+\vspace{5mm}
 
 \underline{Ejemplo 3:} $f (x) = 7, f : \R \to \R$
-\vspace{2mm}
-
-$f (\underbrace{(-\infty, +\infty)}_{\text{abierto}}) = \{7\} \to$ cerrado.
 \vspace{3mm}
 
+$f (\underbrace{(-\infty, +\infty)}_{\text{abierto}}) = \{7\} \to$ cerrado.
+\vspace{5mm}
+
 \underline{Ejemplo 4:} Sea $f : [a, b] \to \R \text{ una función continua en } [a, b] \Rightarrow G (f) = 
-\vspace{2mm} \\ \indent = \{(x, f (x)) \in \R^2 : x \in [a, b]\}$ es un cerrado.
+ \{(x, f (x)) \in \R^2 : x \in [a, b]\}$ es \\ \indent un cerrado.
+\vspace{3mm}
 
-Usamos la caracterización de cerrados por sucesiones.
+\dindent Usamos la caracterización de cerrados por sucesiones.
+\vspace{3mm}
 
-Sea $\{A_k\} = \{(x_k, y_k)\}_{k \in \N} \text{ tal que } y_k = f (x_k) \text{ y } x_k \in [a, b] 
-\text{ (¡cerrado!)} : \indent \{A_k\}_k = \{(x_k, y_k)\} \xrightarrow[k \to \infty]{} (x_0, y_0) \inc{\text{?}} 
-G (f)$.
+\dindent Sea $\{A_k\} = \{(x_k, y_k)\}_{k \in \N} \text{ tal que } y_k = f (x_k) \text{ y } x_k \in [a, b] 
+\text{ (¡cerrado!)} :$
+\vspace{2mm}
 
-Como $\{A_k\} \xrightarrow[k \to \infty]{} (x_0, y_0) \Rightarrow \| (x_k, y_k) - (x_0, y_0)\| < \epsilon 
-\Rightarrow (x_k - x_0) + \\ \indent + (y_k - y_0) \rightarrow 0 \Rightarrow 
+\dindent $\displaystyle \lim_{k \to \infty} \{A_k\} = (x_0, y_0) \inc{\text{?}} G (f)$.
+\vspace{3mm}
+
+\dindent Como $\displaystyle \lim_{k \to \infty} \{A_k\} = (x_0, y_0) \Rightarrow \| (x_k, y_k) - (x_0, y_0)\| < 
+\epsilon \Rightarrow (x_k - x_0) + (y_k - y_0) \rightarrow 0 \Rightarrow \\ \dindent \Rightarrow
 \left\{\begin{array}{lc}
 
-x_k \xrightarrow[k \to \infty]{} x_0 \in [a, b]\\
-f (x_k) \xrightarrow[k \to \infty]{} y_0 \xrightarrow{f \text{ cont}} f (x_0) = y_0\\
+\displaystyle \lim_{k \to \infty} x_k = x_0 \in [a, b]\\
+\displaystyle \lim_{k \to \infty} f (x_k) = y_0 \xRightarrow{f \text{ cont}} f (x_0) = y_0\\
 
 \end{array}\right.
 $
-\vspace{2mm}
+\vspace{3mm}
 
-$\{(x_k, \underbrace{f (x_k)}_{\in G (f)})\} \xrightarrow[k \to \infty]{} \{(x_0, f (x_0)) : x_0 \in [a, b]\} \, 
-\exists G (f) \rightarrow$ cerrado. \checkmark
-\vspace{5mm}
+\dindent $\displaystyle \lim_{k \to \infty} \{(x_k, \underbrace{f (x_k)}_{\in G (f)})\} = \{(x_0, f (x_0)) : x_0 \in [a, b]\} \spac \exists G (f) \rightarrow$ cerrado. \checkmark
+\vspace{7mm}
 
 \teorema[2] Dada $f : \R^n \to \R^m$:
+
 \[
 \boxed{
 f \text{ es continua} \iff \forall \, C \subset \R^m \text{ cerrado } : f^{-1} (V) \subset \R^n \text{ es 
 cerrado }
 }
 \]
-\vspace{0mm}
+\vspace{3mm}
 
 \underline{Demostración:} Es igual que la del Teorema 1 pero usando la premisa de que un conjunto es 
-cerrado si su complementario es abierto.
-\vspace{5mm}
+cerrado \indent si su complementario es abierto.
+\vspace{7mm}
 
 %Dieferencial, derivadas parciales y gradientes
 
@@ -1216,12 +1228,13 @@ cerrado si su complementario es abierto.
 \vspace{3mm}
 
 En $\R$ se tiene que:
+
 \[
 \boxed{
 \text{Derivabilidad} \Rightarrow \text{Continuidad}
 }
-\vspace{3mm}
 \]
+\vspace{3mm}
 
 %Derivadas parciales
 
@@ -1237,7 +1250,7 @@ $f, \bfrac{\partial f}{\partial x_i}$, como la derivada de $f (x_1, x_2,..., x_n
 - f (x_1, x_2,..., x_n)}{h}
 }
 \]
-\vspace{3mm}
+\vspace{5mm}
 
 Notación en $\R^2$ y $\R^3$:
 \vspace{3mm}
@@ -1248,37 +1261,39 @@ $
 
 $\bfrac{\partial f (x, y, z)}{\partial x} \eqc{not} f_x (x, y, z), \bfrac{\partial f (x, y, z)}{\partial y} \eqc{not} f_y (x, y, z) , \bfrac{\partial f (x, y, z)}{\partial z} \eqc{not} f_z (x, y, z)
 $
+\vspace{7mm}
+
+\underline{Ejemplo:} Hallar las derivadas parciales de la función $f (x, y) = x^2 + y^4 \text{ en el punto } 
+(1, 0)$.
 \vspace{5mm}
 
-\underline{Ejemplo:} Hallar las derivadas parciales de la función $f (x, y) = x^2 + \vspace{1mm} \\ \indent 
-+ y^4 \text{ en el punto } (1, 0)$.
+\dindent $\left.\bfrac{\partial f(x, y)}{\partial x}\right |_{(1, 0)} = 2x |_{(1, 0)} = 2$
 \vspace{3mm}
 
-$\left.\bfrac{\partial f(x, y)}{\partial x}\right |_{(1, 0)} = 2x |_{(1, 0)} = 2$
-
-$\left.\bfrac{\partial f(x, y)}{\partial y}\right |_{(1, 0)} = 4y^3 |_{(1, 0)} = 0$
-\vspace{5mm}
+\dindent $\left.\bfrac{\partial f(x, y)}{\partial y}\right |_{(1, 0)} = 4y^3 |_{(1, 0)} = 0$
+\vspace{7mm}
 
 \noindent\underline{Interpretación geométrica:} $f : \R^2 \to \R$
-\vspace{3mm}
+\vspace{5mm}
 
 Fijamos $y = y_0$ e intersecamos dicho plano con la gráfica $z = f (x, y)$ y obtenemos una curva $C (x)$.
+\vspace{3mm}
 
 $\bfrac{\partial f}{\partial x} (x_0, y_0)$ es la pendiente de la recta tangente a la curva $C (x)$ en el punto 
 $(x_0, y_0)$.
-\vspace{3mm}
+\vspace{7mm}
 
 \observacion La existencia de derivadas parciales no garantiza que el plano tangente sea "bueno", es decir, 
 que sea una buena aproximación a la curva:
-\vspace{3mm}
+\vspace{5mm}
 
 En $\R^n, n >1, \exists \text{derivadas parciales} \not\Rightarrow$ Continuidad.
-\vspace{5mm}
+\vspace{7mm}
 
 %Diferenciación
 
 \subsection{Diferenciación}
-\vspace{3mm}
+\vspace{7mm}
 
 Sea $f : \R^2 \to \R$ ,para que la función sea diferenciable tiene que existirr un plano que se aproxime muy 
 bien a la curva en el punto $(x_0, y_0)$, es decir:
@@ -1286,23 +1301,25 @@ bien a la curva en el punto $(x_0, y_0)$, es decir:
 
 $\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{f (x, y) - \overbrace{\scalebox{0.7}{$(ax +by + c)$}}
 ^{\text{plano}}}{\| (x, y) - (x_0, y_0)\|} = 0$ ¿$a, b, c$?
+\vspace{5mm}
+
+De esta forma estamos "pidiendo" al numerador que se acerque a cero más rápido que el denominador, 
+\indent es decir, que el plano se acerque a la curva más rápido de lo que lo hace hacen $x$ e $y$ al punto.
+\vspace{5mm}
+
+(1) En $(x_0, y_0) \rightarrow  z = f (x_0, y_0)$ siendo $z$ el plano y $f (x_0, y_0)$ la gráfica. $f (x_0, y_0) 
+= a x_0 + b y_0 + c \Rightarrow \\ \indent \Rightarrow c = f (x_0, y_0) - a x_0 - b y_0$.
 \vspace{3mm}
 
-De esta forma estamos "pidiendo" al numerador que se acerque a cero más rápido que el denominador, es decir, que el plano se acerque a la curva más rápido de lo que lo hace hacen $x$ e $y$ al punto.
-\vspace{3mm}
+(2) Con $y = y_0$ la pendiente de la grafíca $f (x, y)$ en $(x_0, y_0) \text{ es } "a" \Rightarrow a =
+\bfrac{\partial f (x_0, y_0)}{\partial x}$.
+\vspace{5mm}
 
-- En $(x_0, y_0) \rightarrow  z = f (x_0, y_0)$ siendo $z$ el plano y $f (x_0, y_0)$ la gráfica. $f (x_0, y_0) = 
-a x_0 + b y_0 + c \Rightarrow c = f (x_0, y_0) - a x_0 - b y_0$. (1)
-\vspace{3mm}
-
-- Con $y = y_0$ la pendiente de la grafíca $f (x, y)$ en $(x_0, y_0) \text{ es } "a" \Rightarrow a = \\ =
-\bfrac{\partial f (x_0, y_0)}{\partial x}$. (2)
-\vspace{3mm}
-
-- De igual forma $b = \bfrac{\partial f (x_0, y_0)}{\partial y}$. (3)
+(3) De igual forma $b = \bfrac{\partial f (x_0, y_0)}{\partial y}$. (3)
 \vspace{3mm}
 
 De (1), (2), y (3) obtenemos la ecuación del plano tangente a la curva:
+\vspace{3mm}
 
 \[
 \boxed{
@@ -1310,8 +1327,10 @@ z = f (x_0, y_0) + \bfrac{\partial f}{\partial x} (x_0, y_0) (x - x_0) + \bfrac{
 (y - y_0)
 }
 \]
+\vspace{7mm}
 
-Por tanto, la condición de diferenciabilidad para la función $f : \R^2 \to \R$ \indent es:
+Por tanto, la condición de diferenciabilidad para la función $f : \R^2 \to \R$ es:
+\vspace{3mm}
 
 %Condición de diferenciabilidad
 
@@ -1324,43 +1343,44 @@ Por tanto, la condición de diferenciabilidad para la función $f : \R^2 \to \R$
 \vspace{3mm}
 
 \underline{Ejemplo:} Hallar el plano tangente a la gráfica $z = x^2 + y^4$ en el punto $(1, 0, 1)$ y 
-comprobar que es diferenciable en dicho plano.
+comprobar que es \\ \indent diferenciable en dicho plano.
+\vspace{5mm}
+
+\dindent $i) \, \bfrac{\partial f}{\partial x} = 2x |_{(1, 0)} = 2 \spac \bfrac{\partial f}{\partial y} = 4 y^3 |_{(1, 0)} = 
+0 \Rightarrow z = 1 + 2(x -1) - 0 \cdot (y - 0) \Rightarrow  z = 2x -1$
 \vspace{3mm}
 
-$i) \, \bfrac{\partial f}{\partial x} = 2x |_{(1, 0)} = 2 \spac \bfrac{\partial f}{\partial y} = 4 y^3 |_{(1, 0)} = 
-0 \Rightarrow z = 1 + 2(x -1) - 0 \cdot (y - 0) \Rightarrow \\ \indent \Rightarrow z = 2x -1$
-\vspace{3mm}
-
-$ii) \, \displaystyle \lim_{(x, y) \to (1, 0)} \bfrac{f (x, y) - f(1, 0) - \frac{\partial f}{\partial x} (1, 0) (x -1) - 
+\dindent $ii) \, \displaystyle \lim_{(x, y) \to (1, 0)} \bfrac{f (x, y) - f(1, 0) - \frac{\partial f}{\partial x} (1, 0) (x -1) - 
 \frac{\partial f}{\partial y} (1, 0) (y - 0)}{\|(x, y) - (1, 0)\|} \eqc{\text{?}} 0$
 \vspace{2mm}
 
-$\displaystyle \lim_{(x, y) \to (1, 0)} \bfrac{(x^2 + y^4) - 1 - 2x + 2}{\sqrt{ (x - 1)^2 + y^2}} = \lim_{(x, 
-y) \to (1, 0)} \bfrac{(x^2 + y^4) - (2x - 1)}{\sqrt{(x - 1)^2 + y^2}} = \lim_{(x, y) \to (1, 0)} \bfrac{
-(x - 1)^2 + y^4}{\sqrt{(x -1)^2 + y^2}}$
+\dindent $\displaystyle \lim_{(x, y) \to (1, 0)} \bfrac{(x^2 + y^4) - 1 - 2x + 2}{\sqrt{ (x - 1)^2 + y^2}} = 
+\lim_{(x, y) \to (1, 0)} \bfrac{(x^2 + y^4) - (2x - 1)}{\sqrt{(x - 1)^2 + y^2}} = \lim_{(x, y) \to (1, 0)} 
+\bfrac{(x - 1)^2 + y^4}{\sqrt{(x -1)^2 + y^2}}$
+\vspace{5mm}
+
+\dindent Ahora comprobamos si da 0 a partir de la definición de límite.
 \vspace{3mm}
 
-Ahora comprobamos si da 0 a partir de la definición de límite.
-\vspace{2mm}
-
-$\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x - y) - (1, 0)\| < \delta \Rightarrow \left | \bfrac{(x - 1)^2 
+\dindent $\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x - y) - (1, 0)\| < \delta \Rightarrow \left | \bfrac{(x - 1)^2 
 + y^2}{\sqrt{(x - 1)^2 + y^2}} - 0 \right | < \epsilon$
 \vspace{3mm}
 
-$\left | \bfrac{(x - 1)^2 + y^2}{\sqrt{(x - 1)^2 + y^2}} - 0 \right | \leq \bfrac{(x - 1)^2}{\sqrt{(x - 1)^2 + 
-y^2}} + \bfrac{y^4}{\sqrt{(x - 1)^2 + y^2}} \leq \bfrac{(x - 1)^2 + y^2}{\sqrt{(x - 1)^2 + y^2}} + \\ + 
-\bfrac{{[(x - 1)^2 + y^2]}^3}{\sqrt{(x - 1)^2 + y^2}} \leq \sqrt{(x - 1)^2 + y^2} + \sqrt{{[(x - 1)^2 + 
-y^2]}^3} < \delta + \underbrace{\delta^2}_{< \delta} < 2 \delta$
-\vspace{2mm}
+\dindent $\left | \bfrac{(x - 1)^2 + y^2}{\sqrt{(x - 1)^2 + y^2}} - 0 \right | \leq \bfrac{(x - 1)^2}
+{\sqrt{(x - 1)^2 + y^2}} + \bfrac{y^4}{\sqrt{(x - 1)^2 + y^2}} \leq \bfrac{(x - 1)^2 + y^2}{\sqrt{(x - 
+1)^2 + y^2}} + \bfrac{{[(x - 1)^2 + y^2]}^3}{\sqrt{(x - 1)^2 + y^2}} \leq \\ \dindent \leq \sqrt{(x - 1)^2 
++ y^2} + \sqrt{{[(x - 1)^2 + y^2]}^3} < \delta + \underbrace{\delta^2}_{< \delta} < 2 \delta$
+\vspace{3mm}
 
 Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$.
-\vspace{5mm}
+\vspace{7mm}
 
 %Diferenciabilidad y matriz jacobiana
 
 \definicion Sea $U$ un abierto en $\R^n$ decimos que $f : U  \to \R^m$ es \textbf{diferenciable} en un 
 punto $x_0 = (x_0^1, x_0^2,..., x_0^n) \in U$ si existen todas las derivadas parciales de $f \text{ en } x_0$, 
 y se cumple:
+\vspace{3mm}
 
 \[
 \boxed{
@@ -1377,8 +1397,8 @@ x_n}\\
 
 \end{array} \right )
 }
-\vspace{5mm}
 \]
+\vspace{7mm}
 
 \observacion A $Df (x_0)$, además de derivada de $f \text{ en } x_0$, también se le llama \textbf{matriz 
 jacobiana} de $f \text{ en } x_0$.
@@ -1388,6 +1408,8 @@ jacobiana} de $f \text{ en } x_0$.
 
 \definicion Un caso particular de $Df$ es cuando $m = 1$, es decir, el conunto de llegada de la función es 
 $\R$. A esta matriz jacobiana se le llama \textbf{gradiente} y se denota:
+\vspace{2mm}
+
 \[
 \boxed{
 \vec{\nabla} f (x_1, x_2,..., x_n) = \left ( \bfrac{\partial f}{\partial x_1}, \bfrac{\partial f}{\partial x_2},..., 
@@ -1402,15 +1424,17 @@ $\R$. A esta matriz jacobiana se le llama \textbf{gradiente} y se denota:
 continua en un entorno del punto } x_o \in U$.
 \vspace{3mm}
 
-\underline{Demostración:} $\displaystyle \lim_{x \to x_0} \|f (x) - f (x_0)\| = \\ = \lim_{x \to x_0} 
+\underline{Demostración:} $\displaystyle \lim_{x \to x_0} \|f (x) - f (x_0)\| =  \lim_{x \to x_0} 
 \bfrac{\|f (x) - f (x_0) - Df (x_0) (x - x_0) + Df (x_0) (x - x_0)\| \cdot \|x - x_0\|}{\|x - x_0\|} \leqc{D. T.} \\ 
-\leq{D. T.} \lim_{x \to x_0} \cancelto{0 \text{ por ser diferenciable}}{\bfrac{\|f (x) - f (x_0) - Df (x_0) 
-(x - x_0)\|}{\|x - x_0\|}} \cancelto{0}{\|x - x_0\|} + \\ + \lim_{x \to x_0} \bfrac{\|Df (x_0) (x - x_0)\|}
-{\|x - x_0\|} \|x - x_0\| = \lim_{x - x_0} \|Df (x_0) (x - x_0)\| = \\ = \lim_{x - x_0} \underbrace{\|Df (x_0)\|}
-_{\text{es un número}} \cancelto{0}{\|x - x_0\|} = 0$
-\vspace{5mm}
+\dindent \leqc{D. T.} \lim_{x \to x_0} \cancelto{0 \text{ por ser diferenciable}}{\bfrac{\|f (x) - f (x_0) - Df 
+(x_0) (x - x_0)\|}{\|x - x_0\|}} \cancelto{0}{\|x - x_0\|} + \lim_{x \to x_0} \bfrac{\|Df (x_0) (x - x_0)\|} 
+{\|x - x_0\|} \|x - x_0\| = \vspace{3mm} \\ \dindent = \lim_{x - x_0} \|Df (x_0) (x - x_0)\| = \lim_{x - x_0} 
+\underbrace{\|Df (x_0)\|}_{\text{es un número}} \cancelto{0}{\|x - x_0\|} = 0$
+\vspace{7mm}
 
-\teorema[1] Sea $U \subset \R^n$ un abierto y $f : U \to \R^m$: 
+\teorema[1] Sea $U \subset \R^n$ un abierto y $f : U \to \R^m$:
+\vspace{3mm}
+
 \[
 \boxed{
 f \text{ diferenciable} \Rightarrow f \text{ continua}
@@ -1419,78 +1443,81 @@ f \text{ diferenciable} \Rightarrow f \text{ continua}
 \vspace{5mm}
 
 \teorema[2] Sea $U \subset \R^n$ un abierto, $f : U \to \R^m$ y $x_0 \in U$, si $\, \exists \bfrac{\partial f_j 
-(x_0)}{\partial x_i} \\ \forall i =1,..., n \text{ y } \forall  j = 1,..., m$ y son continuas en un entorno de 
+(x_0)}{\partial x_i}  \forall i =1,..., n \text{ y } \forall  j = 1,..., m$ y son continuas en un entorno de 
 $x_0$, entonces $f (x)$ es diferenciable en $x_0$.
 \vspace{3mm}
 
 \underline{Ejemplo:} $f (x, y) = \left \{
 \begin{array}{ccc}
 
-\bfrac{xy^2}{\sqrt{x^2 + y^2}} & \text{si} & (x , y) \neq \indent (0, 0)\\
+\bfrac{xy^2}{\sqrt{x^2 + y^2}} & \text{si} & (x , y) \neq (0, 0)\\
 0 & \text{si} & (x, y) = (0, 0)\\
 
 \end{array}\right .
 $
 \vspace{3mm}
 
-(i) Probar que es continua en todo $\R^2$ (en el origen).
+\dindent (i) Probar que es continua en todo $\R^2$ (en el origen).
 
-(ii) Probar que es diferenciable en todo $\R^2$ (en el origen).
+\dindent (ii) Probar que es diferenciable en todo $\R^2$ (en el origen).
 
-(iii) Probar que existen las derivadas parciales y que son continuas en $(0, 0)$ \\ \indent (aunque no tienen 
-por qué serlo).
+\dindent (iii) Probar que existen las derivadas parciales y que son continuas en $(0, 0)$ \\ \dindent (aunque 
+no tienen por qué serlo).
 \vspace{3mm}
 
-(i) $\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{xy^2}{\sqrt{x^2 + y^2}} \eqc{?} 0$
+\dindent (i) $\displaystyle \lim_{(x, y) \to (x_0, y_0)} \bfrac{xy^2}{\sqrt{x^2 + y^2}} \eqc{?} 0$
 
-$\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x , y) - (0, 0)\| < \delta \Rightarrow \left | \bfrac{xy^2}{\sqrt
-{x^2 + y^2}} - 0 \right | < \epsilon$
+\dindent $\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x , y) - (0, 0)\| < \delta \Rightarrow \left | 
+\bfrac{xy^2}{\sqrt{x^2 + y^2}} - 0 \right | < \epsilon$
 \vspace{3mm}
 
-$\left | \bfrac{xy^2}{\sqrt{x^2 + y^2}} - 0 \right | \leqc{*} \bfrac{1}{2} \bfrac{\overbrace{\scalebox{0.7}{$(x^2 + y^2)$}}^{\text{plano}}|y|}{\sqrt{x^2 + y^2}} \leqc{**} \bfrac{1}{2} \delta^2 < \delta$. 
+\dindent $\left | \bfrac{xy^2}{\sqrt{x^2 + y^2}} - 0 \right | \leqc{*} \bfrac{1}{2} 
+\bfrac{\overbrace{\scalebox{0.7}{$(x^2 + y^2)$}}^{\text{plano}}|y|}{\sqrt{x^2 + y^2}} \leqc{**} 
+\bfrac{1}{2} \delta^2 < \delta$. 
 \vspace{3mm}
 
-Bastará con tomar $\delta < \sqrt{2 \epsilon}$.
+\dindent Bastará con tomar $\delta < \sqrt{2 \epsilon}$.
 \vspace{3mm}
 
-$\displaystyle \lim_{(x, y) \to (x_0, y_0)} f (x, y) = f (0, 0) = 0$
+\dindent $\displaystyle \lim_{(x, y) \to (x_0, y_0)} f (x, y) = f (0, 0) = 0$
 \vspace{3mm}
 
-$\star xy \leq \bfrac{x^2 + y^2}{2}$
+\dindent $\star xy \leq \bfrac{x^2 + y^2}{2}$
 \vspace{2mm}
 
-$\star \star |y| \leq \|(x, y)\| < \delta$
+\dindent $\star \star |y| \leq \|(x, y)\| < \delta$
 \vspace{5mm}
 
-(ii) $\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{f (x, y) - f (0, 0) - f_x (0, 0) (x - 0) - f_y (0, 0) (y - 0)}{\|(x, y) 
-- (0, 0)\|}$
+\dindent (ii) $\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{f (x, y) - f (0, 0) - f_x (0, 0) (x - 0) - f_y (0, 0) (y - 0)} 
+{\|(x, y) - (0, 0)\|}$
 \vspace{5mm}
 
-$f_x (0, 0) = \bfrac{\partial f}{\partial x} (0, 0) = \displaystyle \lim_{h \to 0} \bfrac{f (h, 0) - f (0, 0)}{h} = 
-\lim_{h \to 0} \bfrac{\frac{h \cdot 0^2}{\sqrt{h^2 + 0^2}} - 0}{h} = \\ \indent = \lim_{h \to 0} \bfrac{0}{h^2} = 0$
+\dindent $f_x (0, 0) = \bfrac{\partial f}{\partial x} (0, 0) = \displaystyle \lim_{h \to 0} \bfrac{f (h, 0) - 
+f (0, 0)}{h} = \lim_{h \to 0} \bfrac{\frac{h \cdot 0^2}{\sqrt{h^2 + 0^2}} - 0}{h} = \lim_{h \to 0} 
+\bfrac{0}{h^2} = 0$
 \vspace{3mm}
 
-$f_y (0, 0) = \bfrac{\partial f}{\partial y} (0, 0)= \displaystyle \lim_{h \to 0} \bfrac{f (0, h) - f (0, 0)}{h} = 
-\lim_{h \to 0} \bfrac{\frac{0 \cdot h^2}{\sqrt{0^2 + h^2}} - 0}{h} = \\ = \lim_{h \to 0}  \bfrac{0}{h^2} = 
-0$
+\dindent $f_y (0, 0) = \bfrac{\partial f}{\partial y} (0, 0)= \displaystyle \lim_{h \to 0} \bfrac{f (0, h) - f (0, 0)}{h} = \lim_{h \to 0} \bfrac{\frac{0 \cdot h^2}{\sqrt{0^2 + h^2}} - 0}{h} = \lim_{h \to 0} 
+\bfrac{0}{h^2} = 0$
 \vspace{3mm}
 
-$\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{\frac{xy^2}{\sqrt{x^2 + y^2}} - 0 - 0 - 0}{\sqrt{x^2 + y^2}} = 
-\lim_{(x, y) \to (0, 0)} \bfrac{xy^2}{x^2 + y^2} \eqc{?} 0$
+\dindent$\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{\frac{xy^2}{\sqrt{x^2 + y^2}} - 0 - 0 - 0}{\sqrt{x^2 + 
+y^2}} = \lim_{(x, y) \to (0, 0)} \bfrac{xy^2}{x^2 + y^2} \eqc{?} 0$
 \vspace{3mm}
 
-$\forall \epsilon >0 \spac \exists \delta > 0 : \left | \bfrac{xy^2}{x^2 + y^2} - 0 \right | \leq \bfrac{1}{2} 
-\bfrac{(x^2 + y^2) |y|}{x^2 + y^2} \leq \bfrac{1}{2} \|(x, y)\| \leq \bfrac{1}{2} \delta < \epsilon$. \\
+\dindent$\forall \epsilon >0 \spac \exists \delta > 0 : \left | \bfrac{xy^2}{x^2 + y^2} - 0 \right | \leq 
+\bfrac{1}{2} \bfrac{(x^2 + y^2) |y|}{x^2 + y^2} \leq \bfrac{1}{2} \|(x, y)\| \leq \bfrac{1}{2} \delta < 
+\epsilon$. \\
 \vspace{3mm}
 
-Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$.
+\dindent Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$.
 \vspace{5mm}
 
-(iii) $f_x = \bfrac{y^2 \sqrt{x^2 + y^2} - xy^2 \frac{x}{\sqrt{x^2 + y^2}}}{x^2 + y^2} = 
-\bfrac{y^2 (x^2 + y^2) - x^2y^2}{(x^2 + y^2) \sqrt{x^2 + y^2}} = \bfrac{\cancel{{(yx)}^2} + y^4 - \cancel{{(xy)^2}}}{\sqrt{{(x^2 - y^2)}^3}} = \\ \indent = \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}}$
+\dindent (iii) $f_x = \bfrac{y^2 \sqrt{x^2 + y^2} - xy^2 \frac{x}{\sqrt{x^2 + y^2}}}{x^2 + y^2} = 
+\bfrac{y^2 (x^2 + y^2) - x^2y^2}{(x^2 + y^2) \sqrt{x^2 + y^2}} = \bfrac{\cancel{{(yx)}^2} + y^4 - \cancel{{(xy)^2}}}{\sqrt{{(x^2 - y^2)}^3}} = \\ \dindent = \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}}$
 \vspace{3mm}
 
-$\bfrac{\partial f}{\partial x} (x, y) = \left \{
+\dindent $\bfrac{\partial f}{\partial x} (x, y) = \left \{
 \begin{array}{ccc}
 
 \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}} & si & (x, y) \neq (0, 0)\\
@@ -1500,28 +1527,29 @@ $\bfrac{\partial f}{\partial x} (x, y) = \left \{
 $
 \vspace{3mm}
 
-Ahora veremos si $f_x$ es continua en el punto $(0, 0)$.
+\dindent Ahora veremos si $f_x$ es continua en el punto $(0, 0)$.
 \vspace{3mm}
 
-$\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}} \eqc{?}$
+\dindent $\displaystyle \lim_{(x, y) \to (0, 0)} \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}} \eqc{?} 0$
 \vspace{3mm}
 
-$\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x ,y) - (0, 0)\| < \delta \Rightarrow |f (x, y) - 0| < \epsilon$
+\dindent $\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x ,y) - (0, 0)\| < \delta \Rightarrow |f (x, y) - 0| < 
+\epsilon$
 \vspace{3mm}
 
-$\left | \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}} - 0 \right | \leq \bfrac{{(x^2 + y^2)}^2}{\sqrt{{(x^2 + y^2)}
-^3}} = \sqrt{x^2 - y^2} < \delta$
+\dindent $\left | \bfrac{y^4}{\sqrt{{(x^2 + y^2)}^3}} - 0 \right | \leq \bfrac{{(x^2 + y^2)}^2} 
+{\sqrt{{(x^2 + y^2)}^3}} = \sqrt{x^2 - y^2} < \delta$
 \vspace{3mm}
 
-Bastará con tomar $\delta < \epsilon$, por lo que $f_x$ es continua.
+\dindent Bastará con tomar $\delta < \epsilon$, por lo que $f_x$ es continua.
 \vspace{5mm}
 
-$f_y = \bfrac{2xy \sqrt{x^2 + y^2} - xy^2 \frac{y}{\sqrt{x^2 + y^2}}}{x^2 + y^2} = \bfrac{2xy (x^2 + 
-y^2) - xy^3}{\sqrt{{(x^2 + y^2)^3}}} = \bfrac{2x^3y + 2xy^3 - xy^3}{\sqrt{{(x^2 + y^2)^3}}} = 
-\\ \indent = \bfrac{2x^3y + xy^3}{\sqrt{{(x^2 + y^2)^3}}}$
+\dindent $f_y = \bfrac{2xy \sqrt{x^2 + y^2} - xy^2 \frac{y}{\sqrt{x^2 + y^2}}}{x^2 + y^2} = \bfrac{2xy 
+(x^2 + y^2) - xy^3}{\sqrt{{(x^2 + y^2)^3}}} = \bfrac{2x^3y + 2xy^3 - xy^3}{\sqrt{{(x^2 + y^2)^3}}} 
+= \\ \dindent = \bfrac{2x^3y + xy^3}{\sqrt{{(x^2 + y^2)^3}}}$
 \vspace{3mm}
 
-$\bfrac{\partial f}{\partial y} (x, y) = \left \{
+\dindent $\bfrac{\partial f}{\partial y} (x, y) = \left \{
 \begin{array}{ccc}
 
 \bfrac{2x^3y + xy^3}{\sqrt{{(x^2 + y^2)^3}}} & si & (x, y) \neq (0, 0)\\
@@ -1531,31 +1559,33 @@ $\bfrac{\partial f}{\partial y} (x, y) = \left \{
 $
 \vspace{3mm}
 
-Ahora repetiremos el procedimiento con $f_y$.
+\dindent Ahora repetiremos el procedimiento con $f_y$.
 \vspace{3mm}
 
-\limdef{(0, 0)}{0}
+\dindent \limdef{(0, 0)}{0}
 
-$\left | \bfrac{2x^2y + xy^3}{\sqrt{{(x^2 + y^2)}^3}} \right | \leqc{D.T} \bfrac{2 |x^3y|}{\sqrt{{(x^2 + 
-y^2)}^3}} + \bfrac{|xy^3|}{\sqrt{{(x^2 + y^2)}^3}} \leqc{*} \bfrac{(x^2 + y^2)(x^2 + y^2)}
-{\sqrt{{(x^2 + y^2)}^3}} + \\ \indent + \bfrac{1}{2} \bfrac{(x^2 + y^2)(x^2 + y^2)}{\sqrt{{(x^2 + 
-y^2)}^3}} \leq 2 \bfrac{{x^2 + y^2)}^2}{\sqrt{{(x^2 + y^2)}^3}} \leq 2 \sqrt{(x^2 + y^2)} < 2 \delta$
+\dindent $\left | \bfrac{2x^2y + xy^3}{\sqrt{{(x^2 + y^2)}^3}} \right | \leqc{D.T} \bfrac{2 |x^3y|} 
+{\sqrt{{(x^2 + y^2)}^3}} + \bfrac{|xy^3|}{\sqrt{{(x^2 + y^2)}^3}} \leqc{*} \bfrac{(x^2 + y^2)(x^2 +
+y^2)}{\sqrt{{(x^2 + y^2)}^3}} + \bfrac{1}{2} \bfrac{(x^2 + y^2)(x^2 + y^2)}{\sqrt{{(x^2 
++ y^2)}^3}} \leq \\ \dindent \leq 2 \bfrac{{x^2 + y^2)}^2}{\sqrt{{(x^2 + y^2)}^3}} \leq 2 \sqrt{(x^2 +
+y^2)} < 2 \delta$
 \vspace{3mm}
 
-$ \, \star 2xy < x^2 + y^2$
+\dindent $ \, \star 2xy < x^2 + y^2$
 \vspace{3mm}
 
-Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$, por lo que $f_y$ también es continua.
+ \dindent Bastará con tomar $\delta < \sfrac{\scalebox{1.5}{$\epsilon$}}{2}$, por lo que $f_y$ también es continua.
 \vspace{7mm}
 
 \definicion Sea $U \subset \R^n$ un abierto y $f : U \to \R^m$, decimos que $f$ es de \textbf{clase 
 $C' (U)$}, y escribimos $f \in C' (U)$ si:
+\vspace{3mm}
 \[
 \boxed{
 \exists \bfrac{\partial f_i}{\partial x_j} \spac \forall i = 1, 2,..., m \text{ y } \forall j = 1, 2,..., n
 }
 \]
-\vspace{3mm}
+\vspace{7mm}
 
 %Propiedades de la matriz jacobiana
 
@@ -1579,7 +1609,7 @@ $C' (U)$}, y escribimos $f \in C' (U)$ si:
 \vspace{7mm}
 
 \subsection{Derivadas direccionales}
-\vspace{3mm}
+\vspace{5mm}
 
 \definicion Dado un vector $\vec{u}$ unitario en $\R^n \text{, un abierto } U \subset \R^n \text{ y } \\
 f : U \to \R^m$, se define la \textbf{derivada direccional} de $f$, según el vector $\vec{u}$, en un punto 
@@ -1594,18 +1624,17 @@ f (x_0 + t \vec{u}) |_{t = 0}
 \]
 \vspace{5mm}
 
-\underline{Ejemplo:}  Hallar la derivada direccional de $f : (x, y) = x^2 + y^2$ en la dirección del vector 
-$\vec{v} = 2 \vec{i} - 3 \vec{j}$.
+\underline{Ejemplo:}  Hallar la derivada direccional de $f : (x, y) = x^2 + y^2$ en la dirección del vector  $\vec{v} = 2 \vec{i} - 3 \vec{j}$.
 \vspace{3mm}
 
-$\vec{u} = \bfrac{\vec{v}}{\|\vec{v}} = \bfrac{2}{\sqrt{13}} \vec{i} - \bfrac{3}{\sqrt{13}} \vec{j}$
+\dindent $\vec{u} = \bfrac{\vec{v}}{\|\vec{v}} = \bfrac{2}{\sqrt{13}} \vec{i} - \bfrac{3}{\sqrt{13}} \vec{j}$
 \vspace{3mm}
 
-$D_{\vec{u}} f (1, 2) = \bfrac{d}{dt} \left .\left [f \left ( 1 + \bfrac{2t}{\sqrt{13}} , 2 - \bfrac{3t}{\sqrt{13}} 
-\right ) \right ] \right |_{t =0} = \bfrac{d}{dt} \left . \left [ {\left ( 1 + \bfrac{2t}{\sqrt{13}} \right )}^2 
-+ {\left ( 2 - \bfrac{3t}{\sqrt{13}} \right )}^2 \right ] \right |_{t = 0} = \\ \indent = \bfrac{4 - 12}
-{\sqrt{13}} = \bfrac{-8}{\sqrt{13}}$
-\vspace{5mm}
+\dindent $D_{\vec{u}} f (1, 2) = \bfrac{d}{dt} \left .\left [f \left ( 1 + \bfrac{2t}{\sqrt{13}} , 2 - \bfrac{3t} 
+{\sqrt{13}} \right ) \right ] \right |_{t =0} = \bfrac{d}{dt} \left . \left [ {\left ( 1 + \bfrac{2t}{\sqrt{13}} 
+\right )}^2 + {\left ( 2 - \bfrac{3t}{\sqrt{13}} \right )}^2 \right ] \right |_{t = 0} = \\ \dindent = \bfrac{4 - 
+12}{\sqrt{13}} = \bfrac{-8}{\sqrt{13}}$
+\vspace{7mm}
 
 \proposicion Sean $U \subset \R^n \text{, } f : U \to \R \text{ diferenciable  en } x_0 \in U \text{ y } \vec{u} 
 $ un vector unitario, entonces:
@@ -1619,7 +1648,7 @@ D_{\vec{u}} f (x_0) = < \vec{\nabla} f (x_0), \vec{u} >
 \vspace{3mm}
 
 \boxed{$n =2$} \spac $f : U \subset \R^2 \to \R$
-\vspace{3mm}
+\vspace{5mm}
 
 $D_{\vec{u}} f (x_0, y_0) = \displaystyle \lim_{t \to 0} \bfrac{f ( (x_0, y_0) + t (u_1, u_2) ) - f (x_0, y_0)}
 {t} = \\ \indent = \lim_{t \to 0} \bfrac{f (x_0 - t u_1, y_0 - tu_2) - f (x_0, y_0) + f (x_0, y_0 + tu_2) - f (x_0, y_0 - tu_2)}{t} = \\ \indent = \lim_{t \to 0} \bfrac{f (x_0 + tu_1, y_0- tu_2) - f (x_0, y_0 - tu_2)}{t} + 
@@ -1636,8 +1665,49 @@ f (x_0, y_0)}{h'}}_{\bfrac{\partial f}{\partial y} (x_0, y_0)} u_2$
 \vspace{7mm}
 
 \subsection{Más sobre funciones diferenciables y el vector gradiente}
-\vspace{3mm}
+\vspace{5mm}
 
 (I) Dirección de máximo crecimiento de $f : U \subset \R^n \to \R$.
+\vspace{3mm}
+
+$f : U \subset \R^n \to \R$
+\vspace{3mm}
+
+Si $f$ es diferenciable y $\vec{u} \text{ unitario } \Rightarrow D_{\vec{u}} f (x_0) = < \vec{\nabla} f (x_0) 
+, \vec{u} > = \|\vec{\nabla} f (x_0)\| \cos \theta$
+\vspace{3mm}
+
+$D_{\vec{u}} f (x_0)$ es máximo si $\cos \theta = 1 \Rightarrow \vec{\nabla} f (x_0) \text{ y } \vec{u}$ 
+tienen que tener la misma dirección y el mismo sentido.
+\vspace{3mm}
+
+(i) La dirección del máximo crecimiento de la función $f$, es la del gradiente $\vec{\nabla} f$, y el valor máximo de \indent $D_{\vec{u}} f (x_0)$ es, precisamente, $\|\vec{\nabla} f (x_0)\|$. \quad $\vec{u} = 
+\lambda \vec{\nabla} f (x_0) \spac (\lambda > 0)$.
+\vspace{3mm}
+
+(ii) El punto de máximo decrecimiento de la función $f$ tiene lugar cuando $\vec{\nabla} f \text{ y } \vec{u}
+$ tienen la misma \indent dirección pero sentidos opuestos. $\quad \vec{u} = \lambda \vec{\nabla} f (x_0) 
+\spac (\lambda < 0)$.
+\vspace{3mm}
+
+(iii) La función $f$ no varía, es decir, ni crece ni decrece, cuando $D_{\vec{u}} f (x_0) = < \vec{\nabla} f 
+(x_0), \vec{u} > = 0 \Rightarrow \\ \indent \Rightarrow \vec{\nabla} f \perp \vec{u}$ y el vector gradiente 
+es perpendicular a los conuntos de nivel.
+\vspace{5mm}
+
+\noindent (II) Gradiente y plano tangente a los conuntos de nivel.
+\vspace{3mm}
+
+Sea $f : \R^2 \to \R$ una función diferenciable en el punto $x_0$. Podemos considerar el plano tangente a 
+la \indent curva en el punto $x_0$ de forma que se cumple que $z = f (x, y)$, y las superficies de nivel 
+$F (x, y, z) = c$. \indent Entonces la ecuación del plano tangente para los conuntos de nivel será:
+\vspace{3mm}
+
+\[
+\boxed{
+< \vec{\nabla} F (x_0), (x - x_0, y - y_0, z - z_0) > = 0
+}
+\]
+
 
 \end{document}
