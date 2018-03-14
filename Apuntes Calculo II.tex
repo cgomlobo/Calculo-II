@@ -38,6 +38,7 @@
 \newcommand{\observacion}[1][\!\!]{\noindent$\ast$ \underline{Observación #1:} }
 \newcommand{\dindent}{\indent\indent}
 \newcommand{\tindent}{\indent\indent\indent}
+\newcommand{\sen}[1]{\text{sen}\,{#1}}
 \newcommand{\limdef}[2]{$\forall \epsilon > 0 \spac \exists \delta > 0 : \|(x ,y) - #1\| < \delta \Rightarrow 
 |f (x, y) - #2| < \epsilon$\vspace{3mm}
 
@@ -1664,8 +1665,12 @@ _{\bfrac{\partial f}{\partial x} (x_0, y_0)} u_1 + \underbrace{\lim_{h \to 0} \b
 f (x_0, y_0)}{h'}}_{\bfrac{\partial f}{\partial y} (x_0, y_0)} u_2$
 \vspace{7mm}
 
+%Más sobre funciones diferenciables y el vector gradiente
+
 \subsection{Más sobre funciones diferenciables y el vector gradiente}
 \vspace{5mm}
+
+%Dirección de máximo crecimiento
 
 (I) Dirección de máximo crecimiento de $f : U \subset \R^n \to \R$.
 \vspace{3mm}
@@ -1695,6 +1700,8 @@ $ tienen la misma \indent dirección pero sentidos opuestos. $\quad \vec{u} = \l
 es perpendicular a los conuntos de nivel.
 \vspace{5mm}
 
+%Gradiente y plano tangente a los conjuntos de nivel
+
 \noindent (II) Gradiente y plano tangente a los conuntos de nivel.
 \vspace{3mm}
 
@@ -1708,6 +1715,145 @@ $F (x, y, z) = c$. \indent Entonces la ecuación del plano tangente para los con
 < \vec{\nabla} F (x_0), (x - x_0, y - y_0, z - z_0) > = 0
 }
 \]
+\vspace{7mm}
+
+%Regla de la cadena
+
+\section{Regla de la cadena}
+\vspace{5mm}
+
+\teorema Sean $U \subset \R^n \text{ y } V \subset \R^m$ conjuntos abiertos con $\vec{x}_0 \in U 
+\text{ y } g (\vec{x}_0) \in V, g : U \to \R^m \text{ y } \\ f  : V \to \R^k$. Si $g (\vec{x})$ es diferenciable 
+en $x_0 \text{ y } f (\vec{x})$ es diferenciable en $g (\vec{x}_0)$, entonces la composición $(f \circ g) 
+(\vec{x}) = f (g (\vec{x}))$ es diferenciable en $\vec{x}_0$ y:
+\vspace{3mm}
+
+\[
+\boxed{
+D (f \circ g) (\vec{x}_0) = Df (g (\vec{x}_0)) \cdot Dg (\vec{x}_0)
+}
+\]
+\vspace{7mm}
+
+\dindent\underline{Ejemplo:} Sean $f : \R^2 \to \R^2, f (x, y) = (e^{x + 2y}, \sen{(2x + y)})$ y 
+$g : \R^3 \to \R^2, g (u, v, w) = \\ \dindent = (u + 2v^2 + 3v^2, 2v - u^2)$. Hallar la matriz jacobiana de
+la composición de ambas funciones en \\ \dindent el punto $(1, -1, 1)$.
+\vspace{3mm}
+
+\tindent$Df (x, y) = \left ( \begin{array}{cc}
+
+\bfrac{\partial f_1}{\partial x} & \bfrac{\partial f_1}{\partial y} \vspace{2mm}\\
+\bfrac{\partial f_2}{\partial x} & \bfrac{\partial f_2}{\partial y} \vspace{2mm}\\
+
+\end{array} \right )
+=
+\left ( \begin{array}{cc}
+
+e^{x + 2y} & 2e^{x + 2y}\\
+2 \cos{(2x + y)} & \cos{(2x + y)}\\
+
+\end{array} \right )
+$
+\vspace{3mm}
+
+\tindent$Dg (u, v, w) = \left ( \begin{array}{ccc}
+
+\bfrac{\partial f_1}{\partial u} & \bfrac{\partial f_1}{\partial v} & \bfrac{\partial f_1}{\partial w} 
+\vspace{2mm}\\
+\bfrac{\partial f_2}{\partial u} & \bfrac{\partial f_2}{\partial v} & \bfrac{\partial f_2}{\partial w} 
+\vspace{2mm}\\
+
+\end{array} \right )
+=
+\left ( \begin{array}{ccc}
+
+1 & 4v + 9v^2 & 0\\
+-2u & 2 & 0\\
+
+\end{array} \right )
+$
+\vspace{5mm}
+
+\tindent $h (u, v, w) = (g \circ f) (u, v, w)$
+\vspace{3mm}
+
+\tindent$Dh (1, -1, 1) = Df (g (1, -1, 1)) \cdot Dg (1, -1, 1) = Df (0, -3) \cdot D (1, -1, 1) =$
+\vspace{3mm}
+
+\tindent$={\left ( \begin{array}{cc}
+
+e^{-6} & 2e^{-6}\\
+2 \cos{-3} & \cos{-3}\\
+
+\end{array} \right )}_{2 x 2}
+{\left ( \begin{array}{ccc}
+
+1 & 5 & 0\\
+-2 & 2 & 0\\
+
+\end{array} \right )}_{2 x 3}
+=
+{\left ( \begin{array}{ccc}
+
+-3 e^{-6} & 9 e^{-6} & 0\\
+0 & 12 \cos{-3} & 0\\
+
+\end{array} \right )}_{2 x 3}
+$
+\vspace{10mm}
+
+%Primer caso especial de la regla de la cadena
+
+\noindent\underline{Primer caso especial de la regla de la cadena}
+\vspace{3mm}
+
+Si $g : \R \to \R^3, f : \R^3 \to \R$, podemos escribir $g (t) = (x (t), y(t), z(t))$.
+\vspace{3mm}
+
+Si definimos $h : \R \to \R \text{ por } h (t) = f (g (t))$, entonces:
+\vspace{3mm}
+
+$\bfrac{df}{dt} = \bfrac{dh}{dt} = \bfrac{\partial f}{\partial x} \cdot \bfrac{d x}{d t} + 
+\bfrac{\partial f}{\partial y} \cdot \bfrac{d y}{dt} +\bfrac{\partial f}{\partial z} \cdot \bfrac{dz}{dt}$
+\vspace{10mm}
+
+%Segundo caso especial de la regla de la cadena
+
+\noindent\underline{Segundo caso especial de la regla de la cadena}
+\vspace{3mm}
+
+Si $g : \R^3 \to \R^3, f : \R^3 \to \R$, podemos escribir $g (x, y, z) = (u (x, y, z), v (x, y, z), w (x, y, z))$.
+\vspace{3mm}
+
+Si definimos $h : \R^3 \to \R \text{ por } f (x, y, z) = f (g (x, y, z)) = f (u (x, y, z), v (x, y, z), w (x, y, z))$, 
+entonces:
+\vspace{5mm}
+
+$\bfrac{\partial f}{\partial x} = \bfrac{\partial h}{\partial x} = \bfrac{\partial f}{\partial u} \cdot \bfrac{
+\partial u}{\partial x} + \bfrac{\partial f}{\partial v} \cdot \bfrac{\partial v}{\partial x} + \bfrac{\partial f} 
+{\partial w} \cdot \bfrac{\partial w}{\partial x}$
+\vspace{3mm}
+
+$\bfrac{\partial f}{\partial y} = \bfrac{\partial h}{\partial y} = \bfrac{\partial f}{\partial u} \cdot \bfrac{
+\partial u}{\partial y} + \bfrac{\partial f}{\partial v} \cdot \bfrac{\partial v}{\partial y} + \bfrac{\partial f} 
+{\partial w} \cdot \bfrac{\partial w}{\partial y}$
+\vspace{3mm}
+
+$\bfrac{\partial f}{\partial z} = \bfrac{\partial h}{\partial z} = \bfrac{\partial f}{\partial u} \cdot \bfrac{
+\partial u}{\partial z} + \bfrac{\partial f}{\partial v} \cdot \bfrac{\partial v}{\partial z} + \bfrac{\partial f} 
+{\partial w} \cdot \bfrac{\partial w}{\partial z}$
+\vspace{5mm}
+
+$\left ( \bfrac{\partial h}{\partial x}, \bfrac{\partial h}{\partial y}, \bfrac{\partial h}{\partial z} \right ) = 
+\left ( \bfrac{\partial f}{\partial u}, \bfrac{\partial f}{\partial v}, \bfrac{\partial f}{\partial w} \right )
+\left (\begin{array}{ccc}
+
+\bfrac{\partial u}{\partial x} & \bfrac{\partial u}{\partial y} & \bfrac{\partial u}{\partial z}\vspace{1mm}\\
+\bfrac{\partial v}{\partial x} & \bfrac{\partial v}{\partial y} & \bfrac{\partial v}{\partial z}\vspace{1mm}\\
+\bfrac{\partial w}{\partial x} & \bfrac{\partial w}{\partial y} & \bfrac{\partial w}{\partial z}\\
+
+\end{array} \right )
+$
 
 
 \end{document}
