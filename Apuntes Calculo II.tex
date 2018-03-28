@@ -1043,7 +1043,7 @@ f (x) \text{ continua en } x_0 \in \R^n \text{ y } g (y) \text{ continua en } f 
 \vspace{3mm}
 
 \definicion Sea $f : \R^n \to \R^m, \, X \subset \R^n \text{ e } Y \subset \R^m$, se define la 
-\textbf{imagen inversa} o \textbf{preimagen} del conunto $Y$ mediante la función $f$ como:
+\textbf{imagen inversa} o \textbf{preimagen} del conjunto $Y$ mediante la función $f$ como:
 \[
 \boxed{
 f^{-1} (Y) = \{x \in \R^n : f (x) \subset Y\}
@@ -1407,7 +1407,7 @@ jacobiana} de $f \text{ en } x_0$.
 
 %Gradiente
 
-\definicion Un caso particular de $Df$ es cuando $m = 1$, es decir, el conunto de llegada de la función es 
+\definicion Un caso particular de $Df$ es cuando $m = 1$, es decir, el conjunto de llegada de la función es 
 $\R$. A esta matriz jacobiana se le llama \textbf{gradiente} y se denota:
 \vspace{2mm}
 
@@ -1697,17 +1697,17 @@ $ tienen la misma \indent dirección pero sentidos opuestos. $\quad \vec{u} = \l
 
 (iii) La función $f$ no varía, es decir, ni crece ni decrece, cuando $D_{\vec{u}} f (x_0) = < \vec{\nabla} f 
 (x_0), \vec{u} > = 0 \Rightarrow \\ \indent \Rightarrow \vec{\nabla} f \perp \vec{u}$ y el vector gradiente 
-es perpendicular a los conuntos de nivel.
+es perpendicular a los conjuntos de nivel.
 \vspace{5mm}
 
 %Gradiente y plano tangente a los conjuntos de nivel
 
-\noindent (II) Gradiente y plano tangente a los conuntos de nivel.
+\noindent (II) Gradiente y plano tangente a los conjuntos de nivel.
 \vspace{3mm}
 
 Sea $f : \R^2 \to \R$ una función diferenciable en el punto $x_0$. Podemos considerar el plano tangente a 
 la \indent curva en el punto $x_0$ de forma que se cumple que $z = f (x, y)$, y las superficies de nivel 
-$F (x, y, z) = c$. \indent Entonces la ecuación del plano tangente para los conuntos de nivel será:
+$F (x, y, z) = c$. \indent Entonces la ecuación del plano tangente para los conjuntos de nivel será:
 \vspace{3mm}
 
 \[
@@ -1854,6 +1854,115 @@ $\left ( \bfrac{\partial h}{\partial x}, \bfrac{\partial h}{\partial y}, \bfrac{
 
 \end{array} \right )
 $
+\vspace{5mm}
+
+\underline{Ejemplo:} Sea $F (x, y) = f (u (x, y), v (x, y)) \text{ con } u = \bfrac{x - y}{2}, v = \bfrac{x + y}
+{2}$. Aplicar la regla de la cadena \\ \indent para calcular $\vec{\nabla} F (x, y)$ en función de las 
+derivadas parciales de $f, \bfrac{\partial f}{\partial u} \text{ y } \bfrac{\partial f}{\partial v}$.
+\vspace{3mm}
+
+\dindent Definimos $g : \R^2 \to \R^2,\spac g (x, y) = (u (x, y), v (x, y)) =  \left ( \bfrac{x - y}{2}, 
+\bfrac{x + y}{2} \right ) \text{ y } \\ \dindent F : \R^2 \to \R, \spac F (x, y) = (f \circ g) (x, y) = f 
+\left ( \bfrac{x - y}{2}, \bfrac{x + y}{2} \right )$
+\vspace{3mm}
+
+$DF (x, y) = \vec{\nabla} F (x, y) = \left ( \bfrac{\partial f}{\partial u}, \bfrac{\partial f}{\partial v} \right )
+\left ( \begin{array}{cc}
+
+\bfrac{\partial u}{\partial x} & \bfrac{\partial u}{\partial y}\vspace{2mm}\\
+\bfrac{\partial v}{\partial x} & \bfrac{\partial v}{\partial y}\vspace{2mm}\\
+
+\end{array} \right )
+= \left ( \bfrac{\partial f}{\partial u}, \bfrac{\partial f}{\partial v} \right ) 
+\left ( \begin{array}{cc}
+
+\bfrac{1}{2} & -\bfrac{1}{2}\vspace{2mm}\\
+\bfrac{1}{2} &\bfrac{1}{2}\vspace{2mm}\\
+
+\end{array} \right )
+= \left ( \bfrac{\partial f}{\partial u} + \bfrac{\partial f}{\partial v}, -\bfrac{\partial f}{\partial u} + 
+\bfrac{\partial f}{\partial v} \right )$
+
+\vspace{7mm}
+
+%Derivadas de orden superior y fórmula de Taylor
+
+\section{Derivadas de orden superior y fórmula de Taylor}
+\vspace{5mm}
+
+%Derivadas de orden superior
+
+\subsection{Derivadas parciales de orden superior}
+\vspace{5mm}
+
+\definicion Definimos las derivadas parciales de orden 2 de:
+\vspace{3mm}
+\begin{itemize}
+
+\item $f : U \subset \R^2 \to \R$ como:
+\vspace{3mm}
+
+\dindent Iterados: $f_{xx} = \bfrac{\partial^2 f}{\partial x^2} = \bfrac{\partial}{\partial x} \left ( \bfrac{
+\partial f}{\partial x}\right ), \spac f_{yy} = \bfrac{\partial^2 f}{\partial y^2} = \bfrac{\partial}{\partial y} 
+\left ( \bfrac{\partial f}{\partial y} \right )$
+\vspace{3mm}
+
+\dindent Mixtos o cruzados: $f_{yx} = \bfrac{\partial^2 f}{\partial x \partial y} = \bfrac{\partial}{\partial x} 
+\left ( \bfrac{\partial f}{\partial y}\right ), \spac f_{xy} = \bfrac{\partial^2 f}{\partial y \partial x} = 
+\bfrac{\partial}{\partial y} \left ( \bfrac{\partial f}{\partial x} \right )$
+\vspace{3mm}
+
+\item $f : U \subset \R^n \to \R$ como:
+\vspace{3mm}
+
+\dindent $f_{x_i x_i} = \bfrac{\partial^2 f}{\partial x_i^2} = \bfrac{\partial}{\partial x_i} \left ( \bfrac{
+\partial f}{\partial x_i}\right ) \spac \forall i = 1,..., n$
+\vspace{3mm}
+
+\dindent $f_{x_i x_j} = \bfrac{\partial^2 f}{\partial x_ j \partial x_i} = \bfrac{\partial}{\partial x_j} \left ( 
+\bfrac{\partial f}{\partial x_i}\right ) \spac \forall i \neq  j = 1,..., n$
+\vspace{5mm}
+
+\end{itemize}
+
+\definicion Sea $U \subset \R^n$ un conjunto abierto y:
+\vspace{3mm}
+
+\begin{itemize}
+
+\item $f U \to \R$, decimos que $f$ es de \textbf{clase $\mathbf{C^k}$} si $f$ y todas sus derivadas 
+parciales de orden $1, 2,..., k \text{ son continuas en } U$.
+\vspace{1mm}
+
+\item $f : U \to \R^m$, tal que $f = (f_1, f_2,..., f_m)$ decimos que $f$ es de clase $C^k \text{ en } U 
+\text{ si } f_i \text{ es de clase } C^k \text{ en } U \text{ para } \\ i = 1,..., m$.
+\vspace{5mm}
+
+\end{itemize}
+
+\observacion Si $f \in C^1 (U) \Rightarrow f$ diferenciable en todo punto de $U$.
+\vspace{10mm}
+
+
+\teorema Sean $U \subset \R^n$ un conjunto abierto y $f : U \to R$. Si $f$ es de clase $C^2$ en $U$ 
+entonces las derivadas parciales cruzadas son iguales, es decir, si $1 \leq i, \, j \leq n$ se tiene en $U$:
+\vspace{3mm}
+\[
+\boxed{
+\bfrac{\partial f}{\partial x_i x_j} = \bfrac{\partial f}{\partial x_j \partial x_i}
+}
+\]
+\vspace{5mm}
+
+%Fórmula de Taylor
+
+\subsection{Fórmula de Taylor}
+\vspace{5mm}
+
+La idea es aproximar una función, cerca de un punto dado, por un polinomio imponiendo que comparta con 
+la función las sucesivas derivadas.
+
+
 
 
 \end{document}
